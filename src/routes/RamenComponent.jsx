@@ -25,6 +25,10 @@ const RamenComponent = () => {
   };
 
   const handleNextStep = () => {
+    if (selectedItems.length === 0) {
+      console.log(orderStatus);
+      // TODO No warning the order is empty! No log. Figure it out.
+    }
     setCurrentStep((prev) => Math.min(prev + 1, steps.length));
   };
 
@@ -39,10 +43,11 @@ const RamenComponent = () => {
         return <TableCodeInput onValidCode={handleCodeValidation} />;
       case 2:
         return (
-          <div className="mt-8">
+          <div className="wrapper-inner">
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
+              orderStatus={orderStatus}
               onClick={handleNextStep}
             />
           </div>
@@ -70,12 +75,12 @@ const RamenComponent = () => {
   };
 
   return (
-    <>
-      <div className="step-container relative pb-12">
+    <main className="wrapper-outer">
+      <div className=" wrapper-inner relative pb-12">
         {/* Progress line */}
-        <div className="absolute h-1 bg-slate-200 top-5 left-[17%] right-[17%] z-0">
+        <div className="absolute h-1 bg-slate-200 top-[2.3rem] left-[17%] right-[17%] z-0">
           <div
-            className="absolute h-full bg-green-500 transition-all duration-500 ease-in-out"
+            className="absolute h-full bg-[rgb(182,27,81)] transition-all duration-500 ease-in-out"
             style={{
               width: progressWidth(),
             }}
@@ -99,15 +104,15 @@ const RamenComponent = () => {
                     transition-all duration-300 ease-in-out
                     ${
                       isCompleted
-                        ? "bg-green-500 text-white"
+                        ? "bg-[rgb(182,27,81)] text-white"
                         : isCurrent
-                        ? "bg-blue-500 text-white"
+                        ? "bg-amber-600 text-white"
                         : "bg-white border-2 border-slate-300"
                     }
                     ${
                       !isCompleted &&
                       !isCurrent &&
-                      "group-hover:border-blue-300"
+                      "group-hover:border-amber-300"
                     }
                   `}>
                   <StepIcon
@@ -122,9 +127,9 @@ const RamenComponent = () => {
                     className={`
                       ${
                         isCompleted
-                          ? "text-green-600"
+                          ? "text-[rgb(182,27,81)]"
                           : isCurrent
-                          ? "text-blue-600"
+                          ? "text-amber-600"
                           : "text-slate-500"
                       }
                     `}>
@@ -138,7 +143,7 @@ const RamenComponent = () => {
       </div>
 
       {renderStepContent()}
-    </>
+    </main>
   );
 };
 

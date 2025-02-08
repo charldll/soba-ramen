@@ -21,12 +21,12 @@ const useOrder = () => {
 
   const placeOrder = async () => {
     if (!tableId) {
-      setOrderStatus("Please log in with a table code first");
+      setOrderStatus("Zaloguj się do stolika");
       return;
     }
 
     if (selectedItems.length === 0) {
-      setOrderStatus("Please select at least one item");
+      setOrderStatus("Wybierz conajmniej jeden składnik");
       return;
     }
 
@@ -41,12 +41,12 @@ const useOrder = () => {
 
       if (error) throw error;
 
-      setOrderStatus("Order placed successfully!");
+      setOrderStatus("Zamówienie złożone");
       setSelectedItems([]);
 
       setTimeout(() => setOrderStatus(""), 3000);
     } catch (err) {
-      setOrderStatus("Error placing order. Please try again.");
+      setOrderStatus("Wystąpił błąd, sprobój ponownie");
       console.error("Error:", err);
     }
   };
