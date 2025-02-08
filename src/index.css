@@ -14,3 +14,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer utilities {
+  /* For Firefox */
+  .custom-scrollbar {
+    /* Set the scrollbar thumb (the draggable part) color */
+    scrollbar-color: rgb(182, 27, 81) rgb(194, 166, 176); /* thumb | track */
+
+    /* Set the scrollbar width */
+    scrollbar-width: thin; /* Options: auto, thin, none */
+  }
+  /* For WebKit Browsers (Chrome, Safari, Edge) */
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 0.75rem; /* Horizontal scrollbar height */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgb(182, 27, 81); /* Track color */
+    border-radius: 10px; /* Rounded track */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgb(194, 166, 176); /* Scrollbar color */
+    border-radius: 10px; /* Rounded scrollbar */
+    /* Border around scrollbar */
+  }
+}

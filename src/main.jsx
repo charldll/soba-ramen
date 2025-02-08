@@ -8,6 +8,7 @@ import About from "./routes/About.jsx";
 import Menu from "./routes/Menu.jsx";
 import Layout from "./Layout/index.jsx";
 import Contact from "./routes/Contact.jsx";
+import RamenComponent from "./routes/RamenComponent.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="custom-ramen" element={<RamenComponent />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

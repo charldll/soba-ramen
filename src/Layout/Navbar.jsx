@@ -9,6 +9,7 @@ const navigation = [
   { name: "Sushi", href: "/", current: true },
   { name: "About", href: "/about", current: false },
   { name: "Menu", href: "/menu", current: false },
+  { name: "Ramen", href: "/custom-ramen", current: false },
   { name: "Contact", href: "/contact", current: false },
 ];
 
@@ -50,8 +51,7 @@ export default function Example() {
                         ? "bg-gray-900 text-white"
                         : "text-gray-300 hover:bg-gray-700 hover:text-white",
                       "rounded-md px-3 py-2 text-sm font-medium"
-                    )}
-                  >
+                    )}>
                     {item.name}
                   </a>
                 ))}
@@ -75,8 +75,7 @@ export default function Example() {
                   ? "bg-gray-900 text-white"
                   : "text-gray-300 hover:bg-gray-700 hover:text-white",
                 "block rounded-md px-3 py-2 text-base font-medium"
-              )}
-            >
+              )}>
               {item.name}
             </DisclosureButton>
           ))}
