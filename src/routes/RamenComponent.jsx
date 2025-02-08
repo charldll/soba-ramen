@@ -1,8 +1,15 @@
 import { KeyRound, Soup, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 
+import TableCodeInput from "../components/TableCodeInput";
+import IngredientChoice from "../components/IngredientChoice";
+import OrderSummary from "../components/OrderSummary";
+import useOrder from "../hooks/useOrder";
+
 const RamenComponent = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const { selectedItems, totalPrice, orderStatus, toggleItem, submitOrder } =
+    useOrder();
 
   const steps = [
     { icon: KeyRound, label: "Zaloguj" },
@@ -82,82 +89,14 @@ const RamenComponent = () => {
           })}
         </div>
       </div>
-      <div className="w-full max-w-[70rem] px-8 mx-auto">
-        <div className=" grid auto-cols-[90%] sm:auto-cols-[45%] md:auto-cols-[30%] lg:auto-cols-[23% grid-flow-col gap-[1rem] py-[0.5rem] overflow-x-auto overscroll-contain snap-x snap-mandatory custom-scrollbar">
-          <div className=" cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://images.unsplash.com/photo-1587029623864-c0c4d22edf6c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Nori, <span>5 zł</span>
-            </p>
-          </div>
-          <div className=" cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://plus.unsplash.com/premium_photo-1671022581618-4bb6650389c9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZWdnfGVufDB8fDB8fHww"
-            />
-            <p className="w-fit mx-auto">
-              Jajko, <span>3 zł</span>
-            </p>
-          </div>
-          <div className=" cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://images.unsplash.com/photo-1629665001701-a232a0ba4eec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hpaXRha2UlMjBtdXNocm9vbXxlbnwwfHwwfHx8MA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Shiitake, <span>5 zł</span>
-            </p>
-          </div>
-          <div className="cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://plus.unsplash.com/premium_photo-1666318300348-a4d0226d81ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWRhbWFtZXxlbnwwfHwwfHx8MA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Edamame, <span>5 zł</span>
-            </p>
-          </div>
-          <div className="cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://plus.unsplash.com/premium_photo-1666318300348-a4d0226d81ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWRhbWFtZXxlbnwwfHwwfHx8MA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Edamame, <span>5 zł</span>
-            </p>
-          </div>
-          <div className="cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://plus.unsplash.com/premium_photo-1666318300348-a4d0226d81ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWRhbWFtZXxlbnwwfHwwfHx8MA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Edamame, <span>5 zł</span>
-            </p>
-          </div>
-          <div className="cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://plus.unsplash.com/premium_photo-1666318300348-a4d0226d81ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWRhbWFtZXxlbnwwfHwwfHx8MA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Edamame, <span>5 zł</span>
-            </p>
-          </div>
-          <div className="cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[rgb(182,27,81)] rounded-[1rem] snap-start">
-            <img
-              className="w-full aspect-[9/10] object-cover"
-              src="https://plus.unsplash.com/premium_photo-1666318300348-a4d0226d81ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWRhbWFtZXxlbnwwfHwwfHx8MA%3D%3D"
-            />
-            <p className="w-fit mx-auto">
-              Edamame, <span>5 zł</span>
-            </p>
-          </div>
-        </div>
-      </div>
+      <TableCodeInput />
+      <IngredientChoice selectedItems={selectedItems} toggleItem={toggleItem} />
+      <OrderSummary
+        selectedItems={selectedItems}
+        totalPrice={totalPrice}
+        orderStatus={orderStatus}
+        submitOrder={submitOrder}
+      />
     </>
   );
 };
