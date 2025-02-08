@@ -3,14 +3,13 @@ const OrderSummary = ({
   selectedItems,
   totalPrice,
   orderStatus,
-  submitOrder,
+  placeOrder,
 }) => {
   return (
     <div>
-      <h2>Your Order</h2>
       <div>
         {selectedItems.length === 0 ? (
-          <p>No items selected.</p>
+          <p>Nie wybrano składników.</p>
         ) : (
           <ul>
             {selectedItems.map((item) => (
@@ -20,13 +19,16 @@ const OrderSummary = ({
             ))}
           </ul>
         )}
-        <h3>Total: ${totalPrice}</h3>
+        <h3>Suma: ${totalPrice}</h3>
       </div>
 
       {orderStatus && <p>{orderStatus}</p>}
 
-      <button onClick={submitOrder} disabled={selectedItems.length === 0}>
-        Place Order
+      <button
+        className="px-4 py-2 bg-amber-600"
+        onClick={placeOrder}
+        disabled={selectedItems.length === 0}>
+        Złóż zamówienie
       </button>
     </div>
   );

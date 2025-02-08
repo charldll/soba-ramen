@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { supabase } from "../supabaseClinet";
 
-const TableCodeInput = () => {
+const TableCodeInput = ({ onValidCode }) => {
   const [code, setCode] = useState(
     () => sessionStorage.getItem("tableCode") || ""
   );
@@ -31,16 +33,19 @@ const TableCodeInput = () => {
         sessionStorage.setItem("tableId", data.id);
         sessionStorage.setItem("loggedTable", data.table_identifier);
         setError(null);
+        onValidCode(true); // Notify parent component that code is valid
         console.log(tableId);
       } else {
         setLoggedTable(null);
         sessionStorage.removeItem("loggedTable");
         sessionStorage.removeItem("tableId");
-        setError("Invalid code");
+        setError("Niepoprawny kod");
+        onValidCode(false);
       }
     } catch (err) {
-      setError("Error verifying code");
+      setError("Błąd kodu");
       console.error("Error:", err);
+      onValidCode(false);
     }
   };
 
@@ -69,7 +74,7 @@ const TableCodeInput = () => {
                 setCode(e.target.value);
                 sessionStorage.setItem("tableCode", e.target.value);
               }}
-              placeholder="Enter table code"
+              placeholder="Wpisz kod stolika"
               className="w-full rounded-lg border px-4 py-2 text-blue-500 transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               autoFocus
             />
