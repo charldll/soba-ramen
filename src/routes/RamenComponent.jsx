@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { KeyRound, Soup, ThumbsUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
@@ -8,40 +9,20 @@ import OrderSummary from "../components/OrderSummary";
 import OrderConfirmation from "../components/OrderConfirmation";
 import ProgressBar from "../components/ProgressBar";
 import useOrder from "../hooks/useOrder";
-import { supabase } from "../supabaseClinet";
 
 const RamenComponent = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const { selectedItems, totalPrice, orderStatus, toggleItem, placeOrder } =
-    useOrder();
+  const {
+    selectedItems,
+    totalPrice,
+    orderStatus,
+    toggleItem,
+    placeOrder,
+    validateTable,
+  } = useOrder();
 
   const { table } = useParams();
   const navigate = useNavigate();
-
-  const validateTable = async (table) => {
-    try {
-      const { data, error } = await supabase
-        .from("restaurant_tables")
-        .select("id, table_identifier")
-        .eq("id", table)
-        .single();
-
-      if (error || !data) {
-        sessionStorage.removeItem("tableId");
-        sessionStorage.removeItem("loggedTable");
-        // sessionStorage.removeItem("tableCode");
-        return false;
-      }
-
-      sessionStorage.setItem("tableId", data.id);
-      sessionStorage.setItem("loggedTable", data.table_identifier);
-      // sessionStorage.setItem("tableCode", tableCode);
-      return true;
-    } catch (err) {
-      console.error("Error validating table:", err);
-      return false;
-    }
-  };
 
   useEffect(() => {
     const checkTable = async () => {
@@ -57,6 +38,7 @@ const RamenComponent = () => {
 
     checkTable();
   }, [table]);
+
   const steps = [
     { icon: KeyRound, label: "Zaloguj" },
     { icon: Soup, label: "Wybierz" },
@@ -75,6 +57,10 @@ const RamenComponent = () => {
       // TODO: No warning the order is empty! No log. Figure it out.
     }
     setCurrentStep((prev) => Math.min(prev + 1, steps.length));
+  };
+
+  const handlePreviousStep = () => {
+    setCurrentStep((prev) => Math.min(prev - 1, steps.length));
   };
 
   const handlePlaceOrder = async () => {
@@ -104,6 +90,7 @@ const RamenComponent = () => {
             totalPrice={totalPrice}
             orderStatus={orderStatus}
             placeOrder={handlePlaceOrder}
+            onClick={handlePreviousStep}
           />
         );
       case 4:

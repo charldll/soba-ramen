@@ -6,9 +6,12 @@ const OrderSummary = ({
   totalPrice,
   orderStatus,
   placeOrder,
+  onClick,
 }) => {
+  const loggedTable = sessionStorage.getItem("loggedTable");
   return (
     <section className="text-center wrapper-inner">
+      <p>{loggedTable}</p>
       <div>
         {selectedItems.length === 0 ? (
           <p>Nie wybrano składników.</p>
@@ -25,13 +28,17 @@ const OrderSummary = ({
       </div>
 
       {orderStatus && <p>{orderStatus}</p>}
-
-      <ButtonComponent
-        className="bg-amber-600"
-        onClick={placeOrder}
-        disabled={selectedItems.length === 0}>
-        Złóż zamówienie
-      </ButtonComponent>
+      <div className="flex justify-center items-center gap-2">
+        <ButtonComponent className="my-4 bg-amber-600 " onClick={onClick}>
+          Wróć
+        </ButtonComponent>
+        <ButtonComponent
+          className="bg-green-600"
+          onClick={placeOrder}
+          disabled={selectedItems.length === 0}>
+          Złóż zamówienie
+        </ButtonComponent>
+      </div>
     </section>
   );
 };

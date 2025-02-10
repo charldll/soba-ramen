@@ -17,9 +17,6 @@ const TableCodeInput = ({ onValidCode }) => {
   const [tableId, setTableId] = useState(() => {
     return sessionStorage.getItem("tableId") || null;
   });
-  const [tableCode, setTableCode] = useState(() => {
-    return sessionStorage.getItem("tableCode") || null;
-  });
 
   const [error, setError] = useState(null);
 
@@ -36,7 +33,6 @@ const TableCodeInput = ({ onValidCode }) => {
       if (data) {
         setLoggedTable(data.table_identifier);
         setTableId(data.id);
-        setTableCode(data.code_for_logging);
         // Store in sessionStorage
         sessionStorage.setItem("tableId", data.id);
         sessionStorage.setItem("loggedTable", data.table_identifier);

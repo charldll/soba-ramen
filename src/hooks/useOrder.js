@@ -6,7 +6,6 @@ const useOrder = () => {
   const [orderStatus, setOrderStatus] = useState("");
 
   const tableId = sessionStorage.getItem("tableId");
-  // const tableCode = sessionStorage.getItem("tableCode");
 
   const toggleItem = (item) => {
     setSelectedItems((prev) => {
@@ -19,6 +18,31 @@ const useOrder = () => {
   };
 
   const totalPrice = selectedItems.reduce((sum, item) => sum + item.price, 0);
+
+  const validateTable = async (table) => {
+    try {
+      const { data, error } = await supabase
+        .from("restaurant_tables")
+        .select("id, table_identifier")
+        .eq("id", table)
+        .single();
+
+      if (error || !data) {
+        sessionStorage.removeItem("tableId");
+        sessionStorage.removeItem("loggedTable");
+
+        return false;
+      }
+
+      sessionStorage.setItem("tableId", data.id);
+      sessionStorage.setItem("loggedTable", data.table_identifier);
+
+      return true;
+    } catch (err) {
+      console.error("Error validating table:", err);
+      return false;
+    }
+  };
 
   const placeOrder = async () => {
     if (!tableId) {
@@ -59,6 +83,7 @@ const useOrder = () => {
     totalPrice,
     placeOrder,
     orderStatus,
+    validateTable,
   };
 };
 
