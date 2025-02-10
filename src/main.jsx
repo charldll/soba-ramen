@@ -20,6 +20,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/menu" element={<Menu />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="custom-ramen" element={<RamenComponent />} />
+        <Route path="custom-ramen/:table" element={<RamenComponent />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

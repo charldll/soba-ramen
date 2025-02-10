@@ -1,9 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { supabase } from "../supabaseClinet";
+import { useNavigate } from "react-router";
 
 const TableCodeInput = ({ onValidCode }) => {
+  const navigate = useNavigate();
   const [code, setCode] = useState(
     () => sessionStorage.getItem("tableCode") || ""
   );
@@ -14,6 +17,10 @@ const TableCodeInput = ({ onValidCode }) => {
   const [tableId, setTableId] = useState(() => {
     return sessionStorage.getItem("tableId") || null;
   });
+  const [tableCode, setTableCode] = useState(() => {
+    return sessionStorage.getItem("tableCode") || null;
+  });
+
   const [error, setError] = useState(null);
 
   const verifyCode = async (inputCode) => {
@@ -29,16 +36,20 @@ const TableCodeInput = ({ onValidCode }) => {
       if (data) {
         setLoggedTable(data.table_identifier);
         setTableId(data.id);
+        setTableCode(data.code_for_logging);
         // Store in sessionStorage
         sessionStorage.setItem("tableId", data.id);
         sessionStorage.setItem("loggedTable", data.table_identifier);
+        sessionStorage.setItem("tableCode", data.code_for_logging);
         setError(null);
         onValidCode(true); // Notify parent component that code is valid
-        console.log(tableId);
+        console.log("Navigating to:", `/custom-ramen/${data.id}`);
+        navigate(`/custom-ramen/${data.id}`);
       } else {
         setLoggedTable(null);
         sessionStorage.removeItem("loggedTable");
         sessionStorage.removeItem("tableId");
+        sessionStorage.removeItem("tableCode");
         setError("Niepoprawny kod");
         onValidCode(false);
       }

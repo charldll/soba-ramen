@@ -11,3 +11,6 @@ validator.js
     @heroicons/react
     @headlessui/react
     Żaka - dodano routingi, przykład navbar
+
+10.02.25
+npm install tailwind-merge - do mergowania klas bez konfliktów

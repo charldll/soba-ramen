@@ -6,6 +6,7 @@ const useOrder = () => {
   const [orderStatus, setOrderStatus] = useState("");
 
   const tableId = sessionStorage.getItem("tableId");
+  // const tableCode = sessionStorage.getItem("tableCode");
 
   const toggleItem = (item) => {
     setSelectedItems((prev) => {

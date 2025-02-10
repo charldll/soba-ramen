@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import IngredientCard from "./IngredientCard";
 import { ingredientsData } from "../data/ingredientsData";
+import ButtonComponent from "./ButtonComponent";
 
 const IngredientChoice = ({
   selectedItems,
@@ -22,12 +23,12 @@ const IngredientChoice = ({
       </div>
       {orderStatus && <p>{orderStatus}</p>}
       <div className="text-right">
-        <button
-          className="px-4 py-2 my-4 bg-amber-600 rounded-md cursor-pointer"
+        <ButtonComponent
+          className="my-4 bg-amber-600 "
           onClick={onClick}
           disabled={selectedItems.length === 0}>
           Dalej
-        </button>
+        </ButtonComponent>
       </div>
     </section>
   );

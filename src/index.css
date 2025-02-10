@@ -41,14 +41,14 @@
   }
 
   .wrapper-outer {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-inline: auto;
     max-inline-size: 1200px;
     padding: 1rem;
   }
 
   .wrapper-inner {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-inline: auto;
     margin-block: 2rem;
     padding: 1rem;

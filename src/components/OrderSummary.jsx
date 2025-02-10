@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import ButtonComponent from "./ButtonComponent";
+
 const OrderSummary = ({
   selectedItems,
   totalPrice,
@@ -24,12 +26,12 @@ const OrderSummary = ({
 
       {orderStatus && <p>{orderStatus}</p>}
 
-      <button
-        className="px-4 py-2 bg-amber-600 cursor-pointer rounded-md"
+      <ButtonComponent
+        className="bg-amber-600"
         onClick={placeOrder}
         disabled={selectedItems.length === 0}>
         Złóż zamówienie
-      </button>
+      </ButtonComponent>
     </section>
   );
 };
