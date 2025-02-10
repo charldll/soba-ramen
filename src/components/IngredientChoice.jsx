@@ -24,7 +24,7 @@ const IngredientChoice = ({
       {orderStatus && <p>{orderStatus}</p>}
       <div className="text-right">
         <ButtonComponent
-          className="my-4 bg-amber-600 "
+          className="my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
           onClick={onClick}
           disabled={selectedItems.length === 0}>
           Dalej

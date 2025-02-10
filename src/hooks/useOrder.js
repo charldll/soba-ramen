@@ -66,7 +66,7 @@ const useOrder = () => {
 
       if (error) throw error;
 
-      setOrderStatus("Zamówienie złożone");
+      // setOrderStatus("Zamówienie złożone");
       setSelectedItems([]);
 
       setTimeout(() => setOrderStatus(""), 3000);
