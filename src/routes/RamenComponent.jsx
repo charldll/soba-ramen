@@ -15,7 +15,7 @@ const RamenComponent = () => {
   const {
     selectedItems,
     totalPrice,
-    orderStatus,
+
     toggleItem,
     placeOrder,
     validateTable,
@@ -52,10 +52,6 @@ const RamenComponent = () => {
   };
 
   const handleNextStep = () => {
-    if (selectedItems.length === 0) {
-      console.log(orderStatus);
-      // TODO: No warning the order is empty! No log. Figure it out.
-    }
     setCurrentStep((prev) => Math.min(prev + 1, steps.length));
   };
 
@@ -78,7 +74,6 @@ const RamenComponent = () => {
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
-              orderStatus={orderStatus}
               onClick={handleNextStep}
             />
           </div>
@@ -88,7 +83,6 @@ const RamenComponent = () => {
           <OrderSummary
             selectedItems={selectedItems}
             totalPrice={totalPrice}
-            orderStatus={orderStatus}
             placeOrder={handlePlaceOrder}
             onClick={handlePreviousStep}
           />
