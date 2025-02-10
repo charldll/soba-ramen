@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const ProgressBar = ({ currentStep, steps }) => {
   const progressWidth = () => {
-    const step = Math.min(currentStep, 3);
+    const step = Math.min(currentStep, 5);
     return `${((step - 1) / (steps.length - 1)) * 100}%`;
   };
 
@@ -19,8 +19,8 @@ const ProgressBar = ({ currentStep, steps }) => {
       <div className="relative flex justify-between">
         {steps.map((step, i) => {
           const StepIcon = step.icon;
-          const isCompleted = i + 1 < Math.min(currentStep, 4);
-          const isCurrent = i + 1 === Math.min(currentStep, 3);
+          const isCompleted = i + 1 < Math.min(currentStep, 6);
+          const isCurrent = i + 1 === Math.min(currentStep, 5);
 
           return (
             <div

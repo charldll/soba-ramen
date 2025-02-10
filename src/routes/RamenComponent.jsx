@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { KeyRound, Soup, ThumbsUp } from "lucide-react";
+import { KeyRound, Soup, ThumbsUp, Cat } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 
@@ -43,6 +43,7 @@ const RamenComponent = () => {
     { icon: KeyRound, label: "Zaloguj" },
     { icon: Soup, label: "Wybierz" },
     { icon: ThumbsUp, label: "Potwierdź" },
+    { icon: Cat, label: "Kitchen"},
   ];
 
   const handleCodeValidation = (isValid) => {
