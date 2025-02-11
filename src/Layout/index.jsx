@@ -14,5 +14,4 @@ export default function Layout() {
   );
 }
 
-// Jak otoczyłam Navbar div className - navbar się rozszerzył,
-// jak dodałam w [auto_1fr_auto] - rozjechał się tekst
+

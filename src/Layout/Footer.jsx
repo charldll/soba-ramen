@@ -1,7 +1,25 @@
+import { Instagram, Facebook } from 'lucide-react';
+import { NavLink } from 'react-router';
+
 export default function Footer() {
   return (
-    <div className="bg-gray-800">
-      <h1>Jestem stopkOM</h1>
+    <div className="bg-gray-800 ">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div className="relative flex h-16 items-center justify-between">
+        <div className="flex">
+          <NavLink to="https://www.instagram.com/">
+        <Instagram/> 
+        </NavLink>
+        <NavLink to="https://www.instagram.com/">
+        <Facebook/>
+        </NavLink>
+        </div>
+        <div className="flex  ">
+        <p> Created by: Agnieszka Wilczek, Inga Pawelec, Żaklina Jasińska</p>
+        <p>© 2025</p>
+        </div>
+        </div>
+      </div>
     </div>
   );
 }
