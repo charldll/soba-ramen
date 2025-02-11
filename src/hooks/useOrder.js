@@ -3,7 +3,6 @@ import { supabase } from "../supabaseClinet";
 
 const useOrder = () => {
   const [selectedItems, setSelectedItems] = useState([]);
-  const [orderStatus, setOrderStatus] = useState("");
 
   const tableId = sessionStorage.getItem("tableId");
 
@@ -46,12 +45,6 @@ const useOrder = () => {
 
   const placeOrder = async () => {
     if (!tableId) {
-      setOrderStatus("Zaloguj się do stolika");
-      return;
-    }
-
-    if (selectedItems.length === 0) {
-      setOrderStatus("Wybierz conajmniej jeden składnik");
       return;
     }
 
@@ -66,12 +59,8 @@ const useOrder = () => {
 
       if (error) throw error;
 
-      // setOrderStatus("Zamówienie złożone");
       setSelectedItems([]);
-
-      setTimeout(() => setOrderStatus(""), 3000);
     } catch (err) {
-      setOrderStatus("Wystąpił błąd, sprobój ponownie");
       console.error("Error:", err);
     }
   };
@@ -82,7 +71,6 @@ const useOrder = () => {
     toggleItem,
     totalPrice,
     placeOrder,
-    orderStatus,
     validateTable,
   };
 };

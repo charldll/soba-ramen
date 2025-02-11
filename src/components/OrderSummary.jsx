@@ -10,7 +10,7 @@ const OrderSummary = ({ selectedItems, totalPrice, placeOrder, onClick }) => {
         <ul>
           {selectedItems.map((item) => (
             <li key={item.name}>
-              {item.name} - {item.price} PLN
+              {item.name}: {item.price} PLN
             </li>
           ))}
         </ul>

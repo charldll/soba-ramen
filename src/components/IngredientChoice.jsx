@@ -20,7 +20,7 @@ const IngredientChoice = ({ selectedItems, toggleItem, onClick }) => {
       </div>
 
       <div className="flex gap-2 justify-end items-center">
-        {selectetItemsEmpty && <p>Nie wybrano składników.</p>}
+        {selectetItemsEmpty && <p>Nie wybrano składników</p>}
         <ButtonComponent
           className="my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
           onClick={onClick}
