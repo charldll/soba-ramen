@@ -3,15 +3,15 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
 
-import Kitchen from "./kitchen/Kitchen.jsx";
+import Kitchen from "./routes/Kitchen.jsx";
 import Layout from "./Layout/index.jsx";
 import Contact from "./routes/Contact.jsx";
 import RamenComponent from "./routes/RamenComponent.jsx";
 import Home from "./routes/Home.jsx";
 import Menu from "./routes/Menu.jsx";
 //import Ramen from
-import Admin from "./kitchen/Admin.jsx";
-import PageNotFound from "./Layout/components/PageNotFound.jsx";
+import Admin from "./routes/Admin.jsx";
+import PageNotFound from "./routes/PageNotFound.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

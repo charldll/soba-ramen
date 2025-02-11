@@ -54,6 +54,7 @@ const useOrder = () => {
           table_id: tableId,
           dish_items: selectedItems,
           total_price: totalPrice,
+          isServed: false,
         },
       ]);
 
