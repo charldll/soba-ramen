@@ -5,9 +5,11 @@ import AppNavLink from "./components/AppNavLink.jsx";
 import AppMobileMenuNavLink from "./components/AppMobileMenuNavLink.jsx";
 
 const navigation = [
-  { name: "Ramen", href: "/" },
+  { name: "Soba", href: "/" },
   { name: "Menu", href: "/menu" },
-  { name: "Contact", href: "/contact" },
+  { name: "Ramen", href: "/ramen" },
+  { name: "Kontakt", href: "/contact" },
+  { name: "Admin", href: "/admin" },
 ];
 
 export default function Navbar() {
