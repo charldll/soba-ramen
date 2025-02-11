@@ -17,3 +17,4 @@ npm install tailwind-merge - do mergowania klas bez konfliktów
 
 11.02.25
 npm install file-loader --save-dev
+realtimecolors.com/?colors=2A2A2A-fffcfa-E14F52-5780DC-122653&fonts=Inter-Inter
