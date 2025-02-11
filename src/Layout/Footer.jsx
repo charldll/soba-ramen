@@ -3,7 +3,7 @@ import { NavLink } from 'react-router';
 
 export default function Footer() {
   return (
-    <div className="bg-[#E14F52]">
+    <div className="bg-[#5780DC]">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
         <div className="flex">
@@ -14,7 +14,7 @@ export default function Footer() {
         <Facebook/>
         </NavLink>
         </div>
-        <div className="flex  ">
+        <div className="flex">
         <p> Created by: Agnieszka Wilczek, Inga Pawelec, Żaklina Jasińska</p>
         <p>© 2025</p>
         </div>
