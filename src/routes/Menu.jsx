@@ -1,6 +1,6 @@
 export default function Menu() {
   return (
-    <>
+    <main className="wrapper-outer">
       <h1>Wybierz Swoją Idealną Miskę</h1>
       <ul>
         Rameny:
@@ -27,6 +27,6 @@ export default function Menu() {
           ostrości lub wegańską opcję!
         </p>
       </ul>
-    </>
+    </main>
   );
 }

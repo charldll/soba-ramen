@@ -5,9 +5,9 @@ import Footer from "./Footer";
 export default function Layout() {
   return (
     <>
+    <div className="min-h-dvh grid grid-rows-[auto_1fr_auto]">
       <Navbar />
-      <div className="min-h-dvh grid grid-rows-[auto_1fr_auto]">
-        <Outlet />
+          <Outlet />
         <Footer />
       </div>
     </>

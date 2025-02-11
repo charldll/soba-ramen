@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <>
+    <main className="wrapper-outer">
       <p>Ramenownia - Mistrzostwo smaku w każdej misce” </p>
       <p>(Zdjęcia ramenów, przewijane) </p>
       <p>
@@ -18,6 +18,6 @@ export default function Home() {
         jak w domu. Nasza misja? Przybliżyć Ci smak prawdziwego japońskiego
         ramenu!
       </p>
-    </>
+    </main>
   );
 }
