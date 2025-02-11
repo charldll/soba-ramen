@@ -20,8 +20,8 @@ export default function AppNavLink({ to, location, children }) {
       to={to}
       className={classNames(
         isActive
-          ? "bg-gray-900 text-white"
-          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+          ? "bg-[#122653] text-[#f9f3ed]"
+          : "text-[#122653] hover:bg-[#28437e] hover:text-[#f9f3ed]",
         "rounded-md px-3 py-2 text-sm font-medium"
       )}
       role="navigation"

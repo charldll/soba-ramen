@@ -14,3 +14,6 @@ validator.js
 
 10.02.25
 npm install tailwind-merge - do mergowania klas bez konfliktów
+
+11.02.25
+npm install file-loader --save-dev
