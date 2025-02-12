@@ -24,7 +24,7 @@ export default function Navbar() {
               <img src={Logo} width={"90px"}/>
             </Link>
           </div>
-          <div className="flex hidden sm:ml-6 sm:block basis-4/5">
+          <div className="flex sm:ml-6 sm:block basis-4/5">
             <div className="flex space-x-4 justify-self-end">
               {navigation.map((item) => (
                   <AppNavLink
