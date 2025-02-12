@@ -1,8 +1,20 @@
+import { Carousel } from '@material-tailwind/react';
+import { mainpageCarousel } from '../data/mainpageCarousel';
+
 export default function Home() {
   return (
     <main className="wrapper-outer">
-      <p>Ramenownia - Mistrzostwo smaku w każdej misce” </p>
-      <p>(Zdjęcia ramenów, przewijane) </p>
+      <Carousel className='sticky rounded-xl h-[300px] shadow-2xl' loop='true'>
+      {mainpageCarousel.map((image)=>(
+        <img 
+        key={image.name}
+        src={image.src}
+        className='h-full w-full object-cover'
+        />
+      ))}
+    </Carousel>
+      <div className='relative w-[500px] border-[#5780DC] border-2 p-4 rounded-xl'>
+      <p>Ramenownia - Mistrzostwo smaku w każdej misce</p>
       <p>
         Ramen to więcej niż danie – to tradycja, sztuka i dusza kuchni
         japońskiej. Powstał na skrzyżowaniu kultur, czerpiąc z chińskich
@@ -18,6 +30,7 @@ export default function Home() {
         jak w domu. Nasza misja? Przybliżyć Ci smak prawdziwego japońskiego
         ramenu!
       </p>
+      </div>
     </main>
   );
 }

@@ -43,10 +43,13 @@
 
   .wrapper-outer {
     /* border: 1px solid red; */
+    height: fit-content;
     margin-inline: auto;
-    max-inline-size: 1200px;
+    max-inline-size: 700px;
     padding: 1rem;
-    border: 2px #5780DC;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-items: center;
   }
 
   .wrapper-inner {

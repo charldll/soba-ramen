@@ -7,8 +7,8 @@ export default function Layout() {
     <>
     <div className="min-h-dvh grid grid-rows-[auto_1fr_auto]">
       <Navbar />
-          <Outlet />
-        <Footer />
+        <Outlet />
+      <Footer />
       </div>
     </>
   );
