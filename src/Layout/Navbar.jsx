@@ -25,7 +25,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="flex sm:ml-6 sm:block basis-4/5">
-            <div className="flex space-x-4 justify-self-end">
+            <div className="flex max-sm:hidden space-x-4 justify-self-end">
               {navigation.map((item) => (
                   <AppNavLink
                     key={item.name}
