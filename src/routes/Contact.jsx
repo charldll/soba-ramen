@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <>
+    <main className="wrapper-outer">
       <h1>
         Odwiedź Nas! Adres: ul. xxx, 00-001 xxx Telefon: +48 123 456 789 E-mail:
         kontakt@ramenownia.pl
@@ -10,6 +10,6 @@ export default function Contact() {
           <p>Masz pytania? Napisz do nas, a chętnie odpowiemy!</p>
         </p>
       </h1>
-    </>
+    </main>
   );
 }

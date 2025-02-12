@@ -1,32 +1,32 @@
 import { Disclosure, DisclosurePanel } from "@headlessui/react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 import AppMobileMenuButton from "./components/AppMobileMenuButton.jsx";
 import AppNavLink from "./components/AppNavLink.jsx";
 import AppMobileMenuNavLink from "./components/AppMobileMenuNavLink.jsx";
+import Logo from "./imgs/soba-logo.svg";
 
 const navigation = [
-
-  
-  { name: "Soba", href: "/" },
   { name: "Menu", href: "/menu" },
   { name: "Ramen", href:"/custom-ramen" },
   { name: "Kontakt", href: "/contact" },
   { name: "Admin", href: "/admin" },
-
 ];
 
 export default function Navbar() {
   const location = useLocation();
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <Disclosure as="nav" className="bg-[#E14F52]">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center"></div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
+          <div className="flex basis-1/5">
+            <Link to="/">
+              <img src={Logo} width={"90px"}/>
+            </Link>
+          </div>
+          <div className="flex hidden sm:ml-6 sm:block basis-4/5">
+            <div className="flex space-x-4 justify-self-end">
+              {navigation.map((item) => (
                   <AppNavLink
                     key={item.name}
                     to={item.href}
@@ -35,7 +35,6 @@ export default function Navbar() {
                     {item.name}
                   </AppNavLink>
                 ))}
-              </div>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
