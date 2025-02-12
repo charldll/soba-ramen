@@ -21,10 +21,10 @@ const AdminLogin = () => {
 
   const onSubmit = async (data) => {
     setServerError("");
-    navigate("/kitchen");
 
     try {
       await signInWithEmail(data.email, data.password);
+      navigate("/kitchen");
     } catch (error) {
       console.log(error);
       setServerError("Oszukałeś z danymi. Spróbuj ponownie.");
