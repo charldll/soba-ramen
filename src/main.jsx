@@ -12,23 +12,35 @@ import Menu from "./routes/Menu.jsx";
 //import Ramen from
 import Admin from "./routes/Admin.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import ProtectedRoute from "./Layout/components/ProtectedRoute.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes> 
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/kitchen" element={<Kitchen />} />
-        <Route path="*" element={<PageNotFound />} />
-        <Route path="custom-ramen" element={<RamenComponent />} />
-        <Route path="custom-ramen/:table" element={<RamenComponent />} />
-        </Route>
-        
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
+
+            <Route
+              path="/kitchen"
+              element={
+                <ProtectedRoute>
+                  <Kitchen />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route path="*" element={<PageNotFound />} />
+            <Route path="custom-ramen" element={<RamenComponent />} />
+            <Route path="custom-ramen/:table" element={<RamenComponent />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
