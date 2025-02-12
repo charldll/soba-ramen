@@ -38,6 +38,8 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "file-loader": "^6.2.0",
     "globals": "^15.14.0",
+    "prettier": "^3.5.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "vite": "^6.0.11"
   }
 }

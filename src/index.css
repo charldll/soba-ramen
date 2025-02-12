@@ -46,6 +46,7 @@
     margin-inline: auto;
     max-inline-size: 1200px;
     padding: 1rem;
+    border: 2px #5780DC;
   }
 
   .wrapper-inner {
