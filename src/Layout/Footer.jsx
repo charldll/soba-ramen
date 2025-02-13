@@ -1,4 +1,4 @@
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Dog } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Footer() {
@@ -26,6 +26,9 @@ export default function Footer() {
               Created by: Agnieszka Wilczek, Inga Pawelec, Żaklina Jasińska
             </p>
             <p>© 2025</p>
+            <NavLink to="/admin">
+              <Dog />
+            </NavLink>
           </div>
         </div>
       </div>

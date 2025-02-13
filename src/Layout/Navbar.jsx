@@ -9,7 +9,6 @@ const navigation = [
   { name: "Menu", href: "/menu" },
   { name: "Ramen", href: "/custom-ramen" },
   { name: "Kontakt", href: "/contact" },
-  { name: "Admin", href: "/admin" },
 ];
 
 export default function Navbar() {
