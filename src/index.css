@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: #2A2A2A;
-  background-color: #f9f3ed;
+  background-color: #DBD4D4;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,9 +43,13 @@
 
   .wrapper-outer {
     /* border: 1px solid red; */
+    height: fit-content;
     margin-inline: auto;
-    max-inline-size: 1200px;
+    max-inline-size: 700px;
     padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-items: center;
   }
 
   .wrapper-inner {
