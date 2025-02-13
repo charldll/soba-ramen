@@ -42,7 +42,10 @@ const KitchenDashboard = () => {
                 <ul className="flex list-none flex-wrap gap-2 text-black">
                   {order.dish_items
                     ? JSON.parse(order.dish_items).map((item, index) => (
-                        <li key={index} className="bg-our-cream rounded-md p-1">
+                        <li
+                          key={index}
+                          className="rounded-md bg-[#e5c5c6] p-1 uppercase"
+                        >
                           {item.name}
                         </li>
                       ))
