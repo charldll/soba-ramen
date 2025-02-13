@@ -30,7 +30,7 @@ const KitchenDashboard = () => {
         </div>
         <div className="grid min-w-full items-stretch gap-2 px-2 py-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {orders.map((order) => (
-            <section key={order.id} className="">
+            <section key={order.id}>
               <div className="border-logo-blue bg-our-cream flex h-full min-h-[250px] flex-col justify-between rounded-lg border-2 p-6 shadow-xl">
                 <code className="text-[.8rem]">ZAM. {order.id}</code>
                 <h2 className="py-2">

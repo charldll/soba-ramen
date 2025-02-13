@@ -50,7 +50,7 @@ const AdminLogin = () => {
             })}
           />
           <label htmlFor="password">Hasło</label>
-          <div className="flex justify-center gap-2">
+          <div className="relative flex justify-center gap-2">
             <input
               id="password"
               className="w-56 rounded-md border p-2 sm:w-64"
@@ -59,7 +59,8 @@ const AdminLogin = () => {
               {...register("password", { required: true })}
             />
             <button
-              className="cursor-pointer"
+              type="button"
+              className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? <EyeOff /> : <Eye />}
