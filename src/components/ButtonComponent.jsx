@@ -6,9 +6,13 @@ import { twMerge } from "tailwind-merge";
 const ButtonComponent = ({ className, children, onClick, disabled }) => {
   return (
     <button
-      className={twMerge("px-9 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition duration-700 ease-in-out", className)}
+      className={twMerge(
+        "cursor-pointer rounded-md px-9 py-3 transition duration-500 ease-in-out hover:bg-gray-700 hover:text-[#dbd4d4c3]",
+        className,
+      )}
       onClick={onClick}
-      disabled={disabled}>
+      disabled={disabled}
+    >
       {children}
     </button>
   );
