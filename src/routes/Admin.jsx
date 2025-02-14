@@ -39,7 +39,8 @@ const AdminLogin = () => {
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            className="rounded-md border p-2 sm:w-64"
+            className="rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
+            autoComplete="off"
             type="email"
             placeholder="Admin Email"
             autoFocus
@@ -53,14 +54,14 @@ const AdminLogin = () => {
           <div className="relative flex justify-center gap-2">
             <input
               id="password"
-              className="w-56 rounded-md border p-2 sm:w-64"
+              className="w-56 rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
               placeholder="Hasło"
               type={showPassword ? undefined : "password"}
               {...register("password", { required: true })}
             />
             <button
               type="button"
-              className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer"
+              className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer rounded-md"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? <EyeOff /> : <Eye />}

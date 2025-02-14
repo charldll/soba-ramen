@@ -5,13 +5,29 @@ import useKitchen from "../hooks/useKitchen";
 import { useAuth } from "../context/AuthContext";
 import { getTableNumber } from "../utils/getTableNumber";
 import { getCurrentDate } from "../utils/getCurrentDate";
+import { useState } from "react";
 
 const KitchenDashboard = () => {
   const { orders, formatTime, deleteOrder, serveOrder } = useKitchen();
   const { signOut, user } = useAuth();
+  const [fadingOrders, setFadingOrders] = useState(new Set());
 
-  const handleServeOrder = async (orderId) => {
-    await serveOrder(orderId); // Updates DB & UI via useKitchen
+  // Fade out effect on deletion or serving order
+  const handleOrderAction = async (orderId, action) => {
+    setFadingOrders((prev) => {
+      const newSet = new Set(prev);
+      newSet.add(orderId); // Marks for fade-out
+      return newSet;
+    });
+
+    setTimeout(async () => {
+      await action(orderId); //  Calls the provided action (serve or delete)
+      setFadingOrders((prev) => {
+        const newSet = new Set(prev);
+        newSet.delete(orderId);
+        return newSet;
+      });
+    }, 500); // Waits for fade-out animation
   };
 
   return (
@@ -28,11 +44,14 @@ const KitchenDashboard = () => {
             Wyloguj
           </ButtonComponent>
         </div>
-        <div className="grid min-w-full items-stretch gap-2 px-2 py-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-2 px-2 py-10 lg:grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
           {orders.map((order) => (
-            <section key={order.id}>
-              <div className="border-logo-blue bg-our-cream flex h-full min-h-[250px] flex-col justify-between rounded-lg border-2 p-6 shadow-xl">
-                <code className="text-[.8rem]">ZAM. {order.id}</code>
+            <section
+              key={order.id}
+              className={fadingOrders.has(order.id) ? "animate-fade-out" : ""}
+            >
+              <div className="border-logo-blue bg-our-cream animate-fade-in flex h-full min-h-[250px] flex-col justify-between space-y-4 rounded-lg border-2 p-6 shadow-xl">
+                <code className="text-[.8rem]">ZAM. {order.id.slice(-6)}</code>
                 <h2 className="py-2">
                   {formatTime(order.created_at)}
                   <strong className="ml-3 border-l-1 pl-3 text-xl font-semibold text-black">
@@ -51,18 +70,20 @@ const KitchenDashboard = () => {
                       ))
                     : null}
                 </ul>
-
-                <div className="border-logo-blue mt-4 flex justify-start gap-2 border-t-2 pt-4">
+                <strong className="">
+                  DO ZAPŁATY: {order.total_price} PLN
+                </strong>
+                <div className="border-logo-blue flex justify-center gap-2 border-t-2 pt-4">
                   <ButtonComponent
                     className="bg-menu-red text-white disabled:hidden"
-                    onClick={() => deleteOrder(order.id)}
+                    onClick={() => handleOrderAction(order.id, deleteOrder)}
                     disabled={order.isServed}
                   >
                     <X />
                   </ButtonComponent>
                   <ButtonComponent
                     className="bg-logo-blue text-white disabled:hidden"
-                    onClick={() => handleServeOrder(order.id)}
+                    onClick={() => handleOrderAction(order.id, serveOrder)}
                     disabled={order.isServed}
                   >
                     <CookingPot />
