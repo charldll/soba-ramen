@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import validator from "validator";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Loader } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import ButtonComponent from "../components/ButtonComponent";
 
@@ -33,8 +33,13 @@ const AdminLogin = () => {
 
   return (
     <main className="wrapper-outer">
-      <form onSubmit={handleSubmit(onSubmit)} className="rounded-md p-4">
-        {serverError && <p className="text-red-500">{serverError}</p>}
+      <h1 className="text-center text-xl text-pretty md:text-3xl">
+        Logowanie do panelu administracyjnego*
+      </h1>
+      {serverError && (
+        <p className="text-menu-red pt-8 text-center">{serverError}</p>
+      )}
+      <form onSubmit={handleSubmit(onSubmit)} className="rounded-md px-4 py-8">
         <div className="flex flex-col gap-2">
           <label htmlFor="email">Email</label>
           <input
@@ -70,12 +75,25 @@ const AdminLogin = () => {
           <ButtonComponent
             type="submit"
             disabled={isSubmitting}
-            className="mt-8 w-56 bg-[#E14F52] font-semibold sm:w-64"
+            className="mt-8 flex w-56 items-center justify-center bg-[#E14F52] font-semibold sm:w-64"
           >
-            {isSubmitting ? "Logowanie..." : "Zaloguj"}
+            {isSubmitting ? (
+              <>
+                <Loader
+                  className="mr-3 size-5 animate-spin pr-2"
+                  viewBox="0 0 24 24"
+                />
+                Logowanie...
+              </>
+            ) : (
+              "Zaloguj"
+            )}
           </ButtonComponent>
         </div>
       </form>
+      <h2 className="text-xs">
+        * Chcesz dołączyć do zespołu? Zostaw nam swoje CV.
+      </h2>
     </main>
   );
 };
