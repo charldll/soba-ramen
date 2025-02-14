@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Dog } from "lucide-react";
+import { Instagram, Facebook, KeyRound } from "lucide-react";
 import { NavLink } from "react-router";
 
 export default function Footer() {
@@ -27,7 +27,7 @@ export default function Footer() {
             </p>
             <p>© 2025</p>
             <NavLink to="/admin">
-              <Dog />
+              <KeyRound />
             </NavLink>
           </div>
         </div>
