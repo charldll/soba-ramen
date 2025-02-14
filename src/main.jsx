@@ -25,20 +25,18 @@ createRoot(document.getElementById("root")).render(
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
-
-            <Route
-              path="/kitchen"
-              element={
-                <ProtectedRoute>
-                  <KitchenDashboard />
-                </ProtectedRoute>
-              }
-            />
-
             <Route path="*" element={<PageNotFound />} />
             <Route path="custom-ramen" element={<RamenComponent />} />
             <Route path="custom-ramen/:table" element={<RamenComponent />} />
           </Route>
+          <Route
+            path="/kitchen"
+            element={
+              <ProtectedRoute>
+                <KitchenDashboard />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
