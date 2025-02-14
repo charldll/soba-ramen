@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import validator from "validator";
@@ -16,8 +16,14 @@ const AdminLogin = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isLoading },
   } = useForm();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/kitchen");
+    }
+  }, [user, navigate]);
 
   const onSubmit = async (data) => {
     setServerError("");
@@ -30,6 +36,22 @@ const AdminLogin = () => {
       setServerError("Oszukałeś z danymi. Spróbuj ponownie.");
     }
   };
+
+  if (isLoading) {
+    return (
+      <main className="wrapper-outer flex h-screen items-center justify-center">
+        <Loader className="size-10 animate-spin" />
+      </main>
+    );
+  }
+
+  if (user) {
+    return (
+      <main className="wrapper-outer flex h-screen items-center justify-center">
+        <Loader className="size-10 animate-spin" />
+      </main>
+    );
+  }
 
   return (
     <main className="wrapper-outer">
