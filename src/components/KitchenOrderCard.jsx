@@ -13,7 +13,7 @@ const KitchenOrderCard = ({
 }) => {
   const parsedDishItems = order.dish_items ? JSON.parse(order.dish_items) : [];
   return (
-    <section key={order.id}>
+    <section>
       <div className="border-logo-blue bg-our-cream animate-fade-in flex h-full min-h-[250px] flex-col justify-between space-y-4 rounded-lg border-2 p-6 shadow-xl">
         <code className="text-[.8rem]">ZAM. {order.id.slice(-6)}</code>
         <h2 className="py-2">

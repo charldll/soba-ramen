@@ -18,7 +18,7 @@ const KitchenDashboard = () => {
   const handleOrderAction = async (orderId, action) => {
     setIsFading(true);
     await action(orderId); // Ensures action is completed before continuing
-    setTimeout(async () => setIsFading(false), 500); // Fade-in after action completes
+    setTimeout(() => setIsFading(false), 500); // Fade-in after action completes
   };
 
   return (
