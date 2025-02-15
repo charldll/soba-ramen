@@ -33,7 +33,7 @@ const AdminLogin = () => {
       navigate("/kitchen");
     } catch (error) {
       console.log(error);
-      setServerError("Oszukałeś z danymi. Spróbuj ponownie.");
+      setServerError("Czy na pewno możesz się tu logować, hmmm?");
     }
   };
 

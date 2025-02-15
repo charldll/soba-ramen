@@ -5,12 +5,12 @@
   --color-logo-blue: #28437e;
   --color-our-cream: #dbd4d4;
   --color-menu-red: #e14f52;
-  --animate-fade-in: fade-in 1s ease-in-out forwards;
+  --animate-fade-in: fade-in 0.5s ease-in-out forwards;
   @keyframes fade-in {
     0% {
       opacity: 0;
     }
-    100 {
+    100% {
       opacity: 1;
     }
   }
