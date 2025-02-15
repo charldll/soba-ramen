@@ -61,7 +61,10 @@ const AdminLogin = () => {
       {serverError && (
         <p className="text-menu-red pt-8 text-center">{serverError}</p>
       )}
-      <form onSubmit={handleSubmit(onSubmit)} className="rounded-md px-4 py-8">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex justify-center rounded-md px-4 py-8"
+      >
         <div className="flex flex-col gap-2">
           <label htmlFor="email">Email</label>
           <input
@@ -113,7 +116,7 @@ const AdminLogin = () => {
           </ButtonComponent>
         </div>
       </form>
-      <h2 className="text-xs">
+      <h2 className="mx-auto w-fit text-xs">
         * Chcesz dołączyć do zespołu? Zostaw nam swoje CV.
       </h2>
     </main>
