@@ -66,7 +66,7 @@ const AdminLogin = () => {
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            className="rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
+            className="w-56 rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
             autoComplete="off"
             type="email"
             placeholder="Admin Email"
@@ -78,10 +78,10 @@ const AdminLogin = () => {
             })}
           />
           <label htmlFor="password">Hasło</label>
-          <div className="relative flex justify-center gap-2">
+          <div className="relative flex w-56 justify-center gap-2 sm:w-64">
             <input
               id="password"
-              className="w-56 rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
+              className="relative w-56 rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
               placeholder="Hasło"
               type={showPassword ? undefined : "password"}
               {...register("password", { required: true })}
