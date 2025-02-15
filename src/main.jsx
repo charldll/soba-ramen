@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./index.css";
 
-import Kitchen from "./routes/Kitchen.jsx";
+import KitchenDashboard from "./routes/KitchenDashboard.jsx";
 import Layout from "./Layout/index.jsx";
 import Contact from "./routes/Contact.jsx";
 import RamenComponent from "./routes/RamenComponent.jsx";
@@ -25,20 +25,18 @@ createRoot(document.getElementById("root")).render(
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
-
-            <Route
-              path="/kitchen"
-              element={
-                <ProtectedRoute>
-                  <Kitchen />
-                </ProtectedRoute>
-              }
-            />
-
             <Route path="*" element={<PageNotFound />} />
             <Route path="custom-ramen" element={<RamenComponent />} />
             <Route path="custom-ramen/:table" element={<RamenComponent />} />
           </Route>
+          <Route
+            path="/kitchen"
+            element={
+              <ProtectedRoute>
+                <KitchenDashboard />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
