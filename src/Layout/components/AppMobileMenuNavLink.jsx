@@ -18,6 +18,9 @@ export default function AppMobileMenuNavLink({
   onClick,
 }) {
   const isActive = location.pathname === to;
+  const isRamen = children === "Stwórz ramen";
+  const isOnRamenPage = location.pathname === "/custom-ramen";
+
   return (
     <NavLink
       to={to}
@@ -26,6 +29,7 @@ export default function AppMobileMenuNavLink({
           ? "bg-gray-900 text-white"
           : "text-gray-300 hover:bg-gray-700 hover:text-white",
         "block rounded-md px-3 py-2 text-base font-medium",
+        isRamen && !isOnRamenPage ? "animate-pulse" : "",
       )}
       role="navigation"
       onClick={onClick}

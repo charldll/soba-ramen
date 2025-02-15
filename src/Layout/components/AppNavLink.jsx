@@ -14,6 +14,8 @@ AppNavLink.propTypes = {
 
 export default function AppNavLink({ to, location, children }) {
   const isActive = location.pathname === to;
+  const isRamen = children === "Stwórz ramen";
+  const isOnRamenPage = location.pathname === "/custom-ramen";
 
   return (
     <NavLink
@@ -22,7 +24,8 @@ export default function AppNavLink({ to, location, children }) {
         isActive
           ? "bg-[#122653] text-[#f9f3ed]"
           : "text-[#122653] hover:bg-[#28437e] hover:text-[#f9f3ed]",
-        "rounded-md px-3 py-2 text-sm font-medium"
+        "relative rounded-md px-3 py-2 text-sm font-medium",
+        isRamen && !isOnRamenPage ? "animate-pulse" : "",
       )}
       role="navigation"
     >
