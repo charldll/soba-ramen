@@ -1,32 +1,23 @@
+import React from 'react';
+// import CollapseButton from '../Layout/components/CollapseButton';
+import {Collapse, Typography} from '@material-tailwind/react';
+
 export default function Menu() {
+
+  const [open, setOpen] = React.useState(false);
+
+  const toggleOpen = () => setOpen((cur) => !cur);
+
   return (
     <main className="wrapper-outer">
-      <h1>Wybierz Swoją Idealną Miskę</h1>
-      <ul>
-        Rameny:
-        <li>
-          Tonkotsu Ramen – kremowy bulion wieprzowy, makaron, jajko marynowane,
-          chashu, szczypiorek
-        </li>
-        <li>
-          Shoyu Ramen – bulion na bazie sosu sojowego, pieczona wieprzowina,
-          bambus, jajko
-        </li>
-        <li>
-          Miso Ramen – esencjonalny bulion miso, mielona wieprzowina, kukurydza,
-          masło
-        </li>
-      </ul>
-      <ul>
-        Przystawki:
-        <li>Gyoza – chrupiące pierożki z wieprzowiną i warzywami</li>
-        <li>Edamame – zielona soja z solą morską</li>
-        <li>Karaage – japoński kurczak w chrupiącej panierce</li>
-        <p>
-          Dostosuj swój ramen! Dodaj dodatkowe składniki, wybierz poziom
-          ostrości lub wegańską opcję!
-        </p>
-      </ul>
+      <div className='flex max-sm:w-auto md:w-[600px] p-4 rounded-xl bg-[#F6EFEF]'>
+        <button className='text-2xl text-[#2A2A2A] uppercase underline' onClick={toggleOpen}>Test</button>
+          <Collapse open={open}>
+            <Typography>
+              Testing test
+            </Typography>
+          </Collapse>
+          </div>
     </main>
   );
 }

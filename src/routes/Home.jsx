@@ -13,7 +13,7 @@ export default function Home() {
         />
       ))}
     </Carousel>
-      <div className='flex max-sm:w-auto md:w-[600px] border-[#5780DC] p-4 rounded-xl bg-[#F6EFEF] -mt-[20px] pt-10'>
+      <div className='flex max-sm:w-auto md:w-[600px] p-4 rounded-xl bg-[#F6EFEF] -mt-[20px] pt-10'>
       <p>Ramenownia - Mistrzostwo smaku w każdej misce<br/>
         Ramen to więcej niż danie – to tradycja, sztuka i dusza kuchni
         japońskiej. Powstał na skrzyżowaniu kultur, czerpiąc z chińskich
