@@ -9,6 +9,7 @@ import Contact from "./routes/Contact.jsx";
 import RamenComponent from "./routes/RamenComponent.jsx";
 import Home from "./routes/Home.jsx";
 import Menu from "./routes/Menu.jsx";
+import About from "./routes/About.jsx";
 //import Ramen from
 import Admin from "./routes/Admin.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
@@ -24,11 +25,12 @@ createRoot(document.getElementById("root")).render(
             <Route index element={<Home />} />
             <Route path="/menu" element={<Menu />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="*" element={<PageNotFound />} />
             <Route path="custom-ramen" element={<RamenComponent />} />
             <Route path="custom-ramen/:table" element={<RamenComponent />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
           <Route
             path="/kitchen"
             element={
