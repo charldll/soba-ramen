@@ -13,31 +13,35 @@ import Menu from "./routes/Menu.jsx";
 import Admin from "./routes/Admin.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
 import ProtectedRoute from "./Layout/components/ProtectedRoute.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="*" element={<PageNotFound />} />
-            <Route path="custom-ramen" element={<RamenComponent />} />
-            <Route path="custom-ramen/:table" element={<RamenComponent />} />
-          </Route>
-          <Route
-            path="/kitchen"
-            element={
-              <ProtectedRoute>
-                <KitchenDashboard />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
+        <ThemeProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="*" element={<PageNotFound />} />
+              <Route path="custom-ramen" element={<RamenComponent />} />
+              <Route path="custom-ramen/:table" element={<RamenComponent />} />
+            </Route>
+
+            <Route
+              path="/kitchen"
+              element={
+                <ProtectedRoute>
+                  <KitchenDashboard />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </ThemeProvider>
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>,

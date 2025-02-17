@@ -7,6 +7,7 @@ const ToggleThemeButton = () => {
 
   return (
     <Switch
+      className=""
       onClick={toggleTheme}
       ripple={true}
       label={isDark ? <Sun /> : <Moon />}
