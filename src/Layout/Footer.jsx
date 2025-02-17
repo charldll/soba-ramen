@@ -5,7 +5,7 @@ import Logo from "./imgs/soba-logo.svg";
 export default function Footer() {
   return (
     <div className="relative bg-[#5780DC]">
-      <footer className="mx-auto max-w-7xl text-center text-black lg:text-left dark:bg-neutral-600 dark:text-neutral-200">
+      <footer className="mx-auto max-w-7xl text-center text-black lg:text-left">
         <div className="mx-6 py-5 text-center md:text-left">
           {/* Grid dla sekcji */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr]">

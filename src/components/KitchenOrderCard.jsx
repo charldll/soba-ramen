@@ -14,7 +14,7 @@ const KitchenOrderCard = ({
   const parsedDishItems = order.dish_items ? JSON.parse(order.dish_items) : [];
   return (
     <section>
-      <div className="border-logo-blue bg-our-cream animate-fade-in flex h-full min-h-[250px] flex-col justify-between space-y-4 rounded-lg border-2 p-6 shadow-xl">
+      <div className="border-logo-blue bg-our-cream dark:bg-dark-secondary animate-fade-in dark:border-dark-tertiary flex h-full min-h-[250px] flex-col justify-between space-y-4 rounded-lg border-2 p-6 shadow-xl">
         <code className="text-[.8rem]">ZAM. {order.id.slice(-6)}</code>
         <h2 className="py-2">
           {formatTime(order.created_at)}
@@ -30,16 +30,16 @@ const KitchenOrderCard = ({
           ))}
         </ul>
         <strong>DO ZAPŁATY: {order.total_price} PLN</strong>
-        <div className="border-logo-blue flex justify-center gap-2 border-t-2 pt-4">
+        <div className="border-logo-blue dark:border-dark-tertiary flex justify-center gap-2 border-t-2 pt-4">
           <ButtonComponent
-            className="bg-menu-red text-white disabled:hidden"
+            className="bg-menu-red dark:border-our-cream text-white disabled:hidden dark:border-2"
             onClick={() => handleOrderAction(order.id, deleteOrder)}
             disabled={order.isServed}
           >
             <X />
           </ButtonComponent>
           <ButtonComponent
-            className="bg-logo-blue text-white disabled:hidden"
+            className="bg-logo-blue dark:bg-dark-tertiary dark:border-our-cream text-white disabled:hidden dark:border-2"
             onClick={() => handleOrderAction(order.id, serveOrder)}
             disabled={order.isServed}
           >
