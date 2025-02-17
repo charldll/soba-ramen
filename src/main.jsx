@@ -9,7 +9,6 @@ import Contact from "./routes/Contact.jsx";
 import RamenComponent from "./routes/RamenComponent.jsx";
 import Home from "./routes/Home.jsx";
 import Menu from "./routes/Menu.jsx";
-//import Ramen from
 import Admin from "./routes/Admin.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -31,7 +30,6 @@ createRoot(document.getElementById("root")).render(
               <Route path="custom-ramen" element={<RamenComponent />} />
               <Route path="custom-ramen/:table" element={<RamenComponent />} />
             </Route>
-
             <Route
               path="/kitchen"
               element={
