@@ -9,6 +9,7 @@ import Contact from "./routes/Contact.jsx";
 import RamenComponent from "./routes/RamenComponent.jsx";
 import Home from "./routes/Home.jsx";
 import Menu from "./routes/Menu.jsx";
+import About from "./routes/About.jsx";
 import Admin from "./routes/Admin.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
@@ -18,18 +19,20 @@ import ProtectedRoute from "./Layout/components/ProtectedRoute.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <ThemeProvider>
+      <ThemeProvider>
+        <AuthProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Admin />} />
-              <Route path="*" element={<PageNotFound />} />
               <Route path="custom-ramen" element={<RamenComponent />} />
               <Route path="custom-ramen/:table" element={<RamenComponent />} />
+              <Route path="*" element={<PageNotFound />} />
             </Route>
+
             <Route
               path="/kitchen"
               element={
@@ -39,8 +42,8 @@ createRoot(document.getElementById("root")).render(
               }
             />
           </Routes>
-        </ThemeProvider>
-      </AuthProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 );
