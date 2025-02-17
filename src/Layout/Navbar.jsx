@@ -8,6 +8,7 @@ import Logo from "./imgs/soba-logo.svg";
 const navigation = [
   { name: "Menu", href: "/menu" },
   { name: "Stwórz ramen", href: "/custom-ramen" },
+  { name: "Poznaj nas", href: "/about" },
   { name: "Kontakt", href: "/contact" },
 ];
 
