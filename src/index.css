@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-logo-blue: #28437e;
   --color-our-cream: #dbd4d4;
   --color-menu-red: #e14f52;
+  --color-dark-primary: #3c3d37;
+  --color-dark-secondary: hsla(105, 7%, 43%, 0.8);
+  --color-dark-tertiary: #181c14;
   --animate-fade-in: fade-in 0.5s ease-in-out forwards;
   @keyframes fade-in {
     0% {
@@ -84,9 +89,11 @@
   }
 
   .bg-grid {
-    background-image:
-      linear-gradient(hsla(359, 71%, 60%, 0.3) 1px, transparent 1px),
-      linear-gradient(90deg, hsla(222, 66%, 60%, 0.3) 1px, transparent 1px);
+    @apply bg-[linear-gradient(hsla(359,71%,60%,0.3)_1px,transparent_1px),linear-gradient(90deg,hsla(222,66%,60%,0.3)_1px,transparent_1px)];
     background-size: 60px 60px;
+  }
+
+  .dark .bg-grid {
+    @apply bg-dark-primary bg-[linear-gradient(hsla(0,9%,85%,0.3)_1px,transparent_1px),linear-gradient(90deg,hsla(0,9%,85%,0.3)_1px,transparent_1px)];
   }
 }
