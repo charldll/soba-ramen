@@ -2,16 +2,23 @@
 import { KeyRound, Soup, ThumbsUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
+import { Stepper, Step, Button } from '@material-tailwind/react';
 
 import TableCodeInput from "../components/TableCodeInput";
 import IngredientChoice from "../components/IngredientChoice";
 import OrderSummary from "../components/OrderSummary";
 import OrderConfirmation from "../components/OrderConfirmation";
-import ProgressBar from "../components/ProgressBar";
 import useOrder from "../hooks/useOrder";
 
 const RamenComponent = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(1);
+  const [isLastStep, setIsLastStep] = useState(false);
+  const [isFirstStep, setIsFirstStep] = useState(false);
+
+  const handleNext = () => !isLastStep && setActiveStep((cur)=>cur+1);
+  const handlePrev = () => !isFirstStep && setActiveStep((cur)=>cur-1);
+
+
   const {
     selectedItems,
     totalPrice,
@@ -31,7 +38,7 @@ const RamenComponent = () => {
         if (!isValid) {
           navigate("/custom-ramen"); // Redirect if invalid
         } else {
-          setCurrentStep(2);
+          setActiveStep(1);
         }
       }
     };
@@ -39,42 +46,27 @@ const RamenComponent = () => {
     checkTable();
   }, [table]);
 
-  const steps = [
-    { icon: KeyRound, label: "Zaloguj" },
-    { icon: Soup, label: "Wybierz" },
-    { icon: ThumbsUp, label: "Potwierdź" },
-  ];
-
   const handleCodeValidation = (isValid) => {
     if (isValid) {
-      setCurrentStep(2);
+      setActiveStep(2);
     }
-  };
-
-  const handleNextStep = () => {
-    setCurrentStep((prev) => Math.min(prev + 1, steps.length));
-  };
-
-  const handlePreviousStep = () => {
-    setCurrentStep((prev) => Math.min(prev - 1, steps.length));
   };
 
   const handlePlaceOrder = async () => {
     await placeOrder();
-    setCurrentStep(4);
+    setActiveStep(4);
   };
 
   const renderStepContent = () => {
-    switch (currentStep) {
+    switch (activeStep) {
       case 1:
-        return <TableCodeInput onValidCode={handleCodeValidation} />;
+        return <TableCodeInput onValidCode={handleCodeValidation} />
       case 2:
         return (
           <div className="wrapper-inner">
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
-              onClick={handleNextStep}
             />
           </div>
         );
@@ -84,20 +76,21 @@ const RamenComponent = () => {
             selectedItems={selectedItems}
             totalPrice={totalPrice}
             placeOrder={handlePlaceOrder}
-            onClick={handlePreviousStep}
           />
-        );
+        )
       case 4:
-        return <OrderConfirmation />;
-      default:
-        return null;
+        return <OrderConfirmation />
     }
   };
 
   return (
     <main className="wrapper-outer">
-      <ProgressBar currentStep={currentStep} steps={steps} />
-      {renderStepContent()}
+      <Stepper 
+        activeStep={activeStep}
+        isLastStep={(value)=> setIsLastStep(value)}
+        isFirstStep={(value)=> setIsFirstStep(value)}>
+          {renderStepContent(activeStep)}
+        </Stepper>
     </main>
   );
 };
