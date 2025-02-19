@@ -20,14 +20,14 @@ export default function Navbar() {
       {({ close }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-16 items-center">
               <div className="flex basis-1/5">
                 <Link to="/">
                   <img src={Logo} width={"90px"} />
                 </Link>
               </div>
               <div className="flex basis-4/5 sm:ml-6 sm:block">
-                <div className="flex space-x-4 justify-self-end max-sm:hidden">
+                <div className="flex justify-end space-x-4 max-sm:hidden">
                   {navigation.map((item) => (
                     <AppNavLink
                       key={item.name}

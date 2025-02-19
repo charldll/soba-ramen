@@ -28,7 +28,7 @@ const KitchenDashboard = () => {
       <nav className="bg-menu-red dark:bg-dark-tertiary">
         <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between px-2 py-2 sm:px-6 lg:px-8">
           <Link to="/">
-            <img src={Logo} width={"90px"} />
+            <img src={Logo} className="w-36 dark:filter-[invert(80%)]" />
           </Link>{" "}
           <ButtonComponent
             onClick={signOut}
