@@ -1,28 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { KeyRound, Soup, ThumbsUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
-import { Stepper, Step, Button } from '@material-tailwind/react';
 
 import TableCodeInput from "../components/TableCodeInput";
 import IngredientChoice from "../components/IngredientChoice";
 import OrderSummary from "../components/OrderSummary";
 import OrderConfirmation from "../components/OrderConfirmation";
 import useOrder from "../hooks/useOrder";
+import ProgressButtons from "../components/ProgressButtons";
+import SoupBase from '../components/SoupBase';
 
 const RamenComponent = () => {
-  const [activeStep, setActiveStep] = useState(1);
-  const [isLastStep, setIsLastStep] = useState(false);
-  const [isFirstStep, setIsFirstStep] = useState(false);
-
-  const handleNext = () => !isLastStep && setActiveStep((cur)=>cur+1);
-  const handlePrev = () => !isFirstStep && setActiveStep((cur)=>cur-1);
-
+  const [activeStep, setActiveStep] = useState(0);
 
   const {
     selectedItems,
     totalPrice,
-
     toggleItem,
     placeOrder,
     validateTable,
@@ -30,6 +23,9 @@ const RamenComponent = () => {
 
   const { table } = useParams();
   const navigate = useNavigate();
+
+  const handleNext = () => setActiveStep((cur) => cur + 1);
+  const handlePrev = () => setActiveStep((cur) => cur - 1);
 
   useEffect(() => {
     const checkTable = async () => {
@@ -48,7 +44,7 @@ const RamenComponent = () => {
 
   const handleCodeValidation = (isValid) => {
     if (isValid) {
-      setActiveStep(2);
+      setActiveStep(1);
     }
   };
 
@@ -57,16 +53,34 @@ const RamenComponent = () => {
     setActiveStep(4);
   };
 
+  const steps = [
+    { icon: "", label: "One"},
+    { icon: "", label: "Two"},
+    { icon: "", label: "Three"},
+    { icon: "", label: "Four"}
+  ];
+
   const renderStepContent = () => {
     switch (activeStep) {
-      case 1:
+      case 0:
         return <TableCodeInput onValidCode={handleCodeValidation} />
+      case 1:
+        return (
+          <div className="wrapper-inner">
+            <SoupBase
+              selectedItems={selectedItems}
+              toggleItem={toggleItem}
+              onClick={handleNext}
+              />
+          </div>
+        );
       case 2:
         return (
           <div className="wrapper-inner">
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
+              onClick={handleNext}
             />
           </div>
         );
@@ -76,21 +90,20 @@ const RamenComponent = () => {
             selectedItems={selectedItems}
             totalPrice={totalPrice}
             placeOrder={handlePlaceOrder}
+            onClick={handleNext}
           />
         )
       case 4:
-        return <OrderConfirmation />
+        return <OrderConfirmation/>
+      default:
+        null;
     }
   };
 
   return (
     <main className="wrapper-outer">
-      <Stepper 
-        activeStep={activeStep}
-        isLastStep={(value)=> setIsLastStep(value)}
-        isFirstStep={(value)=> setIsFirstStep(value)}>
-          {renderStepContent(activeStep)}
-        </Stepper>
+      <ProgressButtons activeStep={activeStep} steps={steps}/>
+      {renderStepContent()}
     </main>
   );
 };

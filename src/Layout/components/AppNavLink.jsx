@@ -22,8 +22,8 @@ export default function AppNavLink({ to, location, children }) {
       to={to}
       className={classNames(
         isActive
-          ? "bg-[#122653] text-[#f9f3ed]"
-          : "text-[#122653] hover:bg-[#28437e] hover:text-[#f9f3ed]",
+          ? "bg-[#E6E1f1] text-[#f9f3ed]"
+          : "text-[#E6E1E7] hover:bg-[#E6E1F9] hover:text-[#f9f3ed]",
         "relative rounded-md px-3 py-2 text-sm font-semibold",
         isRamen && !isOnRamenPage ? "animate-pulse" : "",
       )}

@@ -26,8 +26,8 @@ export default function AppMobileMenuNavLink({
       to={to}
       className={classNames(
         isActive
-          ? "bg-[#122653] text-[#f9f3ed]"
-          : "text-[#122653] hover:bg-[#28437e] hover:text-[#f9f3ed]",
+          ? "bg-[#E6E1E7] text-[#f9f3ed]"
+          : "text-[#E6E1E7] hover:bg-[#E6E110] hover:text-[#f9f3ed]",
         "block rounded-md px-3 py-2 text-base font-medium",
         isRamen && !isOnRamenPage ? "animate-pulse" : "",
       )}

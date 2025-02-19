@@ -4,7 +4,7 @@ import { mainpageCarousel } from '../data/mainpageCarousel';
 export default function Home() {
   return (
     <main className="wrapper-outer">
-      <Carousel className='sticky max-sm:w-auto rounded-xl h-[300px] shadow-xl' loop='true'>
+      <Carousel className='sticky max-sm:w-auto rounded-xl h-[300px] shadow-xl' autoplay={true} loop={true}>
       {mainpageCarousel.map((image)=>(
         <img 
         key={image.name}
