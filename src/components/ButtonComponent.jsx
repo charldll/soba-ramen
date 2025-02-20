@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 // twMege is for merging classes without conflicts
 
-const ButtonComponent = ({ className, children, onClick, disabled }) => {
+const ButtonComponent = ({ className, children, onClick, disabled, type }) => {
   return (
     <button
       className={twMerge(
@@ -12,6 +12,7 @@ const ButtonComponent = ({ className, children, onClick, disabled }) => {
       )}
       onClick={onClick}
       disabled={disabled}
+      type={type}
     >
       {children}
     </button>
