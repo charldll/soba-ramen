@@ -9,6 +9,8 @@ import { getCurrentDate } from "../utils/getCurrentDate";
 import Logo from "../Layout/imgs/soba-logo.svg";
 import KitchenOrderCard from "../components/KitchenOrderCard";
 
+import ToggleThemeButton from "../components/ToggleThemeButton";
+
 const KitchenDashboard = () => {
   const { orders, formatTime, deleteOrder, serveOrder } = useKitchen();
   const { signOut, user } = useAuth();
@@ -23,26 +25,31 @@ const KitchenDashboard = () => {
 
   return (
     <div className="bg-grid min-h-screen">
-      <nav className="bg-menu-red">
+      <nav className="bg-menu-red dark:bg-dark-tertiary">
         <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between px-2 py-2 sm:px-6 lg:px-8">
           <Link to="/">
-            <img src={Logo} width={"90px"} />
-          </Link>
+            <img src={Logo} className="w-36 dark:filter-[invert(80%)]" />
+          </Link>{" "}
           <ButtonComponent
             onClick={signOut}
-            className="bg-logo-blue font-semibold text-white hover:bg-gray-700"
+            className="bg-logo-blue dark:bg-our-cream dark:text-dark-primary font-semibold text-white hover:bg-gray-700"
           >
             Wyloguj
           </ButtonComponent>
         </div>
       </nav>
+      <div className="dark:bg-our-cream m-2 mx-auto w-fit rounded-md border p-2">
+        <ToggleThemeButton />
+      </div>
       <main className="mx-auto max-w-7xl p-2">
-        <h1 className="mx-auto flex w-fit flex-col rounded-md px-6 py-3 text-center text-xl font-bold sm:flex-row">
+        <h1 className="dark:text-our-cream mx-auto flex w-fit flex-col rounded-md px-6 py-3 text-center text-xl font-bold sm:flex-row">
           ZAMÓWIENIA <span className="ml-4"> {getCurrentDate()}</span>
         </h1>
 
         {orders.length === 0 && (
-          <h2 className="px-2 py-10 text-center text-3xl">Brak zamówień</h2>
+          <h2 className="dark:text-our-cream px-2 py-10 text-center text-3xl">
+            Brak zamówień
+          </h2>
         )}
 
         <div

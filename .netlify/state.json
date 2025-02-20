@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Bydgoszcz",
+			"country": {
+				"code": "PL",
+				"name": "Poland"
+			},
+			"subdivision": {
+				"code": "04",
+				"name": "Kujawsko-Pomorskie"
+			},
+			"timezone": "Europe/Warsaw",
+			"latitude": 53.1225,
+			"longitude": 18.005,
+			"postalCode": "85-067"
+		},
+		"timestamp": 1739869361451
+	}
+}

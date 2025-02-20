@@ -7,7 +7,8 @@ import Logo from "./imgs/soba-logo.svg";
 
 const navigation = [
   { name: "Menu", href: "/menu" },
-  { name: "Ramen", href: "/custom-ramen" },
+  { name: "Stwórz ramen", href: "/custom-ramen" },
+  { name: "Poznaj nas", href: "/about" },
   { name: "Kontakt", href: "/contact" },
 ];
 
@@ -15,18 +16,18 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <Disclosure as="nav" className="rounded-sm bg-[#e25c4d]">
+    <Disclosure as="nav" className="bg-menu-red">
       {({ close }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-16 items-center">
               <div className="flex basis-1/5">
                 <Link to="/">
                   <img src={Logo} width={"90px"} />
                 </Link>
               </div>
               <div className="flex basis-4/5 sm:ml-6 sm:block">
-                <div className="flex space-x-4 justify-self-end max-sm:hidden">
+                <div className="flex justify-end space-x-4 max-sm:hidden">
                   {navigation.map((item) => (
                     <AppNavLink
                       key={item.name}
