@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { Link } from "react-router";
 
@@ -13,7 +12,7 @@ import ToggleThemeButton from "../components/ToggleThemeButton";
 
 const KitchenDashboard = () => {
   const { orders, formatTime, deleteOrder, serveOrder } = useKitchen();
-  const { signOut, user } = useAuth();
+  const { signOut } = useAuth();
   const [isFading, setIsFading] = useState(false);
 
   // Fade out effect on deletion or serving order
@@ -28,7 +27,7 @@ const KitchenDashboard = () => {
       <nav className="bg-menu-red dark:bg-dark-tertiary">
         <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between px-2 py-2 sm:px-6 lg:px-8">
           <Link to="/">
-            <img src={Logo} className="w-36 dark:filter-[invert(80%)]" />
+            <img src={Logo} className="w-32" alt="Soba Ramen Logo" />
           </Link>{" "}
           <ButtonComponent
             onClick={signOut}
@@ -42,7 +41,7 @@ const KitchenDashboard = () => {
         <ToggleThemeButton />
       </div>
       <main className="mx-auto max-w-7xl p-2">
-        <h1 className="dark:text-our-cream mx-auto flex w-fit flex-col rounded-md px-6 py-3 text-center text-xl font-bold sm:flex-row">
+        <h1 className="dark:text-our-cream mx-auto flex w-fit flex-col rounded-md px-6 py-3 text-center text-xl font-bold sm:flex-row xl:text-4xl">
           ZAMÓWIENIA <span className="ml-4"> {getCurrentDate()}</span>
         </h1>
 
