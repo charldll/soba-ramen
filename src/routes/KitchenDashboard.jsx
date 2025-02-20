@@ -32,6 +32,7 @@ const KitchenDashboard = () => {
           <ButtonComponent
             onClick={signOut}
             className="bg-logo-blue dark:bg-our-cream dark:text-dark-primary font-semibold text-white hover:bg-gray-700"
+            type="button"
           >
             Wyloguj
           </ButtonComponent>
