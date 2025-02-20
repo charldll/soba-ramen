@@ -35,6 +35,7 @@ const KitchenOrderCard = ({
             className="bg-menu-red dark:border-our-cream text-white disabled:hidden dark:border-2"
             onClick={() => handleOrderAction(order.id, deleteOrder)}
             disabled={order.isServed}
+            tyoe="button"
           >
             <X />
           </ButtonComponent>
@@ -42,6 +43,7 @@ const KitchenOrderCard = ({
             className="bg-logo-blue dark:bg-dark-tertiary dark:border-our-cream text-white disabled:hidden dark:border-2"
             onClick={() => handleOrderAction(order.id, serveOrder)}
             disabled={order.isServed}
+            type="button"
           >
             <CookingPot />
           </ButtonComponent>
