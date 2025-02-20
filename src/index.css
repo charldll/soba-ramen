@@ -6,9 +6,9 @@
 
 @theme {
   --font-abril: "Abril Fatface", serif;
-  --color-logo-blue: #28437e;
-  --color-our-cream: #dbd4d4;
-  --color-menu-red: #e14f52;
+  --color-logo-blue: #024B78;
+  --color-our-cream: #E6E1E7;
+  --color-menu-red: #AF282F;
   --color-dark-primary: #3c5b6f;
   --color-dark-secondary: hsla(219, 11%, 74%, 0.8);
   --color-dark-tertiary: #153448;
@@ -98,7 +98,7 @@
 
   color-scheme: light dark;
   color: #2a2a2a;
-  background-color: #dbd4d4;
+  background-color: #E6E1E7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
