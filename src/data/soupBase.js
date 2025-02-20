@@ -1,7 +1,12 @@
 export const soupBase = [
     {
         src:"https://picsum.photos/200",
-        name: "Chicken base",
+        name: "Shoyu base",
+        price: 10,
+    },
+    {
+        src:"https://picsum.photos/200",
+        name: "Shio base",
         price: 10,
     },
     {
@@ -11,7 +16,7 @@ export const soupBase = [
     },
     {
         src:"https://picsum.photos/200",
-        name: "Pork base",
+        name: "Tonkotsu base",
         price: 10,
     },
     {

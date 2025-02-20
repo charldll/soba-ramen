@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { KeyRound, Soup, ThumbsUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 
@@ -10,6 +9,7 @@ import OrderConfirmation from "../components/OrderConfirmation";
 import useOrder from "../hooks/useOrder";
 import ProgressButtons from "../components/ProgressButtons";
 import SoupBase from '../components/SoupBase';
+import NoodleChoice from '../components/NoodleChoice';
 
 const RamenComponent = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -51,14 +51,15 @@ const RamenComponent = () => {
 
   const handlePlaceOrder = async () => {
     await placeOrder();
-    setActiveStep(4);
+    setActiveStep(5);
   };
 
   const steps = [
     { icon: "", label: "One"},
     { icon: "", label: "Two"},
     { icon: "", label: "Three"},
-    { icon: "", label: "Four"}
+    { icon: "", label: "Four"},
+    { icon: "", label: "Five"}
   ];
 
   const renderStepContent = () => {
@@ -77,6 +78,16 @@ const RamenComponent = () => {
         );
       case 2:
         return (
+          <div className='wrapper-inner'>
+            <NoodleChoice
+              selectedItems={selectedItems}
+              toggleItem={toggleItem}
+              onClick={handleNext}
+              />
+          </div>
+        );
+      case 3:
+        return (
           <div className="wrapper-inner">
             <IngredientChoice
               selectedItems={selectedItems}
@@ -85,16 +96,16 @@ const RamenComponent = () => {
             />
           </div>
         );
-      case 3:
+      case 4:
         return (
           <OrderSummary
             selectedItems={selectedItems}
             totalPrice={totalPrice}
             placeOrder={handlePlaceOrder}
-            onClick={handleNext}
+            onClick={handlePrev}
           />
         )
-      case 4:
+      case 5:
         return <OrderConfirmation/>
       default:
         null;
