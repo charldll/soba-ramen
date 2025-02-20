@@ -15,7 +15,7 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <Disclosure as="nav" className="rounded-sm bg-[#E14F52]">
+    <Disclosure as="nav" className="rounded-sm bg-[#e25c4d]">
       {({ close }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
