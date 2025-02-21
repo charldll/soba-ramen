@@ -30,9 +30,8 @@ createRoot(document.getElementById("root")).render(
               <Route path="/admin" element={<Admin />} />
               <Route path="custom-ramen" element={<RamenComponent />} />
               <Route path="custom-ramen/:table" element={<RamenComponent />} />
-              <Route path="*" element={<PageNotFound />} />
             </Route>
-
+            <Route path="*" element={<PageNotFound />} />
             <Route
               path="/kitchen"
               element={
