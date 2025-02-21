@@ -22,7 +22,7 @@ const zoom = 20;
 
 export default function MyGoogleMap() {
   return (
-    <APIProvider apiKey={"AIzaSyDyqnxhKYenuX_gBTOSsATI_HABDCrMmFE"}>
+    <APIProvider apiKey={import.meta.env.VITE_MAP_API}>
       <Map
         id="map"
         mapId="bfa617ee01033f6c"
