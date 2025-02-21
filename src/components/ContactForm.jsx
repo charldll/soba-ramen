@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { isEmail } from "validator";
 import useMessage from "../hooks/useMessage";
+import ButtonComponent from "./ButtonComponent";
+import { Loader } from "lucide-react";
 
 const Input = ({ label, error, register, ...props }) => (
   <div className="space-y-2">
@@ -60,7 +62,7 @@ export default function ContactForm() {
 
   const onSubmit = async () => {
     try {
-      // await saveMessage();
+      await saveMessage();
 
       await sendMessage();
 
@@ -75,7 +77,7 @@ export default function ContactForm() {
       }, 3000);
     } catch (error) {
       setServerStatus({
-        message: "Błąd podczas wysyłania wiadomości. Spróbuj ponownie..",
+        message: "Błąd podczas wysyłania wiadomości. Spróbuj ponownie...",
         type: "error",
       });
       console.error("Submission error:", error);
@@ -135,10 +137,10 @@ export default function ContactForm() {
               </div>
             )}
 
-            <button
+            <ButtonComponent
               type="submit"
               disabled={isSubmitting}
-              className="w-full transform rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white transition-all hover:scale-[1.02] hover:from-blue-600 hover:to-purple-600 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 md:py-4"
+              className="flex w-full transform items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white transition-all hover:scale-[1.02] hover:from-blue-600 hover:to-purple-600 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 md:py-4"
               onClick={async () => {
                 const isValid = await trigger();
                 if (!isValid) {
@@ -149,8 +151,18 @@ export default function ContactForm() {
                 }
               }}
             >
-              {isSubmitting ? "Wysyłanie..." : "Wyślij"}
-            </button>
+              {isSubmitting ? (
+                <>
+                  <Loader
+                    className="mr-3 size-10 animate-spin pr-2"
+                    viewBox="0 0 24 24"
+                  />
+                  Wysyłanie...
+                </>
+              ) : (
+                "Wyślij"
+              )}
+            </ButtonComponent>
           </div>
         </form>
       </div>
