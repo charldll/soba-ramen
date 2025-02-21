@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClinet";
+import axios from "axios";
 
 const useMessage = () => {
   const [message, setMessage] = useState("");
@@ -22,29 +23,26 @@ const useMessage = () => {
 
   const sendMessage = async () => {
     try {
-      const response = await fetch(
+      const response = await axios.post(
         "https://soba-ramen.netlify.app/.netlify/functions/sendEmail",
         {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            userEmail: userEmail,
-            message: message,
-          }),
+          userEmail: userEmail,
+          message: message,
         },
+        { headers: { "Content-Type": "application/json" } },
       );
 
-      if (!response || !response.ok)
+      if (response.status !== 200) {
         throw new Error("Błąd podczas wysyłania emaila");
+      }
     } catch (error) {
-      console.log(error);
+      console.error("Error sending email:", error);
     }
   };
 
   return {
     message,
     setMessage,
-    userEmail,
     setUserEmail,
     saveMessage,
     sendMessage,
