@@ -29,7 +29,7 @@ export default function MyGoogleMap() {
         style={containerStyle}
         defaultCenter={center}
         defaultZoom={zoom}
-        gestureHandling={"greedy"}
+        gestureHandling={"auto"}
         disableDefaultUI={false}
       >
         <MyGoogleMapContent />
