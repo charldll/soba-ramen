@@ -7,37 +7,38 @@ export default function About() {
   };
   return (
     <main>
-      <div className="relative h-svh w-full">
-        <img src={Image} className="h-svh w-full object-cover"></img>
-        <div className="absolute inset-0 flex items-center justify-center scroll-smooth">
+      <div className="relative w-full lg:h-[70vh]">
+        <img
+          src={Image}
+          className="h-[30vh] w-full object-cover lg:h-[70vh] lg:object-[0%_55%]"
+        />
+        <div className="bg-photo-layer absolute inset-0 flex items-center justify-center">
           <BlurText
             text="Poznaj nas bliżej!"
             delay={150}
             animateBy="words"
             direction="top"
             onAnimationComplete={handleAnimationComplete}
-            className="mb-8 text-center text-8xl text-white"
+            className="w-fit p-2 text-4xl text-white lg:text-8xl"
           />
         </div>
       </div>
-      <section className="wrapper-outer">
-        <h1>Nasza misja</h1>
-        <p>
-          W naszej ramenowni wierzymy, że miska ramenu to coś więcej niż tylko
-          posiłek – to historia, tradycja i pasja zamknięta w aromatycznym
-          bulionie. Naszą misją jest przeniesienie Cię wprost na ulice Japonii
-          poprzez autentyczne smaki, świeże składniki i starannie przygotowane
-          dania. Chcemy, aby każdy, kto przekroczy próg naszej ramenowni, poczuł
-          ciepło domowej atmosfery i mógł delektować się ramenem tworzonym z
-          sercem. Dbamy o najwyższą jakość składników, długogotowane buliony i
-          ręcznie robiony makaron, by każda miska była wyjątkowym
-          doświadczeniem. Nasza misja to nie tylko serwowanie pysznego jedzenia
-          – to także budowanie społeczności, w której każdy miłośnik ramenu
-          znajdzie swoje miejsce.{" "}
-        </p>
-      </section>
 
       <section className="wrapper-outer">
+        <h1>Nasza misja</h1>W naszej ramenowni wierzymy, że miska ramenu to coś
+        więcej niż tylko posiłek – to historia, tradycja i pasja zamknięta w
+        aromatycznym bulionie. Naszą misją jest przeniesienie Cię wprost na
+        ulice Japonii poprzez autentyczne smaki, świeże składniki i starannie
+        przygotowane dania. Chcemy, aby każdy, kto przekroczy próg naszej
+        ramenowni, poczuł ciepło domowej atmosfery i mógł delektować się ramenem
+        tworzonym z sercem. Dbamy o najwyższą jakość składników, długogotowane
+        buliony i ręcznie robiony makaron, by każda miska była wyjątkowym
+        doświadczeniem. Nasza misja to nie tylko serwowanie pysznego jedzenia –
+        to także budowanie społeczności, w której każdy miłośnik ramenu znajdzie
+        swoje miejsce.{" "}
+      </section>
+
+      <section className="wrapper-outer transition-all duration-900 ease-in-out hover:scale-125">
         <h1>Nasz zespół</h1>
         <p>
           Jesteśmy małym, ale zgranym zespołem trzech pasjonatów kuchni
