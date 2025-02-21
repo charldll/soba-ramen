@@ -6,12 +6,13 @@
 
 @theme {
   --font-abril: "Abril Fatface", serif;
-  --color-logo-blue: #024B78;
-  --color-our-cream: #E6E1E7;
-  --color-menu-red: #AF282F;
+  --color-logo-blue: #024b78;
+  --color-our-cream: #e6e1e7;
+  --color-menu-red: #af282f;
   --color-dark-primary: #3c5b6f;
   --color-dark-secondary: hsla(219, 11%, 74%, 0.8);
   --color-dark-tertiary: #153448;
+  --color-photo-layer: hsla(0, 0%, 0%, .6);
   --animate-fade-in: fade-in 0.5s ease-in-out forwards;
   @keyframes fade-in {
     0% {
@@ -98,7 +99,7 @@
 
   color-scheme: light dark;
   color: #2a2a2a;
-  background-color: #E6E1E7;
+  background-color: #e6e1e7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
