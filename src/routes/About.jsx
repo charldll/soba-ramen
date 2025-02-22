@@ -1,5 +1,5 @@
 import BlurText from "../utils/animations/BlurText";
-import Image from "../Layout/imgs/about.jpg";
+import Image from "../Layout/imgs/about1.jpg";
 
 export default function About() {
   const handleAnimationComplete = () => {
