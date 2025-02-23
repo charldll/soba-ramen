@@ -1,6 +1,6 @@
 import { Instagram, Facebook, MapPinned, Mail, Phone } from "lucide-react";
 import { NavLink } from "react-router";
-import Logo from "./imgs/soba-logo.svg";
+import LogoDark from "./imgs/soba-logo-dark.svg";
 
 export default function Footer() {
   return (
@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr]">
             {/* Logo i slogan */}
             <div className="flex flex-col items-center md:items-start">
-              <img src={Logo} alt="Soba Ramen" className="mb-2 w-32" />
+              <img src={LogoDark} alt="Soba Ramen" className="mb-2 w-32" />
               <p className="text-base">
                 Mistrzostwo smaku <br></br> w każdej misce
               </p>

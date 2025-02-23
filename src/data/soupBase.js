@@ -1,27 +1,29 @@
+import Base from '../Layout/imgs/base.svg';
+
 export const soupBase = [
     {
-        src:"https://picsum.photos/200",
-        name: "Shoyu base",
+        src: Base,
+        name: "Shoyu",
         price: 10,
     },
     {
-        src:"https://picsum.photos/200",
-        name: "Shio base",
+        src: Base,
+        name: "Shio",
         price: 10,
     },
     {
-        src:"https://picsum.photos/200",
-        name: "Miso base",
+        src: Base,
+        name: "Miso",
         price: 10,
     },
     {
-        src:"https://picsum.photos/200",
-        name: "Tonkotsu base",
+        src: Base,
+        name: "Tonkotsu",
         price: 10,
     },
     {
-        src:"https://picsum.photos/200",
-        name: "Vegan base",
+        src: Base,
+        name: "Vegan",
         price: 10,
     }
 ]
