@@ -1,5 +1,9 @@
 import BlurText from "../utils/animations/BlurText";
 import Image from "../Layout/imgs/about.webp";
+import Inga from "../Layout/imgs/Inga.png";
+import Agnieszka from "../Layout/imgs/Agnieszka.png";
+import Żaklina from "../Layout/imgs/Żaklina.png";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 export default function About() {
   return (
@@ -7,6 +11,7 @@ export default function About() {
       <div className="relative w-full lg:h-[70vh]">
         <img
           src={Image}
+          loading="eager"
           className="h-[30vh] w-full object-cover lg:h-[70vh] lg:object-[0%_55%]"
         />
         <div className="bg-photo-layer absolute inset-0 flex items-center justify-center">
@@ -20,52 +25,94 @@ export default function About() {
         </div>
       </div>
 
-      <section className="wrapper-outer mx-auto -mt-[20px] w-fit rounded-xl bg-[#F6EFEF] p-4 pt-10 md:w-[90%] xl:w-[80%]">
-        <h1>Nasza misja</h1>W naszej ramenowni wierzymy, że miska ramenu to coś
-        więcej niż tylko posiłek – to historia, tradycja i pasja zamknięta w
-        aromatycznym bulionie. Naszą misją jest przeniesienie Cię wprost na
-        ulice Japonii poprzez autentyczne smaki, świeże składniki i starannie
-        przygotowane dania. Chcemy, aby każdy, kto przekroczy próg naszej
-        ramenowni, poczuł ciepło domowej atmosfery i mógł delektować się ramenem
-        tworzonym z sercem. Dbamy o najwyższą jakość składników, długogotowane
-        buliony i ręcznie robiony makaron, by każda miska była wyjątkowym
-        doświadczeniem. Nasza misja to nie tylko serwowanie pysznego jedzenia –
-        to także budowanie społeczności, w której każdy miłośnik ramenu znajdzie
-        swoje miejsce.{" "}
-      </section>
+      <div className="mx-auto w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
+        <section>
+          <h1 className="text-menu-red mb-10 text-center text-3xl font-bold md:text-4xl">
+            Nasza misja
+          </h1>
+          <p className="text-center text-lg leading-relaxed text-gray-700 md:text-justify md:text-xl">
+            Wierzymy, że miska ramenu to coś więcej niż tylko posiłek – to
+            historia, tradycja i pasja zamknięta w aromatycznym bulionie. Chcemy
+            przenieść Cię wprost na ulice Japonii poprzez autentyczne smaki,
+            świeże składniki i starannie przygotowane dania. Każdy, kto
+            przekroczy próg naszej ramenowni, poczuje ciepło domowej atmosfery i
+            będzie mógł delektować się ramenem tworzonym z sercem. Dbamy o
+            najwyższą jakość składników, długogotowane buliony i ręcznie robiony
+            makaron, by każda miska była wyjątkowym doświadczeniem. Naszym celem
+            jest nie tylko serwowanie pysznego jedzenia, ale także budowanie
+            społeczności, w której każdy miłośnik ramenu znajdzie swoje miejsce.
+          </p>
+        </section>
 
-      <section className="wrapper-outer mx-auto -mt-[20px] w-fit rounded-xl bg-[#F6EFEF] p-4 pt-10 md:w-[90%] xl:w-[80%]">
-        <h1>Nasz zespół</h1>
-        <p>
-          Jesteśmy małym, ale zgranym zespołem trzech pasjonatów kuchni
-          japońskiej, których połączyła miłość do ramenu. Każdy z nas wnosi coś
-          wyjątkowego do naszej ramenowni – od sztuki kulinarnej, przez
-          kreatywność, aż po ciepłą, przyjazną atmosferę.
-        </p>
-        <br />
-        <p>
-          Agnieszka - – mistrz smaku i aromatu. To ona dba o perfekcyjnie
-          ugotowane buliony, sprężysty makaron i idealnie dobrane dodatki.
-          Dzięki niej każda miska ramenu to dzieło sztuki!
-        </p>
-        <br />
-        <p>
-          Inga - osoba odpowiedzialna za atmosferę, design i doświadczenie. To
-          ona tworzy naszą historię, dba o wystrój i sprawia, że nasza
-          ramenownia to nie tylko miejsce na jedzenie, ale i prawdziwa przygoda!
-        </p>
-        <br />
-        <p>
-          Żaklina - serce naszej ramenowni. Dba o każdy szczegół, od najwyższej
-          jakości składników po niezapomnianą obsługę gości. Sprawia, że każdy,
-          kto do nas przychodzi, czuje się jak w domu.
-        </p>
-        <br />
-        <p>
-          Razem tworzymy coś więcej niż restaurację – budujemy miejsce, w którym
-          ludzie mogą dzielić się smakiem, radością i dobrą energią.
-        </p>
-      </section>
+        <section>
+          <h1 className="text-menu-red mt-10 mb-10 text-center text-3xl font-bold md:text-4xl">
+            Nasz zespół
+          </h1>
+          <p className="text-center text-lg leading-relaxed text-gray-700 md:text-justify md:text-xl">
+            Jesteśmy małym, ale zgranym zespołem trzech pasjonatów kuchni
+            japońskiej, których połączyła miłość do ramenu. Każdy z nas wnosi
+            coś wyjątkowego do naszej ramenowni – od sztuki kulinarnej, przez
+            kreatywność, aż po ciepłą, przyjazną atmosferę.
+          </p>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col items-center text-center">
+              <img
+                src={Agnieszka}
+                alt="Agnieszka"
+                className="h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
+              />
+              <h2 className="text-menu-red mt-4 text-xl font-semibold">
+                Agnieszka
+              </h2>
+              <p className="mt-5 text-gray-700 md:text-justify">
+                Mistrz smaku i aromatu. Dba o perfekcyjnie ugotowane buliony,
+                sprężysty makaron i idealnie dobrane dodatki. Dzięki niej każda
+                miska ramenu to dzieło sztuki!
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <img
+                src={Inga}
+                alt="Inga"
+                className="h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
+              />
+              <h2 className="text-menu-red mt-4 text-xl font-semibold">Inga</h2>
+              <p className="mt-5 text-gray-700 md:text-justify">
+                Osoba odpowiedzialna za atmosferę, design i doświadczenie.
+                Tworzy naszą historię, dba o wystrój i sprawia, że ramenownia to
+                nie tylko miejsce na jedzenie, ale i prawdziwa przygoda!
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+              <img
+                src={Żaklina}
+                alt="Żaklina"
+                className="h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
+              />
+              <h2 className="text-menu-red mt-4 text-xl font-semibold">
+                Żaklina
+              </h2>
+              <p className="mt-5 text-gray-700 md:text-justify">
+                Serce naszej ramenowni. Dba o każdy szczegół, od najwyższej
+                jakości składników po niezapomnianą obsługę gości. Sprawia, że
+                każdy czuje się jak w domu.
+              </p>
+            </div>
+          </div>
+          <p className="mt-20 text-center text-lg leading-relaxed text-gray-700 md:text-justify md:text-xl">
+            <span className="text-menu-red font-semibold">
+              Razem tworzymy coś więcej niż restaurację{" "}
+            </span>
+            – budujemy przestrzeń pełną pasji, w której smak łączy ludzi, a
+            każdy posiłek staje się wyjątkowym doświadczeniem. To miejsce, gdzie
+            tradycja spotyka się z nowoczesnością, a aromatyczny ramen nie tylko
+            koi głód, ale także buduje wspomnienia. Chcemy, aby każdy, kto do
+            nas trafi, poczuł się częścią naszej społeczności – otoczonej
+            ciepłem, gościnnością i miłością do japońskiej kuchni.
+          </p>
+        </section>
+      </div>
+      <ScrollToTopButton />
     </main>
   );
 }
