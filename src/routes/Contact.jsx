@@ -23,10 +23,6 @@ const Contact = () => {
         </div>
       </div>
 
-      <h2 className="mt-[50px] text-center text-2xl font-semibold text-black">
-        Masz pytania? Skontaktuj się z nami!
-      </h2>
-
       <ContactForm></ContactForm>
     </main>
   );
