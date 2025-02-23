@@ -1,10 +1,7 @@
 import BlurText from "../utils/animations/BlurText";
-import Image from "../Layout/imgs/about1.jpg";
+import Image from "../Layout/imgs/about.webp";
 
 export default function About() {
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
   return (
     <main>
       <div className="relative w-full lg:h-[70vh]">
@@ -18,13 +15,12 @@ export default function About() {
             delay={150}
             animateBy="words"
             direction="top"
-            onAnimationComplete={handleAnimationComplete}
             className="w-fit p-2 text-4xl text-white lg:text-8xl"
           />
         </div>
       </div>
 
-      <section className="wrapper-outer">
+      <section className="wrapper-outer mx-auto -mt-[20px] w-fit rounded-xl bg-[#F6EFEF] p-4 pt-10 md:w-[90%] xl:w-[80%]">
         <h1>Nasza misja</h1>W naszej ramenowni wierzymy, że miska ramenu to coś
         więcej niż tylko posiłek – to historia, tradycja i pasja zamknięta w
         aromatycznym bulionie. Naszą misją jest przeniesienie Cię wprost na
@@ -38,7 +34,7 @@ export default function About() {
         swoje miejsce.{" "}
       </section>
 
-      <section className="wrapper-outer transition-all duration-900 ease-in-out hover:scale-125">
+      <section className="wrapper-outer mx-auto -mt-[20px] w-fit rounded-xl bg-[#F6EFEF] p-4 pt-10 md:w-[90%] xl:w-[80%]">
         <h1>Nasz zespół</h1>
         <p>
           Jesteśmy małym, ale zgranym zespołem trzech pasjonatów kuchni
