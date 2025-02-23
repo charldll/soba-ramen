@@ -44,10 +44,10 @@ export async function handler(event) {
       to: userEmail,
       subject: "Potwierdzenie otrzymania wiadomości",
       html: `
-        <h2>Dziękujemy za Twoją wiadomość!</h2>
-        <p>Otrzymaliśmy następującą wiadomość:</p>
+        <h2 style="font-size: 1.5rem">Dziękujemy za Twoją wiadomość!</h2>
+        <p style="font-size: 1rem; font-weight: bold;">Otrzymaliśmy następującą wiadomość:</p>
         <blockquote>${message}</blockquote>
-        <p>Skontaktujemy się z Tobą jak najszybciej.</p>
+        <p style="font-size: 1rem;">Skontaktujemy się z Tobą jak najszybciej.</p>
       `,
     });
 
@@ -57,10 +57,38 @@ export async function handler(event) {
       to: process.env.VITE_EMAIL_USER,
       subject: "Nowa wiadomość od użytkownika",
       html: `
-        <h2>Nowa wiadomość</h2>
-        <p><strong>Od:</strong> ${userEmail}</p>
-        <p><strong>Wiadomość:</strong></p>
-        <blockquote>${message}</blockquote>
+        <div
+          style="
+          font-family: Arial, sans-serif;
+          padding: 1.5rem;
+          background-color: #e6e1e7;
+          color: #024b78;
+          font-size: 1rem;
+          border-radius: 5px;">
+            <h2 style="font-size: 24px; font-weight: bold">
+              Dziękujemy za wiadomość!
+            </h2>
+            <p>Otrzymałyśmy maila o następującej treści:</p>
+            <div
+              style="
+              border-radius: 5px;
+              padding: 0.5rem;
+              background-color: #3c5b6f;
+              overflow: hidden;
+              margin-block: 0.5rem;">
+
+              <blockquote
+                style="
+                padding: 10px 20px;
+                background-color: #3c5b6f;
+                color: #e6e1e7;
+                border-left: 4px solid #af282f;">
+              ${message}
+              </blockquote>
+            </div>
+            <p>Skontaktujemy się z Tobą jak najszybciej.</p>
+            <p>Inga, Żaklina i Agnieszka</p>
+        </div>
       `,
     });
 

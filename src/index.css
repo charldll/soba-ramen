@@ -112,7 +112,6 @@
   .custom-scrollbar {
     /* Set the scrollbar thumb (the draggable part) color */
     scrollbar-color: rgb(182, 27, 81) rgb(194, 166, 176); /* thumb | track */
-
     /* Set the scrollbar width */
     scrollbar-width: thin; /* Options: auto, thin, none */
   }
@@ -123,12 +122,12 @@
 
   .custom-scrollbar::-webkit-scrollbar-track {
     background: rgb(182, 27, 81); /* Track color */
-    border-radius: 10px; /* Rounded track */
+    border-radius: 100px; /* Rounded track */
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background: rgb(194, 166, 176); /* Scrollbar color */
-    border-radius: 10px; /* Rounded scrollbar */
+    border-radius: 100px; /* Rounded scrollbar */
     /* Border around scrollbar */
   }
 
