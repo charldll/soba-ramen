@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { soupBase } from '../data/soupBase';
-import IngredientCard from "./IngredientCard";
+import BaseCard from "./BaseCard";
 import ButtonComponent from './ButtonComponent';
 
 const SoupBase = ({ selectedItems, toggleItem, onClick }) => {
@@ -8,10 +8,10 @@ const SoupBase = ({ selectedItems, toggleItem, onClick }) => {
   const selectedMax = selectedItems.length === 1;
 
   return (
-    <section className='w-full max-w-[70rem] mx-auto px-2'>
+    <section className='w-full max-w-[90rem] mx-auto px-2'>
       <div className="grid auto-cols-[90%] sm:auto-cols-[45%] md:auto-cols-[30%] lg:auto-cols-[23%] grid-flow-col gap-[1rem] py-[0.5rem] overflow-x-auto overscroll-contain snap-x snap-mandatory custom-scrollbar">
 				{soupBase.map((ingredient) => (
-          <IngredientCard
+          <BaseCard
           key={ingredient.name}
           ingredient={ingredient}
           selectedItems={selectedItems}

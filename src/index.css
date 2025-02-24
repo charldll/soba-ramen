@@ -135,9 +135,9 @@
     /* border: 1px solid red; */
     height: fit-content;
     margin-inline: auto;
-    max-inline-size: 700px;
+    max-inline-size: 900px;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     justify-items: center;
   }
@@ -147,6 +147,7 @@
     margin-inline: auto;
     margin-block: 2rem;
     padding: 1rem;
+    margin: 1rem;
   }
 
   .bg-grid {
