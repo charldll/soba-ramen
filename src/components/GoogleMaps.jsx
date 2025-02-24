@@ -19,10 +19,13 @@ const center = {
 };
 
 const zoom = 20;
+const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_MAP_API;
+console.log("test1", GOOGLE_MAPS_API_KEY);
+console.log("test2", import.meta.env.VITE_MAP_API);
 
 export default function MyGoogleMap() {
   return (
-    <APIProvider apiKey={import.meta.env.VITE_MAP_API}>
+    <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
       <Map
         id="map"
         mapId="bfa617ee01033f6c"
