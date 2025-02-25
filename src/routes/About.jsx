@@ -1,18 +1,31 @@
 import BlurText from "../utils/animations/BlurText";
 import Image from "../Layout/imgs/about.webp";
-import Inga from "../Layout/imgs/Inga.png";
-import Agnieszka from "../Layout/imgs/Agnieszka.png";
-import Żaklina from "../Layout/imgs/Żaklina.png";
 import ScrollToTopButton from "../components/ScrollToTopButton";
+import AboutTeam from "../components/AboutTeam";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
+  }, []);
   return (
     <main>
       <div className="relative w-full lg:h-[70vh]">
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-current">
+            <p className="text-gray-600">Ładowanie...</p>
+          </div>
+        )}
         <img
           src={Image}
           loading="eager"
-          className="h-[30vh] w-full object-cover lg:h-[70vh] lg:object-[0%_55%]"
+          className={`h-[30vh] w-full object-cover transition-opacity duration-500 lg:h-[70vh] lg:object-[0%_55%] ${isLoading ? "opacity-0" : "opacity-100"}`}
+          onLoad={() => setIsLoading(false)}
+          alt="Miska ramenu"
         />
         <div className="bg-photo-layer absolute inset-0 flex items-center justify-center">
           <BlurText
@@ -25,7 +38,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
+      <div className="my-4 mx-auto w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
         <section>
           <h1 className="text-menu-red mb-10 text-center text-3xl font-bold md:text-4xl">
             Nasza misja
@@ -54,51 +67,7 @@ export default function About() {
             coś wyjątkowego do naszej ramenowni – od sztuki kulinarnej, przez
             kreatywność, aż po ciepłą, przyjazną atmosferę.
           </p>
-          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
-              <img
-                src={Agnieszka}
-                alt="Agnieszka"
-                className="h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
-              />
-              <h2 className="text-menu-red mt-4 text-xl font-semibold">
-                Agnieszka
-              </h2>
-              <p className="mt-5 text-gray-700 md:text-justify">
-                Mistrz smaku i aromatu. Dba o perfekcyjnie ugotowane buliony,
-                sprężysty makaron i idealnie dobrane dodatki. Dzięki niej każda
-                miska ramenu to dzieło sztuki!
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <img
-                src={Inga}
-                alt="Inga"
-                className="h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
-              />
-              <h2 className="text-menu-red mt-4 text-xl font-semibold">Inga</h2>
-              <p className="mt-5 text-gray-700 md:text-justify">
-                Osoba odpowiedzialna za atmosferę, design i doświadczenie.
-                Tworzy naszą historię, dba o wystrój i sprawia, że ramenownia to
-                nie tylko miejsce na jedzenie, ale i prawdziwa przygoda!
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
-              <img
-                src={Żaklina}
-                alt="Żaklina"
-                className="h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
-              />
-              <h2 className="text-menu-red mt-4 text-xl font-semibold">
-                Żaklina
-              </h2>
-              <p className="mt-5 text-gray-700 md:text-justify">
-                Serce naszej ramenowni. Dba o każdy szczegół, od najwyższej
-                jakości składników po niezapomnianą obsługę gości. Sprawia, że
-                każdy czuje się jak w domu.
-              </p>
-            </div>
-          </div>
+          <AboutTeam id="team"></AboutTeam>
           <p className="mt-20 text-center text-lg leading-relaxed text-gray-700 md:text-justify md:text-xl">
             <span className="text-menu-red font-semibold">
               Razem tworzymy coś więcej niż restaurację{" "}
