@@ -6,6 +6,7 @@ const useOrder = () => {
 
   const tableId = sessionStorage.getItem("tableId");
 
+  // For ingredient choice
   const toggleItem = (item) => {
     setSelectedItems((prev) => {
       const exists = prev.find((i) => i.name === item.name);
@@ -13,6 +14,15 @@ const useOrder = () => {
         return prev.filter((i) => i.name !== item.name);
       }
       return [...prev, item];
+    });
+  };
+
+  // For soup and noodle base
+  const chooseOneOptionOnly = (index, item) => {
+    setSelectedItems((prev) => {
+      const newItems = [...prev];
+      newItems[index] = item;
+      return newItems;
     });
   };
 
@@ -73,6 +83,7 @@ const useOrder = () => {
     totalPrice,
     placeOrder,
     validateTable,
+    chooseOneOptionOnly,
   };
 };
 

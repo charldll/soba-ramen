@@ -3,8 +3,8 @@ import IngredientCard from "./IngredientCard";
 import { ingredientsData } from "../data/ingredientsData";
 import ButtonComponent from "./ButtonComponent";
 
-const IngredientChoice = ({ selectedItems, toggleItem, onClick }) => {
-  const selectetItemsEmpty = selectedItems.length === 0;
+const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev }) => {
+  const selectetItemsEmpty = selectedItems.length <= 2;
 
   return (
     <section className="w-full max-w-[70rem] mx-auto px-2">
@@ -23,7 +23,12 @@ const IngredientChoice = ({ selectedItems, toggleItem, onClick }) => {
         {selectetItemsEmpty && <p>Nie wybrano składników</p>}
         <ButtonComponent
           className="my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
-          onClick={onClick}
+          onClick={handlePrev}>
+          Wstecz
+        </ButtonComponent>
+        <ButtonComponent
+          className="my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed"
+          onClick={handleNext}
           disabled={selectetItemsEmpty}>
           Dalej
         </ButtonComponent>

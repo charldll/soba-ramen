@@ -20,13 +20,16 @@ const RamenComponent = () => {
     toggleItem,
     placeOrder,
     validateTable,
+    chooseOneOptionOnly,
   } = useOrder();
 
   const { table } = useParams();
   const navigate = useNavigate();
 
   const handleNext = () => setActiveStep((cur) => cur + 1);
-  const handlePrev = () => setActiveStep((cur) => cur - 1);
+  const handlePrev = () => {
+    setActiveStep((cur) => Math.max(cur - 1, 0));
+  };
 
   useEffect(() => {
     const checkTable = async () => {
@@ -71,7 +74,7 @@ const RamenComponent = () => {
           <div className="wrapper-inner">
             <SoupBase
               selectedItems={selectedItems}
-              toggleItem={toggleItem}
+              chooseOneOptionOnly={chooseOneOptionOnly}
               onClick={handleNext}
               />
           </div>
@@ -81,8 +84,9 @@ const RamenComponent = () => {
           <div className='wrapper-inner'>
             <NoodleChoice
               selectedItems={selectedItems}
-              toggleItem={toggleItem}
-              onClick={handleNext}
+              chooseOneOptionOnly={chooseOneOptionOnly}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
               />
           </div>
         );
@@ -92,7 +96,8 @@ const RamenComponent = () => {
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
-              onClick={handleNext}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
             />
           </div>
         );

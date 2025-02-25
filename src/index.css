@@ -133,7 +133,7 @@
 
   .wrapper-outer {
     /* border: 1px solid red; */
-    height: fit-content;
+    height: 80vh;
     margin-inline: auto;
     max-inline-size: 900px;
     padding: 1rem;
