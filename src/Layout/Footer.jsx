@@ -6,19 +6,19 @@ export default function Footer() {
   return (
     <div className="relative bg-[#5780DC]">
       <footer className="mx-auto max-w-7xl text-center text-black lg:text-left">
-        <div className="mx-6 py-5 text-center md:text-left">
+        <div className="mx-6 py-3 text-center md:text-left">
           {/* Grid dla sekcji */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr]">
             {/* Logo i slogan */}
             <div className="flex flex-col items-center md:items-start">
-              <img src={LogoFooter} alt="Soba Ramen" className="mb-2 w-32" />
-              <p className="text-base">
+              <img src={LogoFooter} alt="Soba Ramen" className="mb-2 w-27" />
+              <p className="text-sm">
                 Mistrzostwo smaku <br></br> w każdej misce
               </p>
             </div>
 
             {/* Kontakt */}
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center text-sm md:items-start">
               <h6 className="mb-4 font-semibold uppercase">
                 Skontaktuj się z nami
               </h6>
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
 
             {/* Social Media */}
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center text-sm md:items-start">
               <h6 className="mb-4 font-semibold uppercase">Social media</h6>
               <div className="mb-2 flex items-center gap-2">
                 <NavLink
@@ -63,9 +63,14 @@ export default function Footer() {
 
             {/* Przydatne linki */}
             <div>
-              <h6 className="mb-4 font-semibold uppercase">Przydatne linki</h6>
+              <h6 className="mb-4 text-sm font-semibold uppercase">
+                Przydatne linki
+              </h6>
               <p>
-                <NavLink to="/admin" className="cursor-pointer hover:underline">
+                <NavLink
+                  to="/admin"
+                  className="cursor-pointer text-sm hover:underline"
+                >
                   Panel Administratora
                 </NavLink>
               </p>
@@ -74,7 +79,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="absolute left-0 w-full bg-[#122653] p-3 text-center text-white">
+        <div className="absolute left-0 w-full bg-[#122653] p-3 text-center text-xs text-white">
           <span>© 2025 Copyright: Soba Ramen</span>
         </div>
       </footer>
