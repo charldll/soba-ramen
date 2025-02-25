@@ -1,5 +1,5 @@
 import BlurText from "../utils/animations/BlurText";
-import Image from "../Layout/imgs/about.webp";
+import Image from "../Layout/imgs/about.jpg";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import AboutTeam from "../components/AboutTeam";
 import ImageWithLoader from "../components/ImageWithLoader";
