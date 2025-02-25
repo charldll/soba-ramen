@@ -53,12 +53,12 @@ const NoodleChoice = ({ selectedItems, chooseOneOptionOnly, handleNext, handlePr
 			<div className='flex gap-2 justify-end items-center'>
 				{selectedNone && <p>Nie wybrano makaronu</p>}
 				<ButtonComponent
-					className='my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed'
+					className='my-4 uppercase text-[white] bg-[#c66268] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed'
 					onClick={handlePrev}>
 					Wstecz
 				</ButtonComponent>
 				<ButtonComponent
-					className='my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed'
+					className='my-4 uppercase text-[white] bg-[#af282f] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed'
 					onClick={handleNext}
 					disabled={selectedNone}>
 					Dalej

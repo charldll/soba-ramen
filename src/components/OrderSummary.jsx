@@ -19,11 +19,11 @@ const OrderSummary = ({ selectedItems, totalPrice, placeOrder, onClick }) => {
       </div>
 
       <div className="flex justify-center items-center gap-2">
-        <ButtonComponent className="my-4 bg-amber-600 " onClick={onClick}>
+        <ButtonComponent className="my-4 text-[white] bg-[#c66268] uppercase" onClick={onClick}>
           Wróć
         </ButtonComponent>
         <ButtonComponent
-          className="bg-green-600"
+          className="bg-[#5780DC] text-[white] uppercase"
           onClick={placeOrder}
           disabled={selectedItems.length === 0}>
           Złóż zamówienie

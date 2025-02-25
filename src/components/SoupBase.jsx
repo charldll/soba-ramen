@@ -52,7 +52,7 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
       <div className="flex gap-2 justify-end items-center">
         {selectedNone && <p>Nie wybrano bazy</p>}
         <ButtonComponent
-          className='my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed'
+          className='my-4 text-[white] uppercase bg-[#af282f] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed'
           onClick={onClick}
           disabled={selectedNone}>
           	Dalej
