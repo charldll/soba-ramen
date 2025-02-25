@@ -54,7 +54,7 @@ const AdminLogin = () => {
   }
 
   return (
-    <main className="wrapper-outer">
+    <main className="my-4 flex min-h-[80vh] flex-col items-center justify-center p-4">
       <h1 className="text-center text-xl text-pretty md:text-3xl">
         Logowanie do panelu administracyjnego*
       </h1>
@@ -92,7 +92,9 @@ const AdminLogin = () => {
             <button
               type="button"
               className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer rounded-md"
-              onClick={() => setShowPassword(!showPassword)}
+              onClick={() => {
+                setShowPassword(!showPassword);
+              }}
             >
               {showPassword ? <EyeOff /> : <Eye />}
             </button>
