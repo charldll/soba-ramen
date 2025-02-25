@@ -43,19 +43,21 @@ export default function Footer() {
                 <NavLink
                   to="https://www.instagram.com/soba.ramen1/"
                   target="_blank"
+                  className={"flex items-center gap-2"}
                 >
                   <Instagram />
+                  <span className="hover:underline">soba.ramen1</span>
                 </NavLink>
-                <span>soba.ramen1</span>
               </div>
               <div className="flex items-center gap-2">
                 <NavLink
                   to="https://www.facebook.com/soba.ramen2/"
                   target="_blank"
+                  className={"flex items-center gap-2"}
                 >
                   <Facebook />
+                  <span className="hover:underline">soba.ramen2</span>
                 </NavLink>
-                <span>soba.ramen2</span>
               </div>
             </div>
 
