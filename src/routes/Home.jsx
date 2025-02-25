@@ -41,7 +41,7 @@ export default function Home() {
             miejsce, gdzie tradycja spotyka nowoczesność. Ciepłe wnętrze, zapach
             bulionu gotowanego przez wiele godzin i uśmiech{" "}
             <Link
-              to="/about"
+              to="/about#team"
               className="decoration-menu-red cursor-pointer font-semibold underline decoration-1 [text-decoration-skip-ink:none]"
             >
               naszego zespołu
