@@ -12,8 +12,9 @@
   --color-dark-primary: #3c5b6f;
   --color-dark-secondary: hsla(219, 11%, 74%, 0.8);
   --color-dark-tertiary: #153448;
-  --color-photo-layer: hsla(0, 0%, 0%, .6);
+  --color-photo-layer: hsla(0, 0%, 0%, 0.6);
   --animate-fade-in: fade-in 0.5s ease-in-out forwards;
+
   @keyframes fade-in {
     0% {
       opacity: 0;
