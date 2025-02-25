@@ -12,40 +12,48 @@ export const ingredientsData = [
     src: Nori,
     name: "Nori",
     price: 5,
+    details: "test",
   },
   {
     src: Egg,
     name: "Jajko",
     price: 3,
+    details: "test",
   },
   {
     src: Shiitake,
     name: "Shiitake",
     price: 5,
+    details: "test",
   },
   {
     src: Edamame,
     name: "Edamame",
     price: 5,
+    details: "test",
   },
   {
     src: Shimeji,
     name: "Shimeji",
     price: 4,
+    details: "test",
   },
   {
     src: Sesame,
     name: "Czarny Sezam",
     price: 2,
+    details: "test",
   },
   {
     src: Bokchoy,
     name: "Bok Choy",
     price: 3,
+    details: "test",
   },
   {
     src: GreenOnion,
     name: "Zielona cebula",
     price: 2,
+    details: "test",
   },
 ];

@@ -34,7 +34,6 @@ const useKitchen = () => {
         "postgres_changes",
         { event: "UPDATE", schema: "public", table: "orders" },
         (payload) => {
-          console.log("Order updated:", payload.new);
           setOrders((currentOrders) => {
             const updatedOrders = currentOrders.map((order) =>
               order.id === payload.new.id ? payload.new : order,
@@ -83,17 +82,16 @@ const useKitchen = () => {
   // Function to delete an order
   const deleteOrder = async (orderId) => {
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("orders")
         .delete()
         .eq("id", orderId);
 
       if (error) {
-        // Log the full error response from Supabase
+        // Logs the full error response from Supabase
         console.error("Error deleting order:", error);
       } else {
-        console.log("Order deleted successfully:", data);
-        // Update the UI by removing the deleted order
+        // Updates the UI by removing the deleted order
         setOrders(orders.filter((order) => order.id !== orderId));
       }
     } catch (error) {

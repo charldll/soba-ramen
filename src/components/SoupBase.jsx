@@ -2,30 +2,59 @@
 import { soupBase } from '../data/soupBase';
 import IngredientCard from "./IngredientCard";
 import ButtonComponent from './ButtonComponent';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Pagination } from 'swiper/modules';
 
-const SoupBase = ({ selectedItems, toggleItem, onClick }) => {
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
   const selectedNone = selectedItems.length === 0;
-  const selectedMax = selectedItems.length === 1;
 
   return (
     <section className='w-full max-w-[70rem] mx-auto px-2'>
-      <div className="grid auto-cols-[90%] sm:auto-cols-[45%] md:auto-cols-[30%] lg:auto-cols-[23%] grid-flow-col gap-[1rem] py-[0.5rem] overflow-x-auto overscroll-contain snap-x snap-mandatory custom-scrollbar">
-				{soupBase.map((ingredient) => (
-          <IngredientCard
-          key={ingredient.name}
-          ingredient={ingredient}
-          selectedItems={selectedItems}
-          toggleItem={toggleItem}
-        />				
+      <div className="flex max-w-[750px]">
+				<Swiper
+          slidesPerView={3.5}
+          freeMode={true}
+          pagination={{
+            dynamicBullets: true,
+          }}
+          modules={[FreeMode, Pagination]}
+          loop={true}
+          className='mySwiper'
+          breakpoints={{
+          0: {
+            slidesPerView: 1.5,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}>
+        {soupBase.map((ingredient) => (
+          <SwiperSlide key={ingredient.name}>
+            <IngredientCard
+            ingredient={ingredient}
+            selectedItems={selectedItems}
+            toggleItem={() => chooseOneOptionOnly(0, ingredient)}
+          />
+        </SwiperSlide>
         ))}
+        </Swiper>
       </div>
       <div className="flex gap-2 justify-end items-center">
         {selectedNone && <p>Nie wybrano bazy</p>}
-        {!selectedMax && !selectedNone && <p>Wybierz tylko jedną bazę</p>}
         <ButtonComponent
-          className='my-4 bg-amber-600 disabled:bg-gray-500 disabled:cursor-not-allowed'
+          className='my-4 text-[white] uppercase bg-[#af282f] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed'
           onClick={onClick}
-          disabled={selectedNone || !selectedMax}>
+          disabled={selectedNone}>
           	Dalej
         </ButtonComponent>
       </div>

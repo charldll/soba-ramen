@@ -14,6 +14,7 @@ export default function Home() {
         <Carousel
           className="sticky h-[300px] rounded-xl shadow-xl max-sm:w-auto xl:h-[400px]"
           loop={true}
+          autoplay={true}
         >
           {mainpageCarousel.map((image) => (
             <img

@@ -134,11 +134,11 @@
 
   .wrapper-outer {
     /* border: 1px solid red; */
-    height: fit-content;
+    height: 80vh;
     margin-inline: auto;
-    max-inline-size: 700px;
+    max-inline-size: 900px;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     justify-items: center;
   }
@@ -148,6 +148,7 @@
     margin-inline: auto;
     margin-block: 2rem;
     padding: 1rem;
+    margin: 1rem;
   }
 
   .bg-grid {
@@ -158,4 +159,32 @@
   .dark .bg-grid {
     @apply bg-dark-primary bg-[linear-gradient(hsla(0,9%,85%,0.3)_1px,transparent_1px),linear-gradient(90deg,hsla(0,9%,85%,0.3)_1px,transparent_1px)];
   }
+  #qr-reader {
+    @apply my-4 p-2;
+  }
+
+  #qr-shaded-region {
+    @apply rounded-xl;
+  }
+}
+
+.swiper {
+  display: grid;
+  width: 70vw;
+  height: 50vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  width: 150px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #122653 !important;
 }
