@@ -159,3 +159,24 @@
     @apply bg-dark-primary bg-[linear-gradient(hsla(0,9%,85%,0.3)_1px,transparent_1px),linear-gradient(90deg,hsla(0,9%,85%,0.3)_1px,transparent_1px)];
   }
 }
+
+.swiper {
+  display: grid;
+  width: 70vw;
+  height: 50vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  width: 150px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
