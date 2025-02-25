@@ -21,7 +21,7 @@ const QRScanner = ({ scannerRef, stopScanning, setIsScanning, isScanning }) => {
           { facingMode: "environment" }, // Use rear camera if available
           { fps: 10, qrbox: { width: 250, height: 250 } },
           (decodedText) => {
-            window.location.href = decodedText;
+            window.location.replace(decodedText);
             stopScanning();
           },
           (error) => {
