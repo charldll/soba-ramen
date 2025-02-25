@@ -1,38 +1,46 @@
 /* eslint-disable react/prop-types */
-import { Html5QrcodeScanner } from "html5-qrcode";
-import { useEffect, useRef } from "react";
+import { Html5Qrcode } from "html5-qrcode";
+import { useEffect } from "react";
 
-const QRScanner = ({ onScannerClose }) => {
-  const scannerRef = useRef(null);
-
+const QRScanner = ({ scannerRef, stopScanning, setIsScanning, isScanning }) => {
   useEffect(() => {
-    if (!scannerRef.current) {
-      scannerRef.current = new Html5QrcodeScanner(
-        "qr-reader",
-        { fps: 5, qrbox: { width: 250, height: 250 } },
-        false,
-      );
-
-      scannerRef.current.render(
-        (decodedText) => {
-          window.location.href = decodedText;
-          if (scannerRef.current) {
-            scannerRef.current.clear();
-          }
-          onScannerClose();
-        },
-        (error) => {
-          console.warn(error);
-        },
-      );
+    if (!isScanning) {
+      stopScanning();
+      return;
     }
-    return () => {
+
+    const startScanner = async () => {
       if (scannerRef.current) {
-        scannerRef.current.clear().catch(console.error);
-        scannerRef.current = null;
+        await stopScanning(); // Ensure previous instance is stopped before starting a new one
+      }
+
+      scannerRef.current = new Html5Qrcode("qr-reader");
+
+      try {
+        await scannerRef.current.start(
+          { facingMode: "environment" }, // Use rear camera if available
+          { fps: 10, qrbox: { width: 250, height: 250 } },
+          (decodedText) => {
+            window.location.href = decodedText;
+            stopScanning();
+          },
+          (error) => {
+            console.warn(error);
+          },
+        );
+        setIsScanning(true);
+      } catch (err) {
+        console.error("Failed to start scanner", err);
       }
     };
-  }, [onScannerClose]);
+
+    startScanner();
+
+    return () => {
+      stopScanning();
+    };
+  }, [isScanning]);
+
   return <div id="qr-reader" className="mx-auto w-full max-w-sm"></div>;
 };
 

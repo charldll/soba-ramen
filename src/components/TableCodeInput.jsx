@@ -4,10 +4,11 @@ import { useNavigate } from "react-router";
 import useCode from "../hooks/useCode";
 import QRScanner from "./QRScanner";
 import { Camera } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const TableCodeInput = ({ onValidCode }) => {
-  const [isScanner, setIsScanner] = useState(false);
+  const [isScanning, setIsScanning] = useState(false);
+  const scannerRef = useRef(null);
   const navigate = useNavigate();
   const { code, setCode, loggedTable, error, verifyCode } =
     useCode(onValidCode);
@@ -20,6 +21,13 @@ const TableCodeInput = ({ onValidCode }) => {
     const tableId = await verifyCode(newCode);
     if (tableId) {
       navigate(`/custom-ramen/${tableId}`);
+    }
+  };
+  const stopScanning = async () => {
+    if (scannerRef.current && isScanning) {
+      await scannerRef.current.stop().catch(console.error);
+      scannerRef.current = null;
+      setIsScanning(false);
     }
   };
 
@@ -39,15 +47,22 @@ const TableCodeInput = ({ onValidCode }) => {
               />
               <button
                 type="button"
-                className="bg-logo-blue text-our-cream cursor-pointer rounded-md px-4"
-                onClick={() => setIsScanner(true)}
+                className="bg-logo-blue text-our-cream cursor-pointer rounded-md px-4 disabled:bg-green-300"
+                onClick={() => {
+                  setIsScanning(!isScanning);
+                }}
               >
                 <Camera size={32} />
               </button>
               {error && <p className="text-sm text-red-500">{error}</p>}
             </div>
-            {isScanner && (
-              <QRScanner onScannerClose={() => setIsScanner(false)} />
+            {isScanning && (
+              <QRScanner
+                isScanning={isScanning}
+                setIsScanning={setIsScanning}
+                scannerRef={scannerRef}
+                stopScanning={stopScanning}
+              />
             )}
           </>
         ) : (
