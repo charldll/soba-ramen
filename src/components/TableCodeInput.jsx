@@ -7,10 +7,12 @@ import { useState, useRef, useEffect } from "react";
 
 import QRScanner from "./QRScanner";
 import { disableFirefoxOnIphone } from "../utils/disableFirefoxOnIphone";
+import { disableIfNoCamera } from "../utils/disableIfNoCamera";
 
 const TableCodeInput = ({ onValidCode }) => {
   const [isScanning, setIsScanning] = useState(false);
-  const [isFirefox, setIsFirefox] = useState(false);
+  const [isFirefox, setIsFirefox] = useState(null);
+  const [hasCamera, setHasCamera] = useState(null);
   const scannerRef = useRef(null);
   const navigate = useNavigate();
   const { code, setCode, loggedTable, error, verifyCode } =
@@ -18,6 +20,7 @@ const TableCodeInput = ({ onValidCode }) => {
 
   useEffect(() => {
     disableFirefoxOnIphone(setIsFirefox);
+    disableIfNoCamera(setHasCamera);
   }, []);
 
   const handleCodeChange = async (e) => {
@@ -52,7 +55,7 @@ const TableCodeInput = ({ onValidCode }) => {
                 className="w-full rounded-lg border px-4 py-2 text-blue-500 transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                 autoFocus
               />
-              {!isFirefox && (
+              {!isFirefox && hasCamera && (
                 <button
                   type="button"
                   className="bg-logo-blue text-our-cream cursor-pointer rounded-md px-4 disabled:bg-green-300"
