@@ -2,32 +2,18 @@ import BlurText from "../utils/animations/BlurText";
 import Image from "../Layout/imgs/about.webp";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import AboutTeam from "../components/AboutTeam";
-import { useEffect, useState } from "react";
+import ImageWithLoader from "../components/ImageWithLoader";
 
 export default function About() {
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 100);
-  }, []);
   return (
     <main>
       <div className="relative w-full lg:h-[70vh]">
-        {isLoading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-current">
-            <p className="text-gray-600">Ładowanie...</p>
-          </div>
-        )}
-        <img
+        <ImageWithLoader
           src={Image}
-          loading="eager"
-          className={`h-[30vh] w-full object-cover transition-opacity duration-500 lg:h-[70vh] lg:object-[0%_55%] ${isLoading ? "opacity-0" : "opacity-100"}`}
-          onLoad={() => setIsLoading(false)}
           alt="Miska ramenu"
+          className="h-[30vh] w-full object-cover transition-opacity duration-300 lg:h-[70vh] lg:object-[0%_55%]"
         />
-        <div className="bg-photo-layer absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center">
           <BlurText
             text="Poznaj nas bliżej!"
             delay={150}
@@ -38,7 +24,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="my-4 mx-auto w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
+      <div className="mx-auto my-4 w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
         <section>
           <h1 className="text-menu-red mb-10 text-center text-3xl font-bold md:text-4xl">
             Nasza misja
