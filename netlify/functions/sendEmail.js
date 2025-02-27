@@ -54,12 +54,7 @@ export async function handler(event) {
         border-radius: 5px;
       "
     >
-      <img
-        src="./src/Layout/imgs/soba-logo-dark.svg"
-        alt="Soba Ramen Logo"
-        height="40"
-        width="80"
-      />
+    
       <h2 style="font-size: 24px; font-weight: bold">
         Dziękujemy za wiadomość!
       </h2>

@@ -1,8 +1,9 @@
 import BlurText from "../utils/animations/BlurText";
 import Image from "../Layout/imgs/about.jpg";
 import ScrollToTopButton from "../components/ScrollToTopButton";
-import AboutTeam from "../components/AboutTeam";
+import AboutTeamCard from "../components/AboutTeamCard";
 import ImageWithLoader from "../components/ImageWithLoader";
+import teamDetails from "../data/teamDetails";
 
 export default function About() {
   return (
@@ -53,7 +54,19 @@ export default function About() {
             coś wyjątkowego do naszej ramenowni – od sztuki kulinarnej, przez
             kreatywność, aż po ciepłą, przyjazną atmosferę.
           </p>
-          <AboutTeam id="team"></AboutTeam>
+          <div
+            id="team"
+            className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {teamDetails.map((person) => (
+              <AboutTeamCard
+                key={person.name}
+                name={person.name}
+                image={person.image}
+                description={person.descritpion}
+              />
+            ))}
+          </div>
           <p className="mt-20 text-center text-lg leading-relaxed text-gray-700 md:text-justify md:text-xl">
             <span className="text-menu-red font-semibold">
               Razem tworzymy coś więcej niż restaurację{" "}
