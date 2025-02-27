@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Grid dla sekcji */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr]">
             {/* Logo i slogan */}
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center md:items-start ">
               <img src={LogoFooter} alt="Soba Ramen" className="mb-2 w-27" />
               <p className="text-sm">
                 Mistrzostwo smaku <br></br> w każdej misce
@@ -43,20 +43,20 @@ export default function Footer() {
                 <NavLink
                   to="https://www.instagram.com/soba.ramen1/"
                   target="_blank"
-                  className={"flex items-center gap-2"}
+                  className={"flex items-center gap-2 hover:underline"}
                 >
                   <Instagram />
-                  <span className="hover:underline">soba.ramen1</span>
+                  <span>soba.ramen1</span>
                 </NavLink>
               </div>
               <div className="flex items-center gap-2">
                 <NavLink
                   to="https://www.facebook.com/soba.ramen2/"
                   target="_blank"
-                  className={"flex items-center gap-2"}
+                  className={"flex items-center gap-2 hover:underline"}
                 >
                   <Facebook />
-                  <span className="hover:underline">soba.ramen2</span>
+                  <span>soba.ramen2</span>
                 </NavLink>
               </div>
             </div>
