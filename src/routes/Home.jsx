@@ -5,7 +5,7 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <main className="mx-auto my-4 h-fit max-w-[700px] justify-center overflow-y-clip p-4 xl:max-w-[1200px]">
-      <h1 className="animate-slide font-abril mb-2 p-2 text-center text-2xl uppercase md:text-4xl lg:text-5xl">
+      <h1 className="animate-slide font-krona mb-2 p-2 text-center text-2xl uppercase md:text-4xl lg:text-5xl tracking-[-0.1em]">
         Mistrzostwo{" "}
         <span className="text-menu-red animate-blur font-semibold">smaku</span>{" "}
         w każdej misce

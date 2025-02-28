@@ -26,16 +26,25 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
           className='mySwiper'
           breakpoints={{
           0: {
+            slidesPerView: 1.2,
+          },
+          375: {
             slidesPerView: 1.5,
           },
-          640: {
+          450: {
             slidesPerView: 2,
           },
-          768: {
+          600: {
+            slidesPerView: 2.5,
+          },
+          780: {
             slidesPerView: 3,
           },
-          1024: {
+          930: {
             slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 4.5,
           },
         }}>
         {soupBase.map((ingredient) => (
