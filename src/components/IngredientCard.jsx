@@ -3,8 +3,7 @@ import { useState } from "react";
 import {
   Popover,
   PopoverHandler,
-  PopoverContent,
-  Button
+  PopoverContent
 } from '@material-tailwind/react';
 import { Info } from 'lucide-react';
 
@@ -18,9 +17,9 @@ const IngredientCard = ({ ingredient, selectedItems, toggleItem }) => {
   
   return (
     <div
-      className={`cursor-pointer grid grid-rows-[min-content] gap-[1rem] p-[1rem] bg-[white] rounded-[1rem] shadow-md snap-start ${
+      className={`cursor-pointer grid grid-rows-[min-content] gap-[0.5rem] p-[0.5rem] bg-[white] rounded-[1rem] shadow-md snap-start ${
         selectedItems.some((i) => i.name === ingredient.name)
-          ? "outline-4 outline-amber-100 -outline-offset-4"
+          ? "outline-4 outline-[#122653] -outline-offset-4"
           : ""
       }`}
       onClick={() => toggleItem(ingredient)}>

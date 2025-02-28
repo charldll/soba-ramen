@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import "tailwindcss";
 
@@ -6,6 +7,7 @@
 
 @theme {
   --font-abril: "Abril Fatface", serif;
+  --font-krona: "Krona One", sans-serif;
   --color-logo-blue: #024b78;
   --color-our-cream: #e6e1e7;
   --color-menu-red: #af282f;
@@ -177,7 +179,6 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  width: 150px;
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
