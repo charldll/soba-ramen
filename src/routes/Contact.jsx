@@ -1,8 +1,7 @@
 import Map from "../components/GoogleMaps";
 import ContactForm from "../components/ContactForm";
-import Żaklina from "../Layout/imgs/Żaklina.png";
-import Inga from "../Layout/imgs/Inga.png";
-import Agnieszka from "../Layout/imgs/Agnieszka.png";
+import AboutTeamCard from "../components/AboutTeamCard";
+import teamDetails from "../data/teamDetails";
 
 const Contact = () => {
   return (
@@ -31,24 +30,14 @@ const Contact = () => {
             <Map />
           </div>
         </div>
-        <div className="flex flex-row items-center ">
+        <div className="flex flex-row items-center">
           <ContactForm></ContactForm>
           <div className="sr-only sm:not-sr-only">
-          <img
-            src={Żaklina}
-            alt="Żaklina"
-            className=" h-50 w-50 transform rounded-full object-cover transition duration-300 hover:scale-110"
-          />
-          <img
-            src={Inga}
-            alt="Inga"
-            className="h-50 w-50 translate-y-[-10%] transform rounded-full object-cover transition duration-300 hover:scale-110"
-          />
-          <img
-            src={Agnieszka}
-            alt="Agnieszka"
-            className="h-50 w-50 translate-y-[-20%] transform rounded-full object-cover transition duration-300 hover:scale-110"
-          />
+            <div id="team" className="">
+              {teamDetails.map((person) => (
+                <AboutTeamCard key={person.name} image={person.image} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
