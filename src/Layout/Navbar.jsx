@@ -6,7 +6,7 @@ import AppMobileMenuNavLink from "./components/AppMobileMenuNavLink.jsx";
 import Logo from "./imgs/soba-logo.svg";
 
 const navigation = [
-  { name: "Menu", href: "/menu" },
+  { name: "Home", href: "/home" },
   { name: "Stwórz ramen", href: "/custom-ramen" },
   { name: "Poznaj nas", href: "/about" },
   { name: "Kontakt", href: "/contact" },
@@ -28,15 +28,24 @@ export default function Navbar() {
               </div>
               <div className="flex basis-4/5 sm:ml-6 sm:block">
                 <div className="flex justify-end space-x-4 max-sm:hidden">
-                  {navigation.map((item) => (
-                    <AppNavLink
-                      key={item.name}
-                      to={item.href}
-                      location={location}
-                    >
-                      {item.name}
-                    </AppNavLink>
-                  ))}
+                  {navigation
+                    .filter(
+                      (item) =>
+                        !(
+                          (location.pathname === "/" ||
+                            location.pathname === "/home") &&
+                          item.href === "/home"
+                        ),
+                    )
+                    .map((item) => (
+                      <AppNavLink
+                        key={item.name}
+                        to={item.href}
+                        location={location}
+                      >
+                        {item.name}
+                      </AppNavLink>
+                    ))}
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
