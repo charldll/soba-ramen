@@ -56,16 +56,25 @@ export default function Navbar() {
 
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map((item) => (
-                <AppMobileMenuNavLink
-                  key={item.name}
-                  to={item.href}
-                  location={location}
-                  onClick={() => close()}
-                >
-                  {item.name}
-                </AppMobileMenuNavLink>
-              ))}
+              {navigation
+                .filter(
+                  (item) =>
+                    !(
+                      (location.pathname === "/" ||
+                        location.pathname === "/home") &&
+                      item.href === "/home"
+                    ),
+                )
+                .map((item) => (
+                  <AppMobileMenuNavLink
+                    key={item.name}
+                    to={item.href}
+                    location={location}
+                    onClick={() => close()}
+                  >
+                    {item.name}
+                  </AppMobileMenuNavLink>
+                ))}
             </div>
           </DisclosurePanel>
         </>
