@@ -11,7 +11,8 @@ const KitchenOrderCard = ({
   serveOrder,
   formatTime,
 }) => {
-  const parsedDishItems = order.dish_items ? JSON.parse(order.dish_items) : [];
+  const parsedDishItems = JSON.parse(order?.dish_items);
+
   return (
     <section>
       <div className="border-logo-blue bg-our-cream dark:bg-dark-secondary animate-fade-in dark:border-dark-tertiary flex h-full min-h-[250px] flex-col justify-between space-y-4 rounded-lg border-2 p-6 shadow-xl">

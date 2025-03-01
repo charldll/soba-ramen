@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
+
 const AboutTeamCard = ({ name, description, image }) => {
   return (
     <>
@@ -15,6 +16,13 @@ const AboutTeamCard = ({ name, description, image }) => {
       </div>
     </>
   );
+};
+
+// propTypes after the component is declared
+AboutTeamCard.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default AboutTeamCard;

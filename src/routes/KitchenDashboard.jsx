@@ -9,6 +9,7 @@ import Logo from "../Layout/imgs/soba-logo.svg";
 import KitchenOrderCard from "../components/KitchenOrderCard";
 
 import ToggleThemeButton from "../components/ToggleThemeButton";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const KitchenDashboard = () => {
   const { orders, formatTime, deleteOrder, serveOrder } = useKitchen();
@@ -43,7 +44,7 @@ const KitchenDashboard = () => {
       </div>
       <main className="mx-auto max-w-7xl p-2">
         <h1 className="dark:text-our-cream mx-auto flex w-fit flex-col rounded-md px-6 py-3 text-center text-xl font-bold sm:flex-row xl:text-4xl">
-          ZAMÓWIENIA <span className="ml-4"> {getCurrentDate()}</span>
+          ZAMÓWIENIA <span className="sm:ml-4"> {getCurrentDate()}</span>
         </h1>
 
         {orders.length === 0 && (
@@ -66,6 +67,7 @@ const KitchenDashboard = () => {
             />
           ))}
         </div>
+        <ScrollToTopButton />
       </main>
     </div>
   );

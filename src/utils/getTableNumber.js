@@ -8,6 +8,8 @@ export const getTableNumber = (id) => {
       return "Stolik 3";
     case "2a367db7-6c5e-44e4-9c69-28cfc09bdbde":
       return "Stolik 4";
+    case "66a23736-38b9-4378-8a25-d6a03fbbb55a":
+      return "Loża VIP";
     default:
       return "Błąd stolika. Zapytać kelnera";
   }

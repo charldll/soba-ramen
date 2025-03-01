@@ -7,7 +7,7 @@ const ButtonComponent = ({ className, children, onClick, disabled, type }) => {
   return (
     <button
       className={twMerge(
-        "cursor-pointer rounded-md px-9 py-3 transition duration-500 ease-in-out hover:bg-gray-700 hover:text-[#dbd4d4c3]",
+        "cursor-pointer rounded-md px-9 py-3 transition duration-500 ease-in-out hover:bg-gray-700 hover:text-[#dbd4d4c3] disabled:cursor-not-allowed",
         className,
       )}
       onClick={onClick}
