@@ -3,7 +3,6 @@ import { NavLink } from "react-router";
 import { classNames } from "../../utils/class-names";
 
 //Opisuje typ parametru, czy jest wymagany - moje założenia, jaki typ parametru ma być.
-// TODO: Poczytać o PropTypes
 AppNavLink.propTypes = {
   to: PropTypes.string.isRequired,
   location: PropTypes.shape({
@@ -23,7 +22,7 @@ export default function AppNavLink({ to, location, children }) {
       className={classNames(
         isActive
           ? "bg-[#122653] text-[#f9f3ed]"
-          : "text-[#E6E1E7] hover:shadow-md hover:bg-[#bf2821] hover:text-[#f9f3ed]",
+          : "text-[#E6E1E7] hover:bg-[#bf2821] hover:text-[#f9f3ed] hover:shadow-md",
         "relative rounded-md px-3 py-2 text-sm font-semibold",
         isRamen && !isOnRamenPage ? "animate-pulse" : "",
       )}

@@ -8,13 +8,14 @@ import Layout from "./Layout/index.jsx";
 import Contact from "./routes/Contact.jsx";
 import RamenComponent from "./routes/RamenComponent.jsx";
 import Home from "./routes/Home.jsx";
-import Menu from "./routes/Menu.jsx";
+// import Menu from "./routes/Menu.jsx";
 import About from "./routes/About.jsx";
 import Admin from "./routes/Admin.jsx";
 import PageNotFound from "./routes/PageNotFound.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import ProtectedRoute from "./Layout/components/ProtectedRoute.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,9 +23,16 @@ createRoot(document.getElementById("root")).render(
       <ThemeProvider>
         <AuthProvider>
           <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route
+              path="/"
+              element={
+                <ScrollToTop>
+                  <Layout />
+                </ScrollToTop>
+              }
+            >
               <Route index element={<Home />} />
-              <Route path="/menu" element={<Menu />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path="/admin" element={<Admin />} />
