@@ -29,7 +29,9 @@ const OrderSummary = ({
         <ul className="text-center">
           {selectedItems.map((item, index) => (
             <li key={item.name}>
-              {index === 0 || index === 1 ? null : (
+              {index === 0 ||
+              index === 1 ||
+              selectedItems.length === 3 ? null : (
                 <button
                   className="cursor-pointer"
                   onClick={() => removeFromSelectedItems(item.name)}
