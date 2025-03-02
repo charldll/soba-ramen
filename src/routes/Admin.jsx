@@ -54,7 +54,7 @@ const AdminLogin = () => {
   }
 
   return (
-    <main className="my-4 flex min-h-[80vh] flex-col items-center justify-center p-4">
+    <main className="my-4 flex min-h-[80vh] flex-col items-center p-4 sm:justify-center">
       <h1 className="text-center text-xl text-pretty md:text-3xl">
         Logowanie do panelu administracyjnego*
       </h1>
@@ -63,13 +63,13 @@ const AdminLogin = () => {
       )}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex justify-center rounded-md px-4 py-8"
+        className="flex w-full justify-center rounded-md px-1 py-8 sm:max-w-sm"
       >
-        <div className="flex flex-col gap-2">
+        <div className="flex w-full flex-col gap-2">
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            className="w-56 rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
+            className="rounded-md border p-2 focus:ring-1 focus:outline-none"
             autoComplete="off"
             type="email"
             placeholder="Admin Email"
@@ -81,17 +81,17 @@ const AdminLogin = () => {
             })}
           />
           <label htmlFor="password">Hasło</label>
-          <div className="relative flex w-56 justify-center gap-2 sm:w-64">
+          <div className="relative flex justify-center gap-2">
             <input
               id="password"
-              className="relative w-56 rounded-md border p-2 focus:ring-1 focus:outline-none sm:w-64"
+              className="w-full rounded-md border p-2 focus:ring-1 focus:outline-none"
               placeholder="Hasło"
               type={showPassword ? undefined : "password"}
               {...register("password", { required: true })}
             />
             <button
               type="button"
-              className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer rounded-md"
+              className="absolute top-1/2 right-3 z-10 -translate-y-1/2 cursor-pointer rounded-md"
               onClick={() => {
                 setShowPassword(!showPassword);
               }}
@@ -102,7 +102,7 @@ const AdminLogin = () => {
           <ButtonComponent
             type="submit"
             disabled={isSubmitting}
-            className="mt-8 flex w-56 items-center justify-center bg-[#E14F52] font-semibold sm:w-64"
+            className="mt-8 flex w-full items-center justify-center bg-[#E14F52] font-semibold"
           >
             {isSubmitting ? (
               <>
@@ -118,7 +118,7 @@ const AdminLogin = () => {
           </ButtonComponent>
         </div>
       </form>
-      <h2 className="mx-auto w-fit text-xs">
+      <h2 className="mx-auto w-fit text-center text-xs">
         * Chcesz dołączyć do zespołu? Zostaw nam swoje CV.
       </h2>
     </main>
