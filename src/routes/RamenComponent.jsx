@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 
@@ -8,14 +7,15 @@ import OrderSummary from "../components/OrderSummary";
 import OrderConfirmation from "../components/OrderConfirmation";
 import useOrder from "../hooks/useOrder";
 import ProgressButtons from "../components/ProgressButtons";
-import SoupBase from '../components/SoupBase';
-import NoodleChoice from '../components/NoodleChoice';
+import SoupBase from "../components/SoupBase";
+import NoodleChoice from "../components/NoodleChoice";
 
 const RamenComponent = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const {
     selectedItems,
+    setSelectedItems,
     totalPrice,
     toggleItem,
     placeOrder,
@@ -58,17 +58,17 @@ const RamenComponent = () => {
   };
 
   const steps = [
-    { icon: "", label: "One"},
-    { icon: "", label: "Two"},
-    { icon: "", label: "Three"},
-    { icon: "", label: "Four"},
-    { icon: "", label: "Five"}
+    { icon: "", label: "One" },
+    { icon: "", label: "Two" },
+    { icon: "", label: "Three" },
+    { icon: "", label: "Four" },
+    { icon: "", label: "Five" },
   ];
 
   const renderStepContent = () => {
     switch (activeStep) {
       case 0:
-        return <TableCodeInput onValidCode={handleCodeValidation} />
+        return <TableCodeInput onValidCode={handleCodeValidation} />;
       case 1:
         return (
           <div className="wrapper-inner">
@@ -76,18 +76,18 @@ const RamenComponent = () => {
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
               onClick={handleNext}
-              />
+            />
           </div>
         );
       case 2:
         return (
-          <div className='wrapper-inner'>
+          <div className="wrapper-inner">
             <NoodleChoice
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
               handleNext={handleNext}
               handlePrev={handlePrev}
-              />
+            />
           </div>
         );
       case 3:
@@ -105,13 +105,14 @@ const RamenComponent = () => {
         return (
           <OrderSummary
             selectedItems={selectedItems}
+            setSelectedItems={setSelectedItems}
             totalPrice={totalPrice}
             placeOrder={handlePlaceOrder}
             onClick={handlePrev}
           />
-        )
+        );
       case 5:
-        return <OrderConfirmation/>
+        return <OrderConfirmation />;
       default:
         null;
     }
@@ -119,7 +120,7 @@ const RamenComponent = () => {
 
   return (
     <main className="wrapper-outer">
-      <ProgressButtons activeStep={activeStep} steps={steps}/>
+      <ProgressButtons activeStep={activeStep} steps={steps} />
       {renderStepContent()}
     </main>
   );
