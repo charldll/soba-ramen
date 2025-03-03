@@ -63,7 +63,6 @@ const NoodleChoice = ({ selectedItems, chooseOneOptionOnly, handleNext, handlePr
 				</Swiper>
 			</div>
 			<div className='flex gap-2 justify-end items-center'>
-				{selectedNone && <p>Nie wybrano makaronu</p>}
 				<ButtonComponent
 					className='my-4 uppercase text-[white] bg-[#c66268] disabled:bg-[#d3c7d2] disabled:cursor-not-allowed'
 					onClick={handlePrev}>
@@ -76,6 +75,7 @@ const NoodleChoice = ({ selectedItems, chooseOneOptionOnly, handleNext, handlePr
 					Dalej
 				</ButtonComponent>
 			</div>
+			{selectedNone && <p className='flex uppercase justify-end font-light tracking-tighter'>Nie wybrano makaronu</p>}
     </section>
   );
 };
