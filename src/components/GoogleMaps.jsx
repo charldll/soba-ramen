@@ -23,21 +23,20 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_MAP_API;
 
 export default function MyGoogleMap() {
   return (
-    
-    <div className=" border rounded-2xl overflow-clip">
-    <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
-      <Map
-        id="map"
-        mapId="bfa617ee01033f6c"
-        style={containerStyle}
-        defaultCenter={center}
-        defaultZoom={zoom}
-        gestureHandling={"auto"}
-        disableDefaultUI={false}
-      >
-        <MyGoogleMapContent />
-      </Map>
-    </APIProvider>
+    <div className="overflow-clip lg:rounded-xl lg:shadow-2xl">
+      <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
+        <Map
+          id="map"
+          mapId="bfa617ee01033f6c"
+          style={containerStyle}
+          defaultCenter={center}
+          defaultZoom={zoom}
+          gestureHandling={"auto"}
+          disableDefaultUI={false}
+        >
+          <MyGoogleMapContent />
+        </Map>
+      </APIProvider>
     </div>
   );
 }

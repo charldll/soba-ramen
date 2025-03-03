@@ -20,7 +20,7 @@ const ImageWithLoader = ({ src, alt, className }) => {
         alt={alt}
         onLoad={() => setLoaded(true)}
         onError={() => console.error("Błąd ładowania obrazka")}
-        style={{ display: loaded ? "block" : "none" }}
+        // style={{ display: loaded ? "block" : "none" }}
         className={className}
       />
     </div>
