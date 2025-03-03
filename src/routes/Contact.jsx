@@ -29,37 +29,53 @@ const Contact = () => {
 
   return (
     <main>
-      <div className="mx-auto my-4 w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-15 shadow-lg md:max-w-[90%] xl:max-w-[90%]">
-        <h1 className="animate-slide text-menu-red justify-center pb-10 text-center text-3xl font-bold md:text-4xl lg:text-4xl">
+      <div className="mx-auto my-4 flex w-full max-w-[95%] flex-col items-center gap-8 rounded-2xl bg-[#F6EFEF] py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
+        <h1 className="animate-slide border-menu-red border-b text-2xl font-bold md:text-3xl lg:border-none lg:text-4xl">
           Gdzie nas znajdziesz?
         </h1>
-
-        <div className="relative flex w-full flex-col-reverse gap-8 overflow-clip lg:flex-row lg:gap-1 lg:p-20 xl:mt-7 xl:gap-8">
-          <div className="animate-slide w-full overflow-clip lg:h-100 lg:w-200 lg:shadow-2xl">
+        {/*  Mapa + Informacje */}
+        <div className="lg:bg-logo-blue relative flex w-full flex-col-reverse gap-8 overflow-clip lg:flex-row lg:gap-1 lg:p-20 xl:mt-7 xl:gap-8">
+          {/* Mapa */}
+          <div className="animate-slide w-full shadow-black lg:h-96 lg:w-1/2">
             <Map />
           </div>
-          <div className="flex w-1/2 flex-col items-center justify-center gap-4 self-center text-center">
-            <p className="mt-2 text-lg font-semibold">Soba Ramen</p>
-            <p className="flex flex-col lg:text-lg">
-              ul. Kraszewskiego 1<span> 12-345 Ramenoland</span>
-            </p>
-            <h2 className="text-menu-red mt-6 text-2xl font-semibold">
-              Godziny otwarcia
-            </h2>
-            <p className="flex flex-col lg:text-lg">
-              Poniedziałek - Piątek <span>12:00 - 22:00</span>
-            </p>
-            <p className="flex flex-col lg:text-lg">
-              Sobota - Niedziela <span>13:00 - 23:00</span>
-            </p>
+
+          {/*Informacje */}
+          <div className="text-our-cream flex w-full flex-col items-center justify-center px-2 text-center lg:w-1/2 lg:p-6">
+            <div className="animate-slide-from-top absolute top-[-2%] hidden grid-cols-3 gap-2 overflow-clip lg:grid">
+              <div className="h-28 w-4 bg-[#F6EFEF]"></div>
+              <div className="bg-menu-red h-22 w-4"></div>
+              <div className="h-18 w-4 bg-[#F6EFEF]"></div>
+            </div>
+            <div className="animate-slide bg-logo-blue w-3/4 rounded-lg py-4 lg:animate-none">
+              <p className="font-semibold lg:text-2xl">Soba Ramen</p>
+              <p className="flex flex-col lg:text-lg">
+                ul. Kraszewskiego 1<span> 12-345 Ramenoland</span>
+              </p>
+
+              <h2 className="mt-6 font-semibold lg:text-2xl">
+                Godziny otwarcia
+              </h2>
+              <p className="flex flex-col lg:text-lg">
+                Poniedziałek - Piątek <span>12:00 - 22:00</span>
+              </p>
+              <p className="flex flex-col lg:text-lg">
+                Sobota - Niedziela <span>13:00 - 23:00</span>
+              </p>
+            </div>
+            <div className="animate-slide-from-bottom absolute bottom-[-2%] hidden grid-cols-3 items-baseline gap-2 overflow-clip lg:grid">
+              <div className="h-18 w-4 bg-[#F6EFEF]"></div>
+              <div className="h-22 w-4 bg-[#F6EFEF]"></div>
+              <div className="h-28 w-4 bg-[#F6EFEF]"></div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-row items-stretch justify-center">
+        <div className="flex w-full flex-row justify-center md:w-3/4 md:gap-2">
           <ContactForm />
 
-          <div className="bg-menu-red sr-only mx-4 flex w-full max-w-[200px] flex-col items-center justify-center gap-4 shadow-lg md:max-w-[500px] lg:not-sr-only lg:max-h-[600px] lg:max-w-[300px]">
-            <p className="text-semibold mb-6 text-center text-2xl text-white">
+          <div className="bg-menu-red sr-only mx-4 flex w-full max-w-[300px] flex-col items-center justify-center gap-4 rounded-lg shadow-lg lg:not-sr-only xl:max-h-[600px] 2xl:max-w-[500px]">
+            <p className="text-semibold mb-6 p-2 text-center text-2xl text-white">
               Nasz zespół chętnie Ci pomoże!
               <span>
                 {" "}

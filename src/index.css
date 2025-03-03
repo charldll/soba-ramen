@@ -78,6 +78,7 @@
       transform: translateY(0);
     }
   }
+
   --animate-scale-up: scale-up 1.5s linear 0.5s forwards;
 
   @keyframes scale-up {
