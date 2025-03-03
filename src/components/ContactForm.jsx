@@ -89,7 +89,7 @@ export default function ContactForm() {
       <div className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="glass-container rounded-xl border border-white/100 bg-white/10 p-6 shadow-xl shadow-gray-500 backdrop-blur-lg md:p-8 lg:p-10"
+          className="lg:border-menu-red rounded-lg p-6 md:p-8 lg:border-2"
           noValidate
         >
           <h2 className="mb-6 text-center text-2xl font-bold text-gray-800 md:mb-8 md:text-3xl lg:text-4xl">
