@@ -8,7 +8,11 @@ const ImageWithLoader = ({ src, alt, className }) => {
     <div>
       {!loaded && (
         <p className="absolute inset-0 flex items-center justify-center">
-          <img src={Logo} alt="Logo" className="w-50 h-50 animate-spin" />
+          <img
+            src={Logo}
+            alt="Logo"
+            className="h-[60px] w-[60px] animate-spin lg:h-[200px] lg:w-[200px]"
+          />
         </p>
       )}
       <img
@@ -20,7 +24,6 @@ const ImageWithLoader = ({ src, alt, className }) => {
         className={className}
       />
     </div>
-    
   );
 };
 

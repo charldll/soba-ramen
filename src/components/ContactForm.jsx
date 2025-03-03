@@ -89,8 +89,7 @@ export default function ContactForm() {
       <div className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="glass-container rounded-xl border border-white/100 bg-white/10 p-6 shadow-xl shadow-gray-500
- backdrop-blur-lg md:p-8 lg:p-10"
+          className="lg:border-menu-red rounded-lg p-6 md:p-8 lg:border-2"
           noValidate
         >
           <h2 className="mb-6 text-center text-2xl font-bold text-gray-800 md:mb-8 md:text-3xl lg:text-4xl">
@@ -141,7 +140,7 @@ export default function ContactForm() {
             <ButtonComponent
               type="submit"
               disabled={isSubmitting}
-              className="flex w-full transform items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 font-semibold text-white transition-all hover:scale-[1.02] hover:from-blue-600 hover:to-purple-600 disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 md:py-4"
+              className="bg-menu-red hover:bg-menu-red flex w-full transform items-center justify-center rounded-lg px-6 py-3 font-semibold text-white transition-all hover:scale-[1.02] disabled:scale-100 disabled:cursor-not-allowed disabled:opacity-50 md:py-4"
               onClick={async () => {
                 const isValid = await trigger();
                 if (!isValid) {

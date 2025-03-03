@@ -23,6 +23,8 @@ const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_MAP_API;
 
 export default function MyGoogleMap() {
   return (
+    
+    <div className=" border rounded-2xl overflow-clip">
     <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
       <Map
         id="map"
@@ -36,6 +38,7 @@ export default function MyGoogleMap() {
         <MyGoogleMapContent />
       </Map>
     </APIProvider>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 @import "tailwindcss";
 
@@ -60,6 +60,19 @@
     }
     80% {
       transform: translateY(-2%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  --animate-slide-from-top: slide-from-top 1.5s ease-in-out forwards;
+  @keyframes slide-from-top {
+    0% {
+      transform: translateY(-100%);
+    }
+    80% {
+      transform: translateY(2%);
     }
     100% {
       transform: translateY(0);
