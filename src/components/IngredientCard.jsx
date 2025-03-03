@@ -17,7 +17,7 @@ const IngredientCard = ({ ingredient, selectedItems, toggleItem }) => {
   
   return (
     <div
-      className={`cursor-pointer grid grid-rows-[min-content] gap-[0.5rem] p-[0.5rem] bg-[white] rounded-[1rem] shadow-md snap-start ${
+      className={`cursor-pointer grid grid-rows-[min-content] gap-[0.5rem] p-[0.5rem] m-0.25 bg-[white] rounded-[1rem] shadow-md snap-start ${
         selectedItems.some((i) => i.name === ingredient.name)
           ? "outline-4 outline-[#122653] -outline-offset-4"
           : ""
@@ -27,18 +27,22 @@ const IngredientCard = ({ ingredient, selectedItems, toggleItem }) => {
       <div>
         <Popover open={openPopover} handler={setOpenPopover} placement="bottom">
         <PopoverHandler {...triggers}>
-          <Info size={16}/>
+          <div className="inline-block ml-[0.1]">
+            <Info size={20} color="#af282f"/>
+          </div>
         </PopoverHandler>
         <PopoverContent className='z-50 max-w-[24rem]'>
-          <div className='mb-2 flex items-center justify-between gap-4'>
+          <div className='items-center justify-between'>
             {ingredient.details}
           </div>
         </PopoverContent>
       </Popover>
-      {ingredient.name}
+        <div className="font-semibold font-stretch-semi-condensed">
+          {ingredient.name}
+        </div>
       </div>
       <img className="w-full aspect-[9/10] object-fit" src={ingredient.src} />
-      <p className="w-fit mx-auto">
+      <p className="w-fit mx-auto font-semibold text-[20px]">
         <span>{ingredient.price},-</span>
       </p>
     </div>

@@ -6,10 +6,11 @@ const ProgressButtons = ({activeStep, steps})=> {
     return (
     <div className="w-[400px] items-center mx-auto">
         <Stepper 
-        activeStep={activeStep}>
+        activeStep={activeStep}
+        lineClassName="bg-[#d3c7d2]">
           {steps.map((step, i) => {
             return (
-              <Step key={i} className="w-4 h-4" activeClassName="bg-[#122653]" completedClassName="bg-[#122653]"/>
+              <Step key={i} className="w-4 h-4 bg-[#d3c7d2]" activeClassName="bg-[#122653]" completedClassName="bg-[#122653]"/>
             )
           })}
       </Stepper>

@@ -119,9 +119,11 @@ const RamenComponent = () => {
   };
 
   return (
-    <main className="wrapper-outer">
+    <main className="bg-[#e6e1e7] bg-[url(./Layout/imgs/fish.svg)] bg-no-repeat bg-blend-overlay bg-cover bg-[left_2rem_bottom_-7rem]">
+      <div className="wrapper-outer">
       <ProgressButtons activeStep={activeStep} steps={steps} />
       {renderStepContent()}
+      </div>
     </main>
   );
 };

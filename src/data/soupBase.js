@@ -31,6 +31,12 @@ export const soupBase = [
     },
     {
         src: Vegan,
+        name: "Seafood",
+        price: 10,
+        details: "Wywar rybny",
+    },
+    {
+        src: Vegan,
         name: "Vegan",
         price: 10,
         details: "Wywar warzywny",

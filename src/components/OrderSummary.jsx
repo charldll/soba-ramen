@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import ButtonComponent from "./ButtonComponent";
 import Bowl from "../Layout/imgs/favicon.svg";
+import { CircleMinus } from 'lucide-react';
 
 const OrderSummary = ({
   selectedItems,
@@ -25,7 +26,7 @@ const OrderSummary = ({
       <p className="font-krona text-center text-2xl uppercase">{loggedTable}</p>
       <br />
       <div className="rounded-[1rem] bg-[white] p-[0.5rem] text-center shadow-md">
-        <img className="m-auto" src={Bowl} width={"60px"} />
+        <img className="m-auto mb-2" src={Bowl} width={"60px"} color="gray"/>
         <ul className="text-center">
           {selectedItems.map((item, index) => (
             <li key={item.name}>
@@ -36,7 +37,7 @@ const OrderSummary = ({
                   className="cursor-pointer"
                   onClick={() => removeFromSelectedItems(item.name)}
                 >
-                  X
+                  <CircleMinus size={12} className="mr-1"/>
                 </button>
               )}
               <b>{item.name}:</b> {item.price},-

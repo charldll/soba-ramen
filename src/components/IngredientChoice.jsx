@@ -14,6 +14,9 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
 
   return (
     <section className="w-full max-w-[70rem] mx-auto px-2">
+      <div className='text-center uppercase text-2xl mb-2 font-krona'>
+        Wybierz dodatki
+      </div>
       <div className="flex max-w-[750px]">
       <Swiper
           slidesPerView={3.5}
@@ -38,13 +41,13 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
               slidesPerView: 2.5,
             },
             780: {
-              slidesPerView: 3,
+              slidesPerView: 2.7,
             },
             930: {
-              slidesPerView: 4,
+              slidesPerView: 3.1,
             },
             1024: {
-              slidesPerView: 4.5,
+              slidesPerView: 3.7,
             },
           }}>
         {ingredientsData.map((ingredient) => (
