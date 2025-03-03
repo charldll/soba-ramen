@@ -48,6 +48,7 @@ export default function Footer() {
                   to="https://www.instagram.com/soba.ramen1/"
                   target="_blank"
                   className={"flex items-center gap-2 hover:underline"}
+                  aria-label="Odwiedź nasz profil na Instagramie"
                 >
                   <Instagram />
                   <span>soba.ramen1</span>
@@ -58,6 +59,7 @@ export default function Footer() {
                   to="https://www.facebook.com/soba.ramen2/"
                   target="_blank"
                   className={"flex items-center gap-2 hover:underline"}
+                  aria-label="Odwiedź nasz profil na Facebooku"
                 >
                   <Facebook />
                   <span>soba.ramen2</span>
