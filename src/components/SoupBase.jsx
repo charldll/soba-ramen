@@ -15,7 +15,7 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
   return (
     <section className='w-full max-w-[70rem] mx-auto px-2'>
       <div className='text-center uppercase text-2xl mb-2 font-krona'>
-        Wybierz bazę ramenu
+        Wybierz wywar
       </div>
       <div className="flex max-w-[750px]">
 				<Swiper
@@ -62,7 +62,6 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
         </Swiper>
       </div>
       <div className="flex gap-2 justify-end items-center">
-        {selectedNone && <p>Nie wybrano bazy</p>}
         <ButtonComponent
           className='my-4 text-[white] uppercase bg-[#af282f] disabled:bg-[#d3c7d2] disabled:cursor-not-allowed font-semibold'
           onClick={onClick}
@@ -70,6 +69,7 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
           	Dalej
         </ButtonComponent>
       </div>
+      {selectedNone && <p className='flex uppercase justify-end font-light tracking-tighter'>Nie wybrano bazy</p>}
     </section>
   );
 };

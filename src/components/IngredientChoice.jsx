@@ -63,7 +63,6 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
       </div>
 
       <div className="flex gap-2 justify-end items-center">
-        {selectetItemsEmpty && <p>Nie wybrano składników</p>}
         <ButtonComponent
           className="my-4 uppercase text-[white] bg-[#c66268] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed"
           onClick={handlePrev}>
@@ -76,6 +75,7 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
           Dalej
         </ButtonComponent>
       </div>
+      {selectetItemsEmpty && <p className='flex uppercase justify-end font-light tracking-tighter'>Nie wybrano składników</p>}
     </section>
   );
 };
