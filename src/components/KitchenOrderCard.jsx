@@ -11,7 +11,10 @@ const KitchenOrderCard = ({
   serveOrder,
   formatTime,
 }) => {
-  const parsedDishItems = JSON.parse(order?.dish_items);
+  // const parsedDishItems = JSON.parse(order?.dish_items);
+  const parsedDishItems = order?.dish_items
+    ? JSON.parse(order.dish_items)
+    : [{ name: "Konsumpcja w toku" }];
 
   return (
     <section>

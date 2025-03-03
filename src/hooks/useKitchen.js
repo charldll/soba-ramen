@@ -101,23 +101,37 @@ const useKitchen = () => {
 
   const serveOrder = async (orderId) => {
     try {
-      const { data, error } = await supabase
+      // Update
+      const { error } = await supabase
         .from("orders")
         .update({ isServed: true })
-        .eq("id", orderId)
-        .select();
+        .eq("id", orderId);
+
       if (error) {
         console.error("Error serving order:", error);
-      } else {
-        console.log("Order served successfully:", data);
-
-        // Update state immediately after serving order
-        setOrders((currentOrders) =>
-          currentOrders.map((order) =>
-            order.id === orderId ? { ...order, isServed: true } : order,
-          ),
-        );
+        return;
       }
+
+      // Fetch after updating
+      const { data, error: fetchError } = await supabase
+        .from("orders")
+        .select("*")
+        .eq("id", orderId)
+        .single(); // Fetches only the updated order
+
+      if (fetchError) {
+        console.error("Error fetching updated order:", fetchError);
+        return;
+      }
+
+      // console.log("Updated order after serving:", data);
+
+      // Update of state with the full order object
+      setOrders((currentOrders) =>
+        currentOrders.map(
+          (order) => (order.id === orderId ? data : order), // Replaces only the updated order
+        ),
+      );
     } catch (error) {
       console.error("Unexpected error:", error);
     }
