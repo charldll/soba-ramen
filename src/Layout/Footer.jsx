@@ -10,21 +10,25 @@ export default function Footer() {
           {/* Grid dla sekcji */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr]">
             {/* Logo i slogan */}
-            <div className="flex flex-col items-center md:items-start ">
-              <img src={LogoFooter} alt="Soba Ramen" className="mb-2 w-27" />
-              <p className="text-sm">
+            <div className="flex flex-col items-center md:items-start">
+              <img
+                src={LogoFooter}
+                alt="Soba Ramen"
+                className="mb-2 w-19 lg:w-24"
+              />
+              <p className="text-xs lg:text-sm">
                 Mistrzostwo smaku <br></br> w każdej misce
               </p>
             </div>
 
             {/* Kontakt */}
-            <div className="flex flex-col items-center text-sm md:items-start">
+            <div className="flex flex-col items-center text-xs md:items-start lg:text-sm">
               <h6 className="mb-4 font-semibold uppercase">
                 Skontaktuj się z nami
               </h6>
               <div className="mb-2 flex items-center gap-2">
                 <MapPinned />
-                <span>Ramenowa 6/3, Ramenoland</span>
+                <span>Kraszewskiego 1, Ramenoland</span>
               </div>
               <div className="mb-2 flex items-center gap-2">
                 <Mail />
@@ -37,7 +41,7 @@ export default function Footer() {
             </div>
 
             {/* Social Media */}
-            <div className="flex flex-col items-center text-sm md:items-start">
+            <div className="flex flex-col items-center text-xs md:items-start lg:text-sm">
               <h6 className="mb-4 font-semibold uppercase">Social media</h6>
               <div className="mb-2 flex items-center gap-2">
                 <NavLink
@@ -63,13 +67,13 @@ export default function Footer() {
 
             {/* Przydatne linki */}
             <div>
-              <h6 className="mb-4 text-sm font-semibold uppercase">
+              <h6 className="mb-4 text-xs font-semibold uppercase lg:text-sm">
                 Przydatne linki
               </h6>
               <p>
                 <NavLink
                   to="/admin"
-                  className="cursor-pointer text-sm hover:underline"
+                  className="cursor-pointer text-xs hover:underline lg:text-sm"
                 >
                   Panel Administratora
                 </NavLink>
