@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import ButtonComponent from "./ButtonComponent";
 import Bowl from "../Layout/imgs/favicon.svg";
-import { CircleMinus } from 'lucide-react';
+import { CircleMinus } from "lucide-react";
 
 const OrderSummary = ({
   selectedItems,
@@ -22,14 +22,22 @@ const OrderSummary = ({
   };
 
   return (
-    <section className="mx-auto mb-8 p-4 m-4">
+    <section className="m-4 mx-auto mb-8 p-4">
       <p className="font-krona text-center text-2xl uppercase">{loggedTable}</p>
       <br />
       <div className="rounded-[1rem] bg-[white] p-2 text-center shadow-md">
-        <img className="m-auto mb-3 mt-2" src={Bowl} width={"60px"} color="gray"/>
-        <ul className="text-center">
+        <img
+          className="m-auto mt-2 mb-3"
+          src={Bowl}
+          width={"60px"}
+          color="gray"
+        />
+        <ul className="text-center text-xl">
           {selectedItems.map((item, index) => (
-            <li key={item.name}>
+            <li
+              key={item.name}
+              className="flex items-center justify-center py-1"
+            >
               {index === 0 ||
               index === 1 ||
               selectedItems.length === 3 ? null : (
@@ -37,27 +45,29 @@ const OrderSummary = ({
                   className="cursor-pointer"
                   onClick={() => removeFromSelectedItems(item.name)}
                 >
-                  <CircleMinus size={16} className="mr-1"/>
+                  <CircleMinus size={20} className="mr-1" />
                 </button>
               )}
-              <b>{item.name}:</b> {item.price},-
+              <div>
+                <b>{item.name}:</b> {item.price},-
+              </div>
             </li>
           ))}
         </ul>
-        <h3 className="text-end">
+        <h3 className="text-end text-xl">
           <b>Suma:</b> {totalPrice},-
         </h3>
       </div>
 
       <div className="flex items-center justify-center gap-2">
         <ButtonComponent
-          className="my-4 bg-[#c66268] text-[white] uppercase h-[48px] text-sm sm:text-[16px]"
+          className="my-4 h-[48px] bg-[#c66268] text-sm text-[white] uppercase sm:text-[16px]"
           onClick={onClick}
         >
           Wróć
         </ButtonComponent>
         <ButtonComponent
-          className="bg-[#5780DC] text-[white] uppercase my-4 h-[48px] text-sm sm:text-[16px]"
+          className="my-4 h-[48px] bg-[#5780DC] text-sm text-[white] uppercase sm:text-[16px]"
           onClick={placeOrder}
           disabled={selectedItems.length === 0}
         >

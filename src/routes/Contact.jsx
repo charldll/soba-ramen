@@ -71,10 +71,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex w-full flex-row justify-center md:w-3/4 md:gap-2">
+        <div className="flex w-full flex-row justify-center md:w-3/4">
           <ContactForm />
 
-          <div className="bg-menu-red sr-only mx-4 flex w-full max-w-[300px] flex-col items-center justify-center gap-4 rounded-lg shadow-lg lg:not-sr-only xl:max-h-[600px] 2xl:max-w-[500px]">
+          <div className="bg-menu-red border-menu-red sr-only mx-4 flex w-full max-w-[300px] flex-col items-center justify-center gap-4 rounded-r-lg shadow-lg lg:not-sr-only xl:max-h-[600px] 2xl:max-w-[500px]">
             <p className="text-semibold mb-6 p-2 text-center text-2xl text-white">
               Nasz zespół chętnie Ci pomoże!
               <span>

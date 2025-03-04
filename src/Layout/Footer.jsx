@@ -8,7 +8,7 @@ export default function Footer() {
       <footer className="mx-auto max-w-7xl text-center text-black lg:text-left">
         <div className="mx-6 py-3 text-center md:text-left">
           {/* Grid dla sekcji */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1fr_1fr]">
+          <div className="mx-auto grid w-fit gap-8 md:grid-cols-[1fr_2fr] md:gap-x-32 lg:w-full lg:grid-cols-[1fr_1.5fr_1fr_1fr] lg:gap-x-0">
             {/* Logo i slogan */}
             <div className="flex flex-col items-center md:items-start">
               <img
