@@ -86,10 +86,10 @@ export default function ContactForm() {
 
   return (
     <div className="flex w-full items-center justify-center lg:justify-start">
-      <div className="w-full lg:w-3/4">
+      <div className="w-full">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="lg:border-menu-red rounded-lg p-6 md:p-8 lg:border-2"
+          className="lg:border-menu-red border-r-none rounded-l-lg p-6 md:p-8 lg:border-2"
           noValidate
         >
           <h2 className="animate-slide border-menu-red mx-auto mb-8 w-fit border-b text-center text-2xl font-bold md:text-3xl lg:border-none lg:text-4xl">
