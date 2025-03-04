@@ -75,7 +75,7 @@ const RamenComponent = () => {
         return <TableCodeInput onValidCode={handleCodeValidation} />;
       case 1:
         return (
-          <div className="wrapper-inner">
+          <div className="mx-auto my-8 p-4">
             <SoupBase
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
@@ -85,7 +85,7 @@ const RamenComponent = () => {
         );
       case 2:
         return (
-          <div className="wrapper-inner">
+          <div className="mx-auto my-8 p-4">
             <NoodleChoice
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
@@ -96,7 +96,7 @@ const RamenComponent = () => {
         );
       case 3:
         return (
-          <div className="wrapper-inner">
+          <div className="mx-auto my-8 p-4">
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
@@ -123,8 +123,8 @@ const RamenComponent = () => {
   };
 
   return (
-    <main className="min-h-full bg-[#e6e1e7] bg-[url(./Layout/imgs/fish.svg)] bg-cover bg-[left_2rem_bottom_-7rem] bg-no-repeat bg-blend-overlay">
-      <div className="wrapper-outer">
+    <main className="bg-[#e6e1e7] bg-[url(./Layout/imgs/fish.svg)] bg-cover bg-[left_2rem_bottom_-7rem] bg-no-repeat bg-blend-overlay">
+      <div className="mx-auto mt-12 mb-4 min-h-full max-w-[900px] justify-items-center p-4">
         <ProgressButtons activeStep={activeStep} steps={steps} />
         {renderStepContent()}
       </div>

@@ -140,25 +140,15 @@
   #qr-shaded-region {
     @apply rounded-xl;
   }
-}
 
-.swiper {
-  display: grid;
-  width: 70vw;
-  min-height: 350px;
-}
+  .swiper {
+    @apply grid min-h-[350px] w-[70vw];
+  }
+  .swiper-pagination-bullet-active {
+    @apply !bg-[#122653];
+  }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  max-height: fit-content;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #122653 !important;
+  .swiper-slide {
+    @apply flex max-h-fit items-center justify-center p-[0.31rem] text-center text-[1.125rem];
+  }
 }
