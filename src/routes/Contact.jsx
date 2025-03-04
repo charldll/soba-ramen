@@ -34,20 +34,20 @@ const Contact = () => {
           Gdzie nas znajdziesz?
         </h1>
         {/*  Mapa + Informacje */}
-        <div className="lg:bg-logo-blue relative flex w-full flex-col-reverse gap-8 overflow-clip lg:flex-row lg:gap-1 lg:p-20 xl:mt-7 xl:gap-8">
+        <div className="relative flex w-full flex-col-reverse gap-8 overflow-clip lg:flex-row lg:gap-1 lg:bg-[#d3c7d2] lg:p-20 xl:mt-7 xl:gap-8">
           {/* Mapa */}
           <div className="animate-slide w-full shadow-black lg:h-96 lg:w-1/2">
             <Map />
           </div>
 
           {/*Informacje */}
-          <div className="text-our-cream flex w-full flex-col items-center justify-center px-2 text-center lg:w-1/2 lg:p-6">
+          <div className="text-logo-blue flex w-full flex-col items-center justify-center px-2 text-center lg:w-1/2 lg:p-6">
             <div className="animate-slide-from-top absolute top-[-2%] hidden grid-cols-3 gap-2 overflow-clip lg:grid">
               <div className="h-28 w-4 bg-[#F6EFEF]"></div>
               <div className="bg-menu-red h-22 w-4"></div>
               <div className="h-18 w-4 bg-[#F6EFEF]"></div>
             </div>
-            <div className="animate-slide bg-logo-blue w-3/4 rounded-lg py-4 lg:animate-none">
+            <div className="animate-slide w-3/4 rounded-lg bg-[#d3c7d2] py-4 lg:animate-none">
               <p className="font-semibold lg:text-2xl">Soba Ramen</p>
               <p className="flex flex-col lg:text-lg">
                 ul. Kraszewskiego 1<span> 12-345 Ramenoland</span>

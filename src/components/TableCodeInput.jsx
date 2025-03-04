@@ -43,7 +43,7 @@ const TableCodeInput = ({ onValidCode }) => {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-md p-4">
+      <div className="mx-auto min-h-screen w-full max-w-md p-4">
         {!loggedTable ? (
           <>
             <div className="flex gap-2">
