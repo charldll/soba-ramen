@@ -124,8 +124,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities{
-  
+@layer utilities {
   .bg-grid {
     @apply bg-[linear-gradient(hsla(359,71%,60%,0.3)_1px,transparent_1px),linear-gradient(90deg,hsla(222,66%,60%,0.3)_1px,transparent_1px)];
     background-size: 60px 60px;
@@ -141,24 +140,15 @@
   #qr-shaded-region {
     @apply rounded-xl;
   }
-}
 
-.swiper {
-  display: grid;
-  width: 70vw;
-  min-height: 350px;
-}
+  .swiper {
+    @apply grid min-h-[350px] w-[70vw];
+  }
+  .swiper-pagination-bullet-active {
+    @apply !bg-[#122653];
+  }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #122653 !important;
+  .swiper-slide {
+    @apply flex max-h-fit items-center justify-center p-[0.31rem] text-center text-[1.125rem];
+  }
 }

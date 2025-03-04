@@ -75,7 +75,7 @@ const RamenComponent = () => {
         return <TableCodeInput onValidCode={handleCodeValidation} />;
       case 1:
         return (
-          <div className="mx-auto mb-8 p-4 m-4">
+          <div className="mx-auto my-8 p-4">
             <SoupBase
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
@@ -85,7 +85,7 @@ const RamenComponent = () => {
         );
       case 2:
         return (
-          <div className="mx-auto mb-8 p-4 m-4">
+          <div className="mx-auto my-8 p-4">
             <NoodleChoice
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
@@ -96,7 +96,7 @@ const RamenComponent = () => {
         );
       case 3:
         return (
-          <div className="mx-auto mb-8 p-4 m-4">
+          <div className="mx-auto my-8 p-4">
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
@@ -123,11 +123,10 @@ const RamenComponent = () => {
   };
 
   return (
-    // grafika na tło tylko w tej zakładce
-    <main className="bg-our-cream bg-[url(./Layout/imgs/fish.svg)] bg-no-repeat bg-blend-overlay bg-cover bg-[left_2rem_bottom_-7rem]">
-      <div className="h-[80vh] mx-auto max-w-[900px] p-4 mt-12 mb-4 justify-items-center">
-      <ProgressButtons activeStep={activeStep} steps={steps} />
-      {renderStepContent()}
+    <main className="bg-[#e6e1e7] bg-[url(./Layout/imgs/fish.svg)] bg-cover bg-[left_2rem_bottom_-7rem] bg-no-repeat bg-blend-overlay">
+      <div className="mx-auto mt-12 mb-4 min-h-full max-w-[900px] justify-items-center p-4">
+        <ProgressButtons activeStep={activeStep} steps={steps} />
+        {renderStepContent()}
       </div>
     </main>
   );
