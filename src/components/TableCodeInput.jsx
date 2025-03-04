@@ -79,8 +79,8 @@ const TableCodeInput = ({ onValidCode }) => {
             )}
           </>
         ) : (
-          <div className="rounded-lg bg-green-100 p-4">
-            <p className="text-center text-lg font-semibold text-green-800">
+          <div className="rounded-lg bg-[#5b7bbc] p-4">
+            <p className="text-center text-lg font-semibold text-[#202a4f]">
               {loggedTable}
             </p>
           </div>

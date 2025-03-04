@@ -39,7 +39,7 @@ const AdminLogin = () => {
 
   if (isLoading) {
     return (
-      <main className="wrapper-outer flex h-screen items-center justify-center">
+      <main className="mx-auto max-w-[900px] p-4 mt-12 mb-4 justify-items-center flex h-screen items-center justify-center">
         <Loader className="size-10 animate-spin" />
       </main>
     );
@@ -47,7 +47,7 @@ const AdminLogin = () => {
 
   if (user) {
     return (
-      <main className="wrapper-outer flex h-screen items-center justify-center">
+      <main className="mx-auto max-w-[900px] p-4 mt-12 mb-4 justify-items-center flex h-screen items-center justify-center">
         <Loader className="size-10 animate-spin" />
       </main>
     );

@@ -61,9 +61,10 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
         ))}
         </Swiper>
       </div>
+      
       <div className="flex gap-2 justify-end items-center">
         <ButtonComponent
-          className='my-4 text-[white] uppercase bg-[#af282f] disabled:bg-[#d3c7d2] disabled:cursor-not-allowed font-semibold'
+          className='my-4 text-[white] uppercase bg-menu-red disabled:bg-[#d3c7d2] disabled:cursor-not-allowed font-semibold'
           onClick={onClick}
           disabled={selectedNone}>
           	Dalej

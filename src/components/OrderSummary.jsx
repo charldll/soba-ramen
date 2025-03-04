@@ -22,10 +22,10 @@ const OrderSummary = ({
   };
 
   return (
-    <section className="wrapper-inner">
+    <section className="mx-auto mb-8 p-4 m-4">
       <p className="font-krona text-center text-2xl uppercase">{loggedTable}</p>
       <br />
-      <div className="rounded-[1rem] bg-[white] p-[0.5rem] text-center shadow-md">
+      <div className="rounded-[1rem] bg-[white] p-2 text-center shadow-md">
         <img className="m-auto mb-3 mt-2" src={Bowl} width={"60px"} color="gray"/>
         <ul className="text-center">
           {selectedItems.map((item, index) => (
@@ -37,7 +37,7 @@ const OrderSummary = ({
                   className="cursor-pointer"
                   onClick={() => removeFromSelectedItems(item.name)}
                 >
-                  <CircleMinus size={12} className="mr-1"/>
+                  <CircleMinus size={16} className="mr-1"/>
                 </button>
               )}
               <b>{item.name}:</b> {item.price},-

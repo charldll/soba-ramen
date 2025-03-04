@@ -19,37 +19,36 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
       </div>
       <div className="flex max-w-[750px]">
       <Swiper
-          slidesPerView={3.5}
-          freeMode={true}
-          pagination={{
-            dynamicBullets: true,
-          }}
-          modules={[FreeMode, Pagination]}
-          loop={true}
-          className='mySwiper'
-          breakpoints={{
-            0: {
-              slidesPerView: 1.2,
-            },
-            375: {
-              slidesPerView: 1.5,
-            },
-            450: {
-              slidesPerView: 2,
-            },
-            600: {
-              slidesPerView: 2.5,
-            },
-            780: {
-              slidesPerView: 2.7,
-            },
-            930: {
-              slidesPerView: 3.1,
-            },
-            1024: {
-              slidesPerView: 3.7,
-            },
-          }}>
+        slidesPerView={3.5}
+        freeMode={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[FreeMode, Pagination]}
+        loop={true}
+        className='mySwiper'
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          375: {
+            slidesPerView: 1.5,
+          },
+          450: {
+            slidesPerView: 2,
+          },
+          600: {
+            slidesPerView: 2.5,
+          },
+          780: {
+            slidesPerView: 2.7,
+          },
+          930: {
+            slidesPerView: 3.1,
+          },
+          1024: {
+            slidesPerView: 3.7,
+          },}}>
         {ingredientsData.map((ingredient) => (
           <SwiperSlide key={ingredient.name}>
           <IngredientCard
@@ -61,7 +60,7 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
         ))}
         </Swiper>
       </div>
-
+      
       <div className="flex gap-2 justify-end items-center">
         <ButtonComponent
           className="my-4 uppercase text-[white] bg-[#c66268] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed"
@@ -69,7 +68,7 @@ const IngredientChoice = ({ selectedItems, toggleItem, handleNext, handlePrev })
           Wstecz
         </ButtonComponent>
         <ButtonComponent
-          className="my-4 uppercase text-[white] bg-[#af282f] disabled:bg-[#dd9ba1] disabled:cursor-not-allowed"
+          className="my-4 uppercase text-[white] bg-menu-red disabled:bg-[#dd9ba1] disabled:cursor-not-allowed"
           onClick={handleNext}
           disabled={selectetItemsEmpty}>
           Dalej

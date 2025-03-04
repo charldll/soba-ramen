@@ -4,7 +4,7 @@ import { Stepper, Step } from "@material-tailwind/react";
 const ProgressButtons = ({activeStep, steps})=> {
   
     return (
-    <div className="w-[400px] items-center mx-auto">
+    <div className="max-w-[350px] items-center mx-auto">
         <Stepper 
         activeStep={activeStep}
         lineClassName="bg-[#d3c7d2]">

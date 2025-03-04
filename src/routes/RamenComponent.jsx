@@ -13,6 +13,7 @@ import NoodleChoice from "../components/NoodleChoice";
 const RamenComponent = () => {
   const [activeStep, setActiveStep] = useState(0);
 
+  // zmienne wchodzące w skład zamówienia
   const {
     selectedItems,
     setSelectedItems,
@@ -31,6 +32,7 @@ const RamenComponent = () => {
     setActiveStep((cur) => Math.max(cur - 1, 0));
   };
 
+  // sprawdzanie kodu stolika
   useEffect(() => {
     const checkTable = async () => {
       if (table) {
@@ -57,21 +59,23 @@ const RamenComponent = () => {
     setActiveStep(5);
   };
 
+  // pozostałość po wcześniejszej metodzie tworzenia kroków
   const steps = [
-    { icon: "", label: "One" },
-    { icon: "", label: "Two" },
-    { icon: "", label: "Three" },
-    { icon: "", label: "Four" },
-    { icon: "", label: "Five" },
+    { icon: "", label: "Code" },
+    { icon: "", label: "Soup" },
+    { icon: "", label: "Noodles" },
+    { icon: "", label: "Additional" },
+    { icon: "", label: "Confirmation" },
   ];
 
+  // funkcje odnośnie kolejnych kroków komponentu
   const renderStepContent = () => {
     switch (activeStep) {
       case 0:
         return <TableCodeInput onValidCode={handleCodeValidation} />;
       case 1:
         return (
-          <div className="wrapper-inner">
+          <div className="mx-auto mb-8 p-4 m-4">
             <SoupBase
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
@@ -81,7 +85,7 @@ const RamenComponent = () => {
         );
       case 2:
         return (
-          <div className="wrapper-inner">
+          <div className="mx-auto mb-8 p-4 m-4">
             <NoodleChoice
               selectedItems={selectedItems}
               chooseOneOptionOnly={chooseOneOptionOnly}
@@ -92,7 +96,7 @@ const RamenComponent = () => {
         );
       case 3:
         return (
-          <div className="wrapper-inner">
+          <div className="mx-auto mb-8 p-4 m-4">
             <IngredientChoice
               selectedItems={selectedItems}
               toggleItem={toggleItem}
@@ -119,8 +123,9 @@ const RamenComponent = () => {
   };
 
   return (
-    <main className="bg-[#e6e1e7] bg-[url(./Layout/imgs/fish.svg)] bg-no-repeat bg-blend-overlay bg-cover bg-[left_2rem_bottom_-7rem]">
-      <div className="wrapper-outer">
+    // grafika na tło tylko w tej zakładce
+    <main className="bg-our-cream bg-[url(./Layout/imgs/fish.svg)] bg-no-repeat bg-blend-overlay bg-cover bg-[left_2rem_bottom_-7rem]">
+      <div className="h-[80vh] mx-auto max-w-[900px] p-4 mt-12 mb-4 justify-items-center">
       <ProgressButtons activeStep={activeStep} steps={steps} />
       {renderStepContent()}
       </div>

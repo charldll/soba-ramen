@@ -17,7 +17,7 @@ const IngredientCard = ({ ingredient, selectedItems, toggleItem }) => {
   
   return (
     <div
-      className={`cursor-pointer grid grid-rows-[min-content] gap-[0.5rem] p-[0.5rem] m-0.25 bg-[white] rounded-[1rem] shadow-md snap-start ${
+      className={`cursor-pointer grid grid-rows-[min-content] gap-2 p-2 m-2 bg-[white] rounded-[1rem] shadow-md snap-start ${
         selectedItems.some((i) => i.name === ingredient.name)
           ? "outline-4 outline-[#122653] -outline-offset-4"
           : ""
