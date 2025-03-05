@@ -5,12 +5,12 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <main className="mx-auto my-4 h-fit max-w-[700px] justify-center overflow-y-clip p-4 xl:max-w-[1200px]">
-      <h1 className="animate-slide font-krona mb-2 p-2 text-center text-2xl uppercase md:text-4xl lg:text-5xl tracking-[-0.1em]">
+      <h1 className="animate-slide font-krona mb-2 p-2 text-center text-2xl tracking-[-0.1em] uppercase md:text-4xl lg:text-5xl">
         Mistrzostwo{" "}
         <span className="text-menu-red animate-blur font-semibold">smaku</span>{" "}
         w każdej misce
       </h1>
-      <div className="animate-slide-from-bottom">
+      <div className="animate-slide-from-bottom 2xl:mt-8">
         <Carousel
           className="sticky h-[300px] rounded-xl shadow-xl max-sm:w-auto xl:h-[400px]"
           loop={true}
@@ -24,7 +24,7 @@ export default function Home() {
             />
           ))}
         </Carousel>
-        <div className="mx-auto -mt-[20px] w-fit rounded-xl bg-[#F6EFEF] p-4 pt-10 md:w-[90%] xl:w-[80%]">
+        <div className="mx-auto -mt-[20px] w-fit rounded-xl bg-[#F6EFEF] p-4 pt-10 text-lg leading-relaxed md:w-[90%] xl:w-[80%]">
           <p className="md:animate-scale-up mx-auto mb-4 max-w-prose">
             <span className="font-semibold">Ramen to więcej niż danie </span>–
             to tradycja, sztuka i dusza kuchni japońskiej. Powstał na

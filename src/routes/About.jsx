@@ -25,8 +25,8 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-auto my-4 w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[85%]">
-        <section>
+      <div className="mx-auto my-4 w-full max-w-[95%] rounded-2xl bg-[#F6EFEF] p-6 py-12 shadow-lg md:max-w-[90%] xl:max-w-[80%]">
+        <section className="mx-auto 2xl:max-w-[1400px]">
           <h1 className="text-menu-red mb-10 text-center text-3xl font-bold md:text-4xl">
             Nasza misja
           </h1>
@@ -44,7 +44,7 @@ export default function About() {
           </p>
         </section>
 
-        <section>
+        <section className="mx-auto 2xl:max-w-[1400px]">
           <h1 className="text-menu-red mt-10 mb-10 text-center text-3xl font-bold md:text-4xl">
             Nasz zespół
           </h1>

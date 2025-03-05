@@ -23,7 +23,7 @@ export default function AppNavLink({ to, location, children }) {
         isActive
           ? "bg-[#122653] text-[#f9f3ed]"
           : "text-our-cream hover:bg-[#78120d] hover:text-[#f9f3ed] hover:shadow-md",
-        "relative rounded-md px-3 py-2 text-sm font-semibold",
+        "relative rounded-md px-3 py-2 text-sm font-semibold 2xl:text-lg 2xl:font-normal",
         isRamen && !isOnRamenPage ? "animate-pulse" : "",
       )}
       role="navigation"

@@ -1,4 +1,11 @@
-import { Instagram, Facebook, MapPinned, Mail, Phone } from "lucide-react";
+import {
+  Instagram,
+  Facebook,
+  MapPinned,
+  Mail,
+  Phone,
+  Github,
+} from "lucide-react";
 import { NavLink } from "react-router";
 import LogoFooter from "./imgs/soba-logo-footer.svg";
 
@@ -72,14 +79,22 @@ export default function Footer() {
               <h6 className="mb-4 text-xs font-semibold uppercase lg:text-sm">
                 Przydatne linki
               </h6>
-              <p>
+              <div className="mb-2 flex flex-col items-center gap-2 md:items-start">
                 <NavLink
                   to="/admin"
                   className="cursor-pointer text-xs hover:underline lg:text-sm"
                 >
                   Panel Administratora
                 </NavLink>
-              </p>
+                <NavLink
+                  to="https://github.com/charldll/soba-ramen"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex cursor-pointer items-center text-xs hover:underline lg:text-sm"
+                >
+                  <Github /> <span>Soba Ramen Repo</span>
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>

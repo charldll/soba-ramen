@@ -65,7 +65,7 @@ const SoupBase = ({ selectedItems, chooseOneOptionOnly, onClick }) => {
       <div className="flex-row-reverse items-center gap-4 md:flex">
         <div className="flex items-center justify-end gap-2">
           <ButtonComponent
-            className="bg-menu-red my-4 font-semibold text-[white] uppercase disabled:cursor-not-allowed disabled:bg-[#d3c7d2]"
+            className="bg-menu-red disabled:bg-fish-light my-4 font-semibold text-[white] uppercase disabled:cursor-not-allowed"
             onClick={onClick}
             disabled={selectedNone}
           >
