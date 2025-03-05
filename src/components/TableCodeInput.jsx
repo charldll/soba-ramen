@@ -52,7 +52,7 @@ const TableCodeInput = ({ onValidCode }) => {
                 value={code}
                 onChange={handleCodeChange}
                 placeholder="Podaj kod stolika"
-                className="w-full rounded-lg border px-4 py-2 text-blue-500 transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-lg border px-4 py-2 text-[#5b7bbc] transition-all outline-none focus:border-[#5b7bbc] focus:ring-2 focus:ring-[#5b7bbc]"
                 autoFocus
               />
               {!isFirefox && hasCamera && (
@@ -77,6 +77,9 @@ const TableCodeInput = ({ onValidCode }) => {
                 stopScanning={stopScanning}
               />
             )}
+            <p className="border-fish-light text-fish-light mt-8 rounded-md border-2 p-4 text-center font-bold">
+              Kod gościa: soba
+            </p>
           </>
         ) : (
           <div className="rounded-lg bg-[#5b7bbc] p-4">
